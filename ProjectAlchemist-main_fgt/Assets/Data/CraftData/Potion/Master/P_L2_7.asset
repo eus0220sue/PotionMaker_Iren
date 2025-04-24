@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60417a9359a050d4aaecd92dcb7bd621, type: 3}
+  m_Name: P_L2_7
+  m_EditorClassIdentifier: 
+  m_gradeType: 2
+  m_itemType: 3
+  m_pName: "\uC0AC\uB7C9\uC758 \uBB18\uC57D"
+  m_index: 7
+  m_inputI1: {fileID: 11400000, guid: 1427574f488cf634e91f191a1260f5fd, type: 2}
+  m_inputI2: {fileID: 11400000, guid: b41bf439f6ecef440b80c34077f2b32e, type: 2}
+  m_outputItemData: {fileID: 11400000, guid: 29e36ca09ba48a74e9f4cec8831d37a0, type: 2}
+  m_OAmount: 1
+  m_IAmount1: 1
+  m_IAmount2: 1
+  m_potionIllust: {fileID: 21300000, guid: 91ebd0fa7a921f24a8e6089e52710fa0, type: 3}
+  m_PotionDS: "\uC0AC\uB791\uC758 \uBB18\uC57D\uC774\uB77C\uB294 \uB8E8\uBA38\uAC00
+    \uB3CC\uC9C0\uB9CC, \uC2E4\uC740 \uAC10\uC815\uC744 \uC9C4\uD558\uAC8C \uB2F4\uB294
+    \uC778\uAE30 \uC789\uD06C. \uACE0\uBC31 \uD3B8\uC9C0\uC5D0 \uC790\uC8FC \uC4F0\uC774\uBA70,
+    \uC4F4 \uC774\uC758 \uB9C8\uC74C\uC744 \uB354\uC6B1 \uC9C4\uC2E4\uD558\uAC8C
+    \uC804\uD574\uC900\uB2E4."

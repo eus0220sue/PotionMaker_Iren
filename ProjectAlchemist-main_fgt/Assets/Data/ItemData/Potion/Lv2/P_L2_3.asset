@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e510cff9f8f7641a730aa4889c9e42, type: 3}
+  m_Name: P_L2_3
+  m_EditorClassIdentifier: 
+  m_itemType: 0
+  m_itemName: "\uC232\uC758 \uD5A5\uAE30 \uBB3C\uC57D"
+  m_maxStack: 10
+  m_itemIcon: {fileID: 21300000, guid: d0446c9af477470439cc7121454f3993, type: 3}
+  description: "\uC740\uC740\uD55C \uC790\uC5F0\uC758 \uD5A5\uAE30\uAC00 \uB098\uAC8C
+    \uD55C\uB2E4. \uAD49\uC7A5\uD788 \uB098\uB978\uD558\uACE0 \uBAB8\uC774 \uC774\uC644\uB418\uB294
+    \uAE30\uBD84\uC774 \uB4E0\uB2E4."
+  m_usableItem: 0

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34c8b377a13d6542b6797a0a5545ee4, type: 3}
+  m_Name: F_R_M4_1
+  m_EditorClassIdentifier: 
+  m_MaterialName: "\uBC18\uC9DD \uBC84\uC12F"
+  stateSprites:
+  - {fileID: 21300000, guid: e162b81349f4e71488ac3f04172b2b77, type: 3}
+  - {fileID: 21300000, guid: 2e1b31b0bfe27ec438eb162ca4682e70, type: 3}
+  m_objName: "\uBC18\uC9DD \uBC84\uC12F"
+  m_itemData: {fileID: 11400000, guid: 6e15805e27cc6084398355d3cfd3d9e3, type: 2}
+  amount: 1

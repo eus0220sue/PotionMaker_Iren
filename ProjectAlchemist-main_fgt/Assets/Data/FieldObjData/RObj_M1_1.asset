@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34c8b377a13d6542b6797a0a5545ee4, type: 3}
+  m_Name: RObj_M1_1
+  m_EditorClassIdentifier: 
+  m_MaterialName: "\uC0B0\uC131\uC5F4\uB9E4"
+  stateSprites:
+  - {fileID: -1629941505, guid: 64fc53b82a0965047813634f6e530570, type: 3}
+  - {fileID: -746888221, guid: 64fc53b82a0965047813634f6e530570, type: 3}
+  m_objName: "\uC0B0\uC131\uC5F4\uB9E4"
+  m_itemData: {fileID: 11400000, guid: 9618246b5b02197419fe31ef3b0af489, type: 2}
+  amount: 1

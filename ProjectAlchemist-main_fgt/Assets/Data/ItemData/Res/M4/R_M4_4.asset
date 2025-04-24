@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e510cff9f8f7641a730aa4889c9e42, type: 3}
+  m_Name: R_M4_4
+  m_EditorClassIdentifier: 
+  m_itemType: 0
+  m_itemName: "\uB531\uD480 \uACB0\uC815"
+  m_maxStack: 20
+  m_itemIcon: {fileID: 21300000, guid: fda6f4639f972d644ae0fab49918513d, type: 3}
+  description: "\uC5B4\uB5A4 \uBB3C\uCCB4\uB4E0 \uB531 \uBD99\uC5B4\uC788\uAC8C \uD55C\uB2E4.
+    \uC5D0\uC13C\uC2A4\uB85C \uB18D\uCD95\uD560 \uC2DC, \uC601\uAD6C\uC801\uC778
+    \uC9C0\uC18D\uB825\uC73C\uB85C \uBCC0\uD55C\uB2E4."
+  m_usableItem: 0

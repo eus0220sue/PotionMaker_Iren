@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e510cff9f8f7641a730aa4889c9e42, type: 3}
+  m_Name: R_M4_2
+  m_EditorClassIdentifier: 
+  m_itemType: 0
+  m_itemName: "\uC554\uCD08\uBCA0\uB9AC"
+  m_maxStack: 20
+  m_itemIcon: {fileID: 21300000, guid: 244beb6c9175f7d4cb6cf29f239d7936, type: 3}
+  description: "\uB3D9\uAD74\uC5D0\uC11C \uC0DD\uC0B0\uB418\uB294 \uB3CC \uCC98\uB7FC
+    \uB531\uB531\uD55C \uC5F4\uB9E4. \uC5F4\uB9E4\uC758 \uC528\uAC00 \uB3C5\uC774
+    \uC788\uC5B4, \uC5D0\uC13C\uC2A4\uB85C \uCD94\uCD9C\uD574\uC11C \uC0AC\uC6A9\uD574\uC57C
+    \uD55C\uB2E4."
+  m_usableItem: 0

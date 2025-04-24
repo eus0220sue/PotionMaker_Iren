@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34c8b377a13d6542b6797a0a5545ee4, type: 3}
+  m_Name: F_R_M2_2
+  m_EditorClassIdentifier: 
+  m_MaterialName: "\uC544\uC774\uC2A4 \uD3EC\uADF8"
+  stateSprites:
+  - {fileID: 21300000, guid: a7c4cff4b455abd458e7557c9da3c87f, type: 3}
+  - {fileID: 21300000, guid: a7668c428deca224b9080ace1b9501bf, type: 3}
+  m_objName: F_R_M2_2_Ice Fog
+  m_itemData: {fileID: 11400000, guid: 72c2054dcd5416d46a8bc945915923c8, type: 2}
+  amount: 1

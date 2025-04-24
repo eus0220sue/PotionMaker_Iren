@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e510cff9f8f7641a730aa4889c9e42, type: 3}
+  m_Name: R_M4_6
+  m_EditorClassIdentifier: 
+  m_itemType: 0
+  m_itemName: "\uB9D0\uB791 \uC218\uC815"
+  m_maxStack: 20
+  m_itemIcon: {fileID: 21300000, guid: 74564dee5f43795429e987e88df544af, type: 3}
+  description: "\uB9D0\uB791\uB9D0\uB791\uD55C \uC218\uC815\uC73C\uB85C, \uC190\uC73C\uB85C
+    \uC7A1\uAE30 \uC5B4\uB835\uB2E4. \uC190\uC5D0 \uC950\uB294 \uB300\uB85C \uBAA8\uC591\uC774
+    \uBC14\uB010\uB2E4. \uC5D0\uC13C\uC2A4\uB85C \uB18D\uCD95\uD560 \uC2DC, \uBAA8\uC591
+    \uBCC0\uD654\uC758 \uD3ED\uC774 \uB192\uC544\uC9C4\uB2E4."
+  m_usableItem: 0

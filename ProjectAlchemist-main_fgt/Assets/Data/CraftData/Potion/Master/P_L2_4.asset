@@ -22,7 +22,7 @@ MonoBehaviour:
   m_OAmount: 1
   m_IAmount1: 1
   m_IAmount2: 1
-  m_potionIllust: {fileID: 0}
+  m_potionIllust: {fileID: 21300000, guid: ad940ab022a50cf46bb0d8ee409b49dc, type: 3}
   m_PotionDS: "\uC790\uC678\uC120 \uCC28\uB2E8\uC758 \uD6A8\uACFC\uAC00 \uB9E4\uC6B0
     \uC88B\uB2E4. \uD574\uBCC0\uAC00 \uC0AC\uB78C\uB4E4\uC5D0\uAC8C \uAF64\uB098
     \uC778\uAE30\uC778 \uC7AC\uD488\uC774\uB2E4."

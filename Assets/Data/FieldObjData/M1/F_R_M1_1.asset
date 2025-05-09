@@ -15,6 +15,7 @@ MonoBehaviour:
   m_MaterialName: "\uC57C\uAD11 \uBC84\uC12F"
   stateSprites:
   - {fileID: 21300000, guid: 592b909339356c741856d1cff1fc556f, type: 3}
+  - {fileID: 21300000, guid: 6759b6847bac76c4796b321e2545289e, type: 3}
   - {fileID: 21300000, guid: a631534bbc186e346997dd3d284df5ce, type: 3}
   m_objName: "\uC57C\uAD11 \uBC84\uC12F"
   m_itemData: {fileID: 11400000, guid: 4b925b31f3f7f6041a0a30c048c1422e, type: 2}

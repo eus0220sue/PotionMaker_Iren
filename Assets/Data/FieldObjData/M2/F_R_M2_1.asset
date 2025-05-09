@@ -15,6 +15,7 @@ MonoBehaviour:
   m_MaterialName: "\uD478\uB978 \uC218\uBD84\uCD08"
   stateSprites:
   - {fileID: 21300000, guid: 6421736889314f448a21cf4352bc0b43, type: 3}
+  - {fileID: 21300000, guid: 432c9a86ffaff6b429f2f81bfd0d77f3, type: 3}
   - {fileID: 21300000, guid: e8129bc90b1ba934cb0badd9135e34d1, type: 3}
   m_objName: F_R_M2_1_Blue Dewleaf
   m_itemData: {fileID: 11400000, guid: 72c2054dcd5416d46a8bc945915923c8, type: 2}

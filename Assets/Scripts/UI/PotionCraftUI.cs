@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -82,6 +81,7 @@ public class PotionCraftUI : MonoBehaviour
         SwitchTab(TabType.Novice);
         SetupCraftList();
         HighlightSlot();
+        AutoFindExchangeManager();
 
     }
 
@@ -111,7 +111,7 @@ public class PotionCraftUI : MonoBehaviour
         HandleSlotMoveInput();
        
         // Z키 기능
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (currentState == UIState.List)
             {
@@ -124,7 +124,7 @@ public class PotionCraftUI : MonoBehaviour
         }
         if (!gameObject.activeSelf) return;
 
-        if (Input.GetKeyDown(KeyCode.X) && currentState == UIState.Craft)
+        if (Input.GetKeyDown(KeyCode.Z) && currentState == UIState.Craft)
         {
             currentState = UIState.List;
             m_bookCraftUI.SetActive(false);
@@ -264,6 +264,7 @@ public class PotionCraftUI : MonoBehaviour
         m_Input1Name.text = data.IsInputI1.m_itemName;
         m_Input2Name.text = data.IsInputI2.m_itemName;
 
+        Debug.Log($"[TrySelected] 선택된 인덱스: {selectedIndex}");
 
 
         currentState = UIState.Craft;
@@ -333,13 +334,13 @@ public class PotionCraftUI : MonoBehaviour
     private void HandleSlotMoveInput()
     {
         // 1. 먼저 GetKeyDown 처리 (처음 누른 순간만 반응)
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             MoveSlot(-1);
             holdTimer = holdDelay;
             return; //  중복 입력 방지
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             MoveSlot(1);
             holdTimer = holdDelay;
@@ -347,7 +348,7 @@ public class PotionCraftUI : MonoBehaviour
         }
 
         // 2. 누르고 있는 상태 처리 (Hold)
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             holdTimer -= Time.deltaTime;
             if (holdTimer <= 0f)
@@ -356,7 +357,7 @@ public class PotionCraftUI : MonoBehaviour
                 holdTimer = holdDelay;
             }
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
             holdTimer -= Time.deltaTime;
             if (holdTimer <= 0f)
@@ -373,6 +374,7 @@ public class PotionCraftUI : MonoBehaviour
     void MoveSlot(int dir)
     {
         selectedIndex = Mathf.Clamp(selectedIndex + dir, 0, slotList.Count - 1);
+        Debug.Log($"[MoveSlot] 현재 선택 인덱스: {selectedIndex}");
         HighlightSlot();
     }
 
@@ -382,11 +384,17 @@ public class PotionCraftUI : MonoBehaviour
         selectedIndex = 0;               // 인덱스 초기화
         currentState = UIState.List;     // 상태 초기화
 
-        SetupCraftList();           // 리스트 세팅
+        m_bookCraftUI.SetActive(false);  // 상세 화면 비활성화 추가
+        m_Input1Slot.Clear();            // 슬롯 비우기
+        m_Input2Slot.Clear();
+        m_OutputSlot.Clear();
+
+        SetupCraftList();                // 리스트 세팅
         UpdateDescriptionUI();
         SwitchTab(currentTab);           // 탭에 맞는 리스트 세팅
         HighlightSlot();                 // 첫 번째 슬롯 강조 + 스크롤 조정
     }
+
     public void UpdateDescriptionUI()
     {
         if (selectedIndex < 0 || selectedIndex >= slotList.Count)
@@ -413,5 +421,9 @@ public class PotionCraftUI : MonoBehaviour
             m_potionName.text = data.IsName;
             m_potionIllust.sprite = data.IsPotionIllust;
         }
+    }
+    public void AutoFindExchangeManager()
+    {
+        m_exchangeManager = FindObjectOfType<ExchangeManager>();
     }
 }

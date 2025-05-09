@@ -16,57 +16,105 @@ public class UserController : ParentController
     private IInteractableInterface currentTarget = null;
 
     private List<Collider2D> interactablesInRangeList = new List<Collider2D>();
-
+    /// <summary>
+    /// 이동 플래그 
+    /// </summary>
+    public bool m_moveFlag = false;
     public bool IsMoveLock { get; private set; } = false;
+
+    public bool isInteracting = false;
 
 
     private void Start()
     {
         m_rb = GetComponent<Rigidbody2D>();
         wallLayer = LayerMask.NameToLayer("Wall"); // "Wall" 레이어 가져오기
-
         // Rigidbody2D 설정
         m_rb.gravityScale = 0;
         m_rb.freezeRotation = true;
         m_rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        SetMoveFlag(true); // ← 최초에 한 번 이동 가능하게 설정
+
     }
 
     void Update()
     {
         if (GManager.Instance != null && GManager.Instance.TPFlag) return;
-
         Interact();
         Move();
     }
+    private void FixedUpdate()
+    {
+        if (!m_moveFlag)
+        {
+            m_rb.velocity = Vector2.zero;
+            return;
+        }
+
+        m_rb.velocity = m_input * m_moveSpeed;
+    }
+
     public override void Move()
     {
-        if (GManager.Instance.IsInventoryUI.isOpen) return;
-        if (GManager.Instance.IsUIManager.UIOpenFlag) return;
-        if (GManager.Instance != null && GManager.Instance.TPFlag) return;
-        // 입력값 가져오기
+        if (!m_moveFlag)
+        {
+            m_input = Vector2.zero;
+            animator.SetBool("isMove", false);
+            return;
+        }
+        if (GManager.Instance == null)
+        {
+            Debug.LogError("[UserController] GManager.Instance가 null입니다.");
+            return;
+        }
+
+        if (GManager.Instance.IsInventoryUI == null)
+        {
+            Debug.LogError("[UserController] IsInventoryUI가 null입니다.");
+            return;
+        }
+
+        if (GManager.Instance.IsInventoryUI.isOpen)
+        {
+            Debug.Log("[UserController] 인벤토리 UI가 열려 있어 이동 불가.");
+            m_input = Vector2.zero;
+            m_rb.velocity = Vector2.zero;
+            animator.SetBool("isMove", false);
+            return;
+        }
+
+        if (GManager.Instance.IsUIManager.UIOpenFlag)
+        {
+            m_input = Vector2.zero;
+            m_rb.velocity = Vector2.zero;
+            animator.SetBool("isMove", false);
+            return;
+        }
+
+        if (GManager.Instance.TPFlag)
+        {
+            m_input = Vector2.zero;
+            m_rb.velocity = Vector2.zero;
+            animator.SetBool("isMove", false);
+            return;
+        }
+
+        // 아래는 입력 정상 처리
         m_input.x = Input.GetAxisRaw("Horizontal");
         m_input.y = Input.GetAxisRaw("Vertical");
-        m_input = m_input.normalized; // 대각선 이동 속도 보정
-        
+        m_input = m_input.normalized;
+
         bool isMove = m_input.magnitude > 0.1f;
         animator.SetBool("isMove", isMove);
 
-        // 이동 중일 때만 방향 갱신
         if (isMove)
         {
-            if (Mathf.Abs(m_input.x) > 0.1f) // 좌우 입력이 있을 때만
+            if (Mathf.Abs(m_input.x) > 0.1f)
             {
                 lastMoveX = m_input.x > 0 ? 1f : -1f;
             }
-            // 이동 중이든 아니든 현재 방향 반영 (중요!)
             animator.SetFloat("moveX", lastMoveX);
         }
-    }
-
-    private void FixedUpdate()
-    {
-        // Rigidbody2D를 사용하여 이동
-        m_rb.velocity = m_input * m_moveSpeed;
     }
     /// <summary>
     /// 충돌체크
@@ -84,7 +132,6 @@ public class UserController : ParentController
             }
         }
     }
-
     private void OnTriggerExit2D(Collider2D other)
     {
         if (interactablesInRangeList.Contains(other))
@@ -92,15 +139,31 @@ public class UserController : ParentController
             interactablesInRangeList.Remove(other);
         }
     }
+    public void SetMoveFlag(bool m_moveFlag)
+    {
+        this.m_moveFlag = m_moveFlag;
+
+        if (!m_moveFlag)
+        {
+            m_input = Vector2.zero;          
+            m_rb.velocity = Vector2.zero;     
+            animator.SetBool("isMove", false);
+        }
+    }
     /// <summary>
     /// 인터렉션 인터페이스 
     /// </summary>
     private void Interact()
     {
+        if (isInteracting) return; // 중복 인터렉션 차단
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            isInteracting = true;
+
             if (interactablesInRangeList.Count == 0)
             {
+                Debug.Log($"[Interact] 대상 확인 실패:");
+                isInteracting = false;
                 return;
             }
 
@@ -120,12 +183,11 @@ public class UserController : ParentController
     }
     public void ResetMoveAndAnimation()
     {
-        m_input = Vector2.zero; // 입력 초기화
+        m_input = Vector2.zero;
 
         if (animator != null)
         {
-            animator.SetFloat("moveX", 0f); //  정확한 파라미터 이름
-            animator.SetBool("isMove", false); //  정확한 파라미터 이름
+            animator.SetBool("isMove", false);
         }
     }
 }

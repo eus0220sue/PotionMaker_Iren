@@ -7,6 +7,7 @@ public class InventorySlot : MonoBehaviour
     [SerializeField] private Image icon;
     [SerializeField] private TMP_Text quantityText;
     [SerializeField] private int nowQuantity;
+    private ItemData m_itemData; // ³»ºÎ º¸°ü¿ë Ãß°¡
 
     [SerializeField] private GameObject m_selected;
 
@@ -46,10 +47,13 @@ public class InventorySlot : MonoBehaviour
 
     public void SetSelected(bool isOn)
     {
-        Debug.Log($"{gameObject.name} ¡æ SetSelected({isOn})");
-
         if (m_selected != null)
             m_selected.SetActive(isOn);
+    }
+
+    public string GetItemName()
+    {
+        return m_itemData != null ? m_itemData.m_itemName : "ºó ½½·Ô";
     }
 
 }

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
 {
+
+    [SerializeField] private GameObject m_shopUI;
     [SerializeField] private ExchangeManager m_exchangeManager;
     [SerializeField] private List<ItemData> m_shopGoodsList;
     [SerializeField] private InventorySlot[] m_sellSlot;
@@ -25,13 +27,24 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private GameObject m_sellGroup;
     [SerializeField] private GameObject m_purchaseGroup;
 
+    private int currentIndex = 0; // 현재 선택 슬롯
 
-    private float holdDelay = 0.2f;
+    private float holdDelay = 0.5f;    // 처음 눌렀을 때 다음 반복까지 딜레이
+    private float repeatRate = 0.1f;   // 연속 입력 간격
     private float holdTimer = 0f;
+
     private enum TabType { Purchase, Sell }
     private TabType currentTab = TabType.Purchase;
     private int selectedIndex = 0;
 
+    void Start()
+    {
+        m_shopUI.SetActive(false);
+        InitShopUI();
+        SwitchTab(TabType.Purchase);
+        UpdatePurchaseUI();
+
+    }
 
     private void Update()
     {
@@ -41,10 +54,8 @@ public class ShopUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             SwitchTab();
-            //currentTab = (currentTab == TabType.Purchase) ? TabType.Sell : TabType.Purchase;
-            //SwitchTab(currentTab);
         }
-        // 제작 실행 (Z키)
+        //액션
         if (Input.GetKeyDown(KeyCode.Z))
         {
         }
@@ -58,49 +69,78 @@ public class ShopUI : MonoBehaviour
 
     private void HandleSlotMoveInput()
     {
-        // 1. 먼저 GetKeyDown 처리 (처음 누른 순간만 반응)
-        if (Input.GetKeyDown(KeyCode.W))
+        // 초기화
+        holdTimer -= Time.deltaTime;
+
+        // W
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            MoveSlot(-1);
-            holdTimer = holdDelay;
-            return; //  중복 입력 방지
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            MoveSlot(1);
+            MoveUp();
             holdTimer = holdDelay;
             return;
         }
+        else if (Input.GetKey(KeyCode.UpArrow) && holdTimer <= 0f)
+        {
+            MoveUp();
+            holdTimer = repeatRate;
+            return;
+        }
 
-        // 2. 누르고 있는 상태 처리 (Hold)
-        if (Input.GetKey(KeyCode.W))
+        // S
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            holdTimer -= Time.deltaTime;
-            if (holdTimer <= 0f)
-            {
-                MoveSlot(-1);
-                holdTimer = holdDelay;
-            }
+            MoveDown();
+            holdTimer = holdDelay;
+            return;
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.DownArrow) && holdTimer <= 0f)
         {
-            holdTimer -= Time.deltaTime;
-            if (holdTimer <= 0f)
-            {
-                MoveSlot(1);
-                holdTimer = holdDelay;
-            }
+            MoveDown();
+            holdTimer = repeatRate;
+            return;
         }
-        else
+
+        // A
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            MoveLeft();
+            holdTimer = holdDelay;
+            return;
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow) && holdTimer <= 0f)
+        {
+            MoveLeft();
+            holdTimer = repeatRate;
+            return;
+        }
+
+        // D
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            MoveRight();
+            holdTimer = holdDelay;
+            return;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow) && holdTimer <= 0f)
+        {
+            MoveRight();
+            holdTimer = repeatRate;
+            return;
+        }
+
+        // 키 안 누르고 있으면 초기화
+        if (!Input.GetKey(KeyCode.UpArrow) &&
+            !Input.GetKey(KeyCode.DownArrow) &&
+            !Input.GetKey(KeyCode.LeftArrow) &&
+            !Input.GetKey(KeyCode.RightArrow))
         {
             holdTimer = 0f;
         }
-    }
-    void MoveSlot(int dir)
-    {
-        selectedIndex = Mathf.Clamp(selectedIndex + dir, 0, slotList.Count - 1);
+        UpdateSlotSelection();
 
     }
+
+
     /// <summary>
     /// 탭 전환 이미지 변경
     /// </summary>
@@ -132,6 +172,8 @@ public class ShopUI : MonoBehaviour
 
         // 3. 탭 버튼 비주얼 업데이트
         UpdateTabSprites();
+        selectedIndex = 0;
+        UpdateSlotSelection(); // 선택 UI 갱신도 같이 해주는 게 좋음
     }
 
     private void UpdatePurchaseUI()
@@ -142,8 +184,6 @@ public class ShopUI : MonoBehaviour
             Destroy(slot.gameObject);
         }
         m_purchaseSlotList.Clear();
-        Debug.Log("[ShopUI] 기존 구매 슬롯 모두 삭제 완료");
-
         // 2. 판매 아이템 리스트를 돌면서 슬롯 생성
         foreach (var item in m_shopGoodsList)
         {
@@ -152,35 +192,96 @@ public class ShopUI : MonoBehaviour
                 ShopSlot slot = Instantiate(m_purchaseSlotPrefab, m_purchaseSlotGroup);
                 slot.Set(item);
                 m_purchaseSlotList.Add(slot);
-
-                //  디버그 로그 추가
-                Debug.Log($"[ShopUI] 구매 슬롯 생성 완료 - 아이템: {item.m_itemName}");
-            }
-            else
-            {
-                //  아이템이 null이면 경고 로그
-                Debug.LogWarning("[ShopUI] m_shopGoodsList에 null 항목이 있습니다.");
             }
         }
-
-        Debug.Log($"[ShopUI] 구매 슬롯 세팅 완료 - 총 {m_purchaseSlotList.Count}개 생성됨");
     }
-
-
-
     private void UpdateSellUI()
     {
         var data = GManager.Instance.IsinvenManager.IsInventoryData;
 
+        if (data == null || data.slots == null)return;
         for (int i = 0; i < m_sellSlot.Length; i++)
         {
-            if (i < data.slots.Length && data.slots[i] != null && data.slots[i].itemData != null)
+            if (i < data.slots.Length)
             {
-                m_sellSlot[i].SetSlot(data.slots[i].itemData, data.slots[i].quantity);
+                var slotData = data.slots[i];
+
+                if (slotData == null)
+                {
+                }
+                else if (slotData.itemData == null)
+                {
+                }
+                else
+                {
+                    m_sellSlot[i].SetSlot(slotData.itemData, slotData.quantity);
+                }
             }
-            else
+        }
+
+    }
+    public void InitShopUI()
+    {
+        currentTab = TabType.Purchase;
+        selectedIndex = 0;
+
+        m_purchaseGroup.SetActive(true); //  강제 비주얼 초기화
+        m_sellGroup.SetActive(false);    //  이전 상태 제거
+
+        SwitchTab(currentTab);           // 기존 로직 호출
+    }
+    private void MoveLeft()
+    {
+        int rowSize = 8;
+        int rowStart = (selectedIndex / rowSize) * rowSize;
+        selectedIndex = (selectedIndex == rowStart) ? rowStart + rowSize - 1 : selectedIndex - 1;
+    }
+
+    private void MoveRight()
+    {
+        int rowSize = 8;
+        int rowStart = (selectedIndex / rowSize) * rowSize;
+        selectedIndex = (selectedIndex == rowStart + rowSize - 1) ? rowStart : selectedIndex + 1;
+    }
+
+    private void MoveUp()
+    {
+        if (selectedIndex - 8 >= 0)
+            selectedIndex -= 8;
+    }
+
+    private void MoveDown()
+    {
+        int totalCount = GetCurrentSlotCount();
+        if (selectedIndex + 8 < totalCount)
+            selectedIndex += 8;
+    }
+
+
+private int GetCurrentSlotCount()
+{
+    return currentTab == TabType.Purchase ? m_purchaseSlotList.Count : m_sellSlot.Length;
+}
+    private void UpdateSlotSelection()
+    {
+        if (currentTab == TabType.Purchase)
+        {
+            for (int i = 0; i < m_purchaseSlotList.Count; i++)
             {
-                m_sellSlot[i].ClearSlot();
+                bool isSelected = i == selectedIndex;
+                m_purchaseSlotList[i].SetSelected(isSelected);
+                if (isSelected)
+                    Debug.Log($"[상점] 구매 슬롯 {i} 선택됨: {m_purchaseSlotList[i].GetItemName()}");
+            }
+        }
+        else if (currentTab == TabType.Sell)
+        {
+            for (int i = 0; i < m_sellSlot.Length; i++)
+            {
+                bool isSelected = i == selectedIndex;
+                m_sellSlot[i].SetSelected(isSelected);
+                if (isSelected)
+                    Debug.Log($"[상점] 판매 슬롯 {i} 선택됨: {m_sellSlot[i].GetItemName()}");
             }
         }
     }

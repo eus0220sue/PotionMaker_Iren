@@ -6,7 +6,7 @@ using UnityEditor;
 public class ShopSlot : MonoBehaviour
 {
     [SerializeField] private Image m_goodsIcon;
-    [SerializeField] private GameObject m_highlight;
+    [SerializeField] private GameObject m_selected;
 
     private ItemData m_goodsData;
 
@@ -17,7 +17,6 @@ public class ShopSlot : MonoBehaviour
         if (item == null)
         {
             m_goodsIcon.enabled = false;
-            Debug.LogWarning("[ShopSlot] Set() 호출했지만 item이 null입니다.");
             return;
         }
 
@@ -25,10 +24,7 @@ public class ShopSlot : MonoBehaviour
 
         m_goodsIcon.enabled = true;
         m_goodsIcon.sprite = item.m_itemIcon;
-        m_highlight.SetActive(false);
-
-        //  디버그 로그
-        Debug.Log($"[ShopSlot] 슬롯 세팅 완료 - 아이템: {item.m_itemName}");
+        m_selected.SetActive(false);
     }
 
     public void Clear()
@@ -37,15 +33,16 @@ public class ShopSlot : MonoBehaviour
         m_goodsIcon.sprite = null;
         m_goodsIcon.enabled = false;
 
-        //  디버그 로그
-        Debug.Log("[ShopSlot] 슬롯 클리어 완료");
     }
 
-    public void SetHighlight(bool isActive)
+    public void SetSelected(bool isActive)
     {
-        m_highlight.SetActive(isActive);
-
-        //  디버그 로그
-        Debug.Log($"[ShopSlot] 하이라이트 {(isActive ? "활성화" : "비활성화")}");
+        m_selected.SetActive(isActive);
     }
+
+    public string GetItemName()
+    {
+        return m_goodsData != null ? m_goodsData.m_itemName : "빈 슬롯";
+    }
+
 }

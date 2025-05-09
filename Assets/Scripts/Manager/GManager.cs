@@ -2,6 +2,7 @@ using FunkyCode.Buffers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GManager : MonoBehaviour
 {
@@ -19,10 +20,24 @@ public class GManager : MonoBehaviour
     [Header("포션 제작 관련")]
     [SerializeField] private PotionCraftUI m_potionCraftUI;
     public PotionCraftUI IsPotionCraftUI { get { return m_potionCraftUI; } }
+    [Header("상점 관련")]
+    [SerializeField] private ShopUI m_shopUI;
+    public ShopUI IsShopUI { get { return m_shopUI; } }
     [Header("사운드 관련")]
     public MapBGMController mapBGMController;
     [SerializeField] private SoundManager m_soundManager;
     public SoundManager IsSoundManager { get { return m_soundManager; } }
+    /// <summary>
+    /// 유저 컨트롤러
+    /// </summary>
+    public UserController IsUserController = null;
+    /// <summary>
+    /// 유저 트렌스폼
+    /// </summary>
+    public Transform IsUserTrans
+    {
+        get { return m_userObj != null ? m_userObj.transform : null; }
+    }
 
     /// <summary>
     /// 유저 게임 오브젝트
@@ -47,9 +62,6 @@ public class GManager : MonoBehaviour
     /// </summary>
     [SerializeField] UIManager m_UIManager = null;
     public UIManager IsUIManager { get { return m_UIManager; } }
-    
-
-
     /// <summary>
     /// 제작 UI
     /// </summary>
@@ -66,6 +78,9 @@ public class GManager : MonoBehaviour
     /// 맵 전환시 false로
     /// </summary>
     public bool IsSettingFlag { get; set; } = false;
+
+    public bool m_uiPrev = false;
+
     /// <summary>
     /// 싱글톤 인스턴스
     /// </summary>
@@ -85,56 +100,68 @@ public class GManager : MonoBehaviour
             return;
         }
     }
-    /// <summary>
-    /// 세팅
-    /// </summary>
-    /// <param name="argUserObj">유저 오브젝트</param>
-    public void Setting(GameObject argUserObj)
+    public void Start()
     {
-        m_userObj = argUserObj;
-        IsSettingFlag = true;
-    }
-    /// <summary>
-    /// 유저 컨트롤러
-    /// </summary>
-    public UserController IsUserController { get; private set; } = null;
-    /// <summary>
-    /// 유저 트렌스폼
-    /// </summary>
-    public Transform IsUserTrans
-    {
-        get { return m_userObj != null ? m_userObj.transform : null; }
-    }
+        string currentScene = SceneManager.GetActiveScene().name;
 
-    private void Start()
-    {
-        //  Start()에서 자동으로 Setting() 호출
-        GameObject m_character = GameObject.Find("Character");
-        if (m_character != null)
+        if (currentScene == "MainGame")
         {
-            Setting(m_character);
+            GameObject m_character = GameObject.Find("Character");
+
+            if (m_character != null)
+            {
+                Setting(m_character); // 여기서 IsUserTrans 설정됨
+                Debug.Log("[GManager] Setting() 호출됨: " + m_character.name);
+            }
+            else
+            {
+                Debug.LogError("[GManager] MainGame 씬이지만 Character 오브젝트를 찾을 수 없음!");
+            }
         }
+        else
+        {
+            Debug.Log($"[GManager] 현재 씬({currentScene})은 캐릭터 세팅이 필요 없는 씬입니다.");
+        }
+
         InitFirstMapBounds();
-        Debug.Log($"[GManager] mapBGMController 연결 상태: {(mapBGMController != null ? "정상" : "null")}");
 
         if (currentMapGroup != null && mapBGMController != null)
         {
             mapBGMController.PlayBGMForMap(currentMapGroup);
         }
-        else
-        {
-            Debug.LogWarning("[GManager] 초기 맵이나 mapBGMController가 설정되지 않음");
-        }
     }
+
+    void Update()
+    {
+        if (IsUIManager == null || IsUserController == null) return;
+
+        bool isUI = IsUIManager.UIOpenFlag;
+
+        if (isUI != m_uiPrev)
+        {
+            IsUserController.SetMoveFlag(!isUI);
+            Debug.Log($"[GManager] UI 상태 변경: 이동 {(isUI ? "차단" : "허용")}");
+            m_uiPrev = isUI;
+        }
+    }    /// <summary>
+         /// 세팅
+         /// </summary>
+         /// <param name="argUserObj">유저 오브젝트</param>
+    public void Setting(GameObject argUserObj)
+    {
+        m_userObj = argUserObj;
+        IsSettingFlag = true;
+        Debug.Log("[GManager] Setting 완료: 유저 = " + m_userObj.name);
+    }
+
+
     public void SetInventoryUI(InventoryUI ui)
     {
         m_inventoryUI = ui; 
     }
-
     public void SetTPFlag(bool isOn)
     {
         TPFlag = isOn;
-        Debug.Log($"[TPFlag] 상태 변경됨 → {(isOn ? "ON (이동 불가)" : "OFF (이동 가능)")}");
     }
     public void StartTPAfterTeleport()
     {
@@ -150,42 +177,54 @@ public class GManager : MonoBehaviour
 
     private IEnumerator TPAfterTeleportCoroutine()
     {
-        Debug.Log("[GManager] 페이드 인 시작");
-
-        // 바로 FadeIn 시작
         yield return StartCoroutine(m_fadeInOut.FadeIn());
-
-        Debug.Log("[GManager] 페이드 인 완료, TPFlag OFF");
-
         SetTPFlag(false);
     }
-    private void InitFirstMapBounds()
+    public void InitFirstMapBounds()
     {
-        if (currentMapGroup == null)
+        if (currentMapGroup == null || IsCameraBase == null)
         {
-            Debug.LogWarning("[GManager] 시작할 때 currentMapGroup이 연결되어 있지 않습니다.");
+            Debug.LogWarning("[GManager] 맵 그룹 또는 카메라가 null이어서 제한 영역 설정 실패");
             return;
         }
 
-        BoxCollider2D collider = currentMapGroup.GetComponent<BoxCollider2D>();
+        var collider = currentMapGroup.GetComponent<BoxCollider2D>();
         if (collider == null)
         {
-            Debug.LogWarning("[GManager] 시작할 때 currentMapGroup에 BoxCollider2D가 없습니다.");
+            Debug.LogWarning("[GManager] currentMapGroup에 BoxCollider2D가 없습니다");
             return;
         }
 
         Bounds bounds = collider.bounds;
-        Vector2 min = bounds.min;
-        Vector2 max = bounds.max;
+        IsCameraBase.SetCameraBounds(bounds.min, bounds.max);
 
-        if (IsCameraBase != null)
+        Debug.Log($"[GManager] 카메라 제한 영역 설정 완료: min={bounds.min}, max={bounds.max}");
+    }
+    public void AutoReferenceSceneObjects()
+    {
+        currentMapGroup = GameObject.Find("MapM1_Sub01");
+        m_fadeInOut = FindObjectOfType<FadeInOut>();
+        m_cameraBase = FindObjectOfType<CameraBase>();
+        m_potionCraftUI = FindObjectOfType<PotionCraftUI>();
+        m_shopUI = FindObjectOfType<ShopUI>();
+        m_inventoryUI = GameObject.Find("Inventory")?.GetComponent<InventoryUI>();
+        m_invenManager = FindObjectOfType<InventoryManager>();
+        m_UIManager = FindObjectOfType<UIManager>();
+        m_craftUI = FindObjectOfType<CraftUI>();
+        m_exchangeManager = FindObjectOfType<ExchangeManager>();
+        IsUserController = FindObjectOfType<UserController>();
+
+        // UIManager 내부의 GameObject 필드도 자동 연결
+        if (m_UIManager != null)
         {
-            IsCameraBase.SetCameraBounds(min, max);
-            Debug.Log($"[GManager] 게임 시작 시 카메라 제한 자동 설정: Min {min} / Max {max}");
-        }
-        else
-        {
-            Debug.LogError("[GManager] CameraBase 연결이 되어 있지 않습니다.");
+            m_UIManager.CraftUI = GameObject.Find("CraftUI");
+            m_UIManager.PotionCraftUI = GameObject.Find("PotionCraftUI");
+            m_UIManager.ShopUI = GameObject.Find("ShopUI");
+            Debug.Log("[Debug] CraftUI: " + GameObject.Find("CraftUI"));
+            Debug.Log("[Debug] ShopUI: " + GameObject.Find("ShopUI"));
         }
     }
+
+
+
 }

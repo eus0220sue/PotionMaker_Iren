@@ -100,25 +100,25 @@ public class InventoryUI : MonoBehaviour
     }
     private void HandleInventoryInput()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        switch (true)
         {
-            MoveLeft();
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            MoveRight();
-        }
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            MoveUp();
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            MoveDown();
+            case bool _ when Input.GetKeyDown(KeyCode.LeftArrow):
+                MoveLeft();
+                break;
+            case bool _ when Input.GetKeyDown(KeyCode.RightArrow):
+                MoveRight();
+                break;
+            case bool _ when Input.GetKeyDown(KeyCode.UpArrow):
+                MoveUp();
+                break;
+            case bool _ when Input.GetKeyDown(KeyCode.DownArrow):
+                MoveDown();
+                break;
         }
 
         UpdateInventorySlotSelection();
     }
+
     private void MoveLeft()
     {
         int rowStart = (currentInventoryIndex / 8) * 8; // 현재 줄 시작 번호

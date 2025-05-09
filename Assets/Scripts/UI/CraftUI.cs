@@ -51,6 +51,7 @@ public class CraftUI : MonoBehaviour
         SetupCraftList();
         HighlightSlot();
         InitCraftUI();
+        AutoFindExchangeManager();
     }
     void Update()
     {
@@ -62,8 +63,8 @@ public class CraftUI : MonoBehaviour
             currentTab = (currentTab == TabType.Powder) ? TabType.Oil : TabType.Powder;
             SwitchTab(currentTab);
         }
-        // 제작 실행 (Z키)
-        if (Input.GetKeyDown(KeyCode.Z))
+        // 제작 실행 (스페이스키)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             TryCraftSelected();
         }
@@ -188,7 +189,6 @@ public class CraftUI : MonoBehaviour
             if (data != null)
             {
                 m_exchangeManager.Craft(data);
-                Debug.Log($"[CraftUI] 분쇄 제작 완료: {data.IsOutputItemData.m_itemName}");
             }
         }
         else if (currentTab == TabType.Oil)
@@ -198,7 +198,6 @@ public class CraftUI : MonoBehaviour
             if (data != null)
             {
                 m_exchangeManager.OilCraft(data);
-                Debug.Log($"[CraftUI] 추출 제작 완료: {data.IsOutputItem.m_itemName}");
             }
         }
     }
@@ -207,13 +206,13 @@ public class CraftUI : MonoBehaviour
     private void HandleSlotMoveInput()
     {
         // 1. 먼저 GetKeyDown 처리 (처음 누른 순간만 반응)
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             MoveSlot(-1);
             holdTimer = holdDelay;
             return; //  중복 입력 방지
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             MoveSlot(1);
             holdTimer = holdDelay;
@@ -221,7 +220,7 @@ public class CraftUI : MonoBehaviour
         }
 
         // 2. 누르고 있는 상태 처리 (Hold)
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             holdTimer -= Time.deltaTime;
             if (holdTimer <= 0f)
@@ -230,7 +229,7 @@ public class CraftUI : MonoBehaviour
                 holdTimer = holdDelay;
             }
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
             holdTimer -= Time.deltaTime;
             if (holdTimer <= 0f)
@@ -259,4 +258,11 @@ public class CraftUI : MonoBehaviour
         SwitchTab(currentTab);           // 탭에 맞는 리스트 세팅
         HighlightSlot();                 // 첫 번째 슬롯 강조 + 스크롤 조정
     }
+
+    public void AutoFindExchangeManager()
+    {
+        m_exchangeManager = FindObjectOfType<ExchangeManager>();
+    }
 }
+        
+

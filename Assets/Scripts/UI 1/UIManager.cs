@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject CraftUI;
-    public GameObject PotionCraftUI;
-    public GameObject DialogueUI;
-    public GameObject ShopUI;
+    public GameObject CraftUI { get; set; }
+    public GameObject PotionCraftUI { get; set; }
+    public GameObject ShopUI { get; set; }
+    //public GameObject DialogueUI;
 
     /// <summary>
     /// 플래그 세팅
@@ -18,21 +18,20 @@ public class UIManager : MonoBehaviour
             return CraftUIOpenFlag
                 || PotionCraftUIOpenFlag
                 || DialogueOpenFlag
-                || ShopUIOpenFlag;
+                || ShopUIOpenFlag
+                || GManager.Instance.IsInventoryUI.isOpen;
+
         }
     }
     public bool CraftUIOpenFlag = false;
     public bool PotionCraftUIOpenFlag = false;
     public bool DialogueOpenFlag = false;
     public bool ShopUIOpenFlag = false;
-
-
-    public void Start()
+    void Awake()
     {
-        /*PotionCraftUI.SetActive(false);
-        DialogueUI.SetActive(false);
-        ShopUI.SetActive(false);
-    */
+        if (CraftUI == null) CraftUI = GameObject.Find("CraftUI");
+        if (PotionCraftUI == null) PotionCraftUI = GameObject.Find("PotionCraftUI");
+        if (ShopUI == null) ShopUI = GameObject.Find("ShopUI");
     }
 
     void Update()
@@ -56,7 +55,7 @@ public class UIManager : MonoBehaviour
     {
         ShopUIOpenFlag = true;
         ShopUI.SetActive(true);
-        GManager.Instance.IsPotionCraftUI.InitPotionUI();
+        GManager.Instance.IsShopUI.InitShopUI();
 
     }
     private void CloseUI()
@@ -73,8 +72,15 @@ public class UIManager : MonoBehaviour
                 PotionCraftUIOpenFlag = false;
                 PotionCraftUI.SetActive(false);
             }
+            if (ShopUIOpenFlag)
+            {
+                ShopUIOpenFlag = false;
+                ShopUI.SetActive(false);
+            }
             // 다른 UI들도 추후 여기에 추가
             // if (DialogueOpenFlag) { ... }
+            GManager.Instance.IsUserController.isInteracting = false; // 인터렉션 가능 상태로 복원
+
         }
     }
 }

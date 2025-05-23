@@ -51,6 +51,14 @@ public class InventoryManager : MonoBehaviour
         GManager.Instance.IsInventoryUI.UpdateUI();
     }
 
+    public bool HasItemById(string itemId)
+    {
+        // ItemDatabase에서 ID로 ItemData 찾아서 확인
+        ItemData target = ItemDB.GetItemById(itemId); // 이 부분은 당신의 구조에 따라 구현
+        if (target == null) return false;
+
+        return InventoryData.HasItem(target, 1); // 최소 1개 이상 보유 여부
+    }
 
 }
 

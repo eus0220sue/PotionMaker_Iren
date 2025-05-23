@@ -4,10 +4,10 @@ using TMPro;
 
 public class InventorySlot : MonoBehaviour
 {
-    [SerializeField] private Image icon;
-    [SerializeField] private TMP_Text quantityText;
-    [SerializeField] private int nowQuantity;
-    private ItemData m_itemData; // 내부 보관용 추가
+    [SerializeField] Image icon;
+    [SerializeField] TMP_Text quantityText;
+    [SerializeField] int m_nowQuantity;
+    public ItemData m_itemData; // 내부 보관용 추가
 
     [SerializeField] private GameObject m_selected;
 
@@ -17,7 +17,7 @@ public class InventorySlot : MonoBehaviour
         // 에디터에서 수량 바꾸면 텍스트도 자동 갱신됨
         if (quantityText != null)
         {
-            quantityText.text = nowQuantity > 1 ? nowQuantity.ToString() : "";
+            quantityText.text = m_nowQuantity > 1 ? m_nowQuantity.ToString() : "";
         }
     }
 
@@ -29,6 +29,9 @@ public class InventorySlot : MonoBehaviour
             return;
         }
 
+        m_itemData = itemData;       //  내부 상태 저장
+        m_nowQuantity = quantity;      //  수량도 저장
+
         icon.sprite = itemData.m_itemIcon;
         icon.enabled = true;
         quantityText.text = quantity > 1 ? quantity.ToString() : "";
@@ -39,11 +42,13 @@ public class InventorySlot : MonoBehaviour
     {
         icon.sprite = null;
         icon.enabled = false;
-        nowQuantity = 0;
+        m_itemData = null;
+        m_nowQuantity = 0;
         quantityText.text = "";
     }
 
-    public int GetQuantity() => nowQuantity;
+
+    public int GetQuantity() => m_nowQuantity;
 
     public void SetSelected(bool isOn)
     {

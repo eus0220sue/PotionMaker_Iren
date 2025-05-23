@@ -4,4 +4,3 @@ public interface IInteractableInterface
 {
     void Interact();
 }
-

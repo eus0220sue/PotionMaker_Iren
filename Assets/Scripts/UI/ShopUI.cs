@@ -27,15 +27,15 @@ public class ShopUI : MonoBehaviour
     [SerializeField] private GameObject m_sellGroup;
     [SerializeField] private GameObject m_purchaseGroup;
 
-    private int currentIndex = 0; // 현재 선택 슬롯
+    public int currentIndex = 0; // 현재 선택 슬롯
 
-    private float holdDelay = 0.5f;    // 처음 눌렀을 때 다음 반복까지 딜레이
-    private float repeatRate = 0.1f;   // 연속 입력 간격
-    private float holdTimer = 0f;
+    public float holdDelay = 0.5f;    // 처음 눌렀을 때 다음 반복까지 딜레이
+    public float repeatRate = 0.1f;   // 연속 입력 간격
+    public float holdTimer = 0f;
 
-    private enum TabType { Purchase, Sell }
-    private TabType currentTab = TabType.Purchase;
-    private int selectedIndex = 0;
+    public enum TabType { Purchase, Sell }
+    public TabType currentTab = TabType.Purchase;
+    public int selectedIndex = 0;
 
     void Start()
     {
@@ -45,8 +45,7 @@ public class ShopUI : MonoBehaviour
         UpdatePurchaseUI();
 
     }
-
-    private void Update()
+    public void Update()
     {
         if (!gameObject.activeSelf) return;
         HandleSlotMoveInput();
@@ -60,14 +59,13 @@ public class ShopUI : MonoBehaviour
         {
         }
     }
-    void SwitchTab(TabType tab)
+    public void SwitchTab(TabType tab)
     {
         selectedIndex = 0;
         //SetupList();
         UpdateTabSprites();
     }
-
-    private void HandleSlotMoveInput()
+    public void HandleSlotMoveInput()
     {
         // 초기화
         holdTimer -= Time.deltaTime;
@@ -176,7 +174,7 @@ public class ShopUI : MonoBehaviour
         UpdateSlotSelection(); // 선택 UI 갱신도 같이 해주는 게 좋음
     }
 
-    private void UpdatePurchaseUI()
+    public void UpdatePurchaseUI()
     {
         // 1. 기존 슬롯 다 삭제
         foreach (var slot in m_purchaseSlotList)
@@ -195,7 +193,7 @@ public class ShopUI : MonoBehaviour
             }
         }
     }
-    private void UpdateSellUI()
+    public void UpdateSellUI()
     {
         var data = GManager.Instance.IsinvenManager.IsInventoryData;
 
@@ -230,27 +228,27 @@ public class ShopUI : MonoBehaviour
 
         SwitchTab(currentTab);           // 기존 로직 호출
     }
-    private void MoveLeft()
+    public void MoveLeft()
     {
         int rowSize = 8;
         int rowStart = (selectedIndex / rowSize) * rowSize;
         selectedIndex = (selectedIndex == rowStart) ? rowStart + rowSize - 1 : selectedIndex - 1;
     }
 
-    private void MoveRight()
+    public void MoveRight()
     {
         int rowSize = 8;
         int rowStart = (selectedIndex / rowSize) * rowSize;
         selectedIndex = (selectedIndex == rowStart + rowSize - 1) ? rowStart : selectedIndex + 1;
     }
 
-    private void MoveUp()
+    public void MoveUp()
     {
         if (selectedIndex - 8 >= 0)
             selectedIndex -= 8;
     }
 
-    private void MoveDown()
+    public void MoveDown()
     {
         int totalCount = GetCurrentSlotCount();
         if (selectedIndex + 8 < totalCount)
@@ -258,11 +256,11 @@ public class ShopUI : MonoBehaviour
     }
 
 
-private int GetCurrentSlotCount()
-{
-    return currentTab == TabType.Purchase ? m_purchaseSlotList.Count : m_sellSlot.Length;
-}
-    private void UpdateSlotSelection()
+    public int GetCurrentSlotCount()
+    {
+        return currentTab == TabType.Purchase ? m_purchaseSlotList.Count : m_sellSlot.Length;
+    }
+    public void UpdateSlotSelection()
     {
         if (currentTab == TabType.Purchase)
         {

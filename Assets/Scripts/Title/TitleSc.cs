@@ -62,10 +62,25 @@ public class TitleSc : MonoBehaviour
                 {
                     if (result)
                     {
+                        GManager.Instance.IsQuestManager.StartQuest("MQ_0");
+                        if (GManager.Instance == null)
+                        {
+                            Debug.LogError("[Test] GManager.Instance == null");
+                        }
+                        else if (GManager.Instance.IsQuestManager == null)
+                        {
+                            Debug.LogError("[Test] GManager.Instance.IsQuestManager == null");
+                        }
+                        else
+                        {
+                            Debug.Log($"[Test] GManager.Instance.IsQuestManager OK: {GManager.Instance.IsQuestManager.name}");
+                            GManager.Instance.IsQuestManager.StartQuest("MQ_0");
+                        }
+
                         SceneLoader.LoadScene("MainGame", afterLoad: () =>
                         {
                             GameObject character = GameObject.Find("Character");
-                            GameObject map = GameObject.Find("MapMH_Main");
+                            GameObject map = GameObject.Find("MapM0_CityHall");
 
                             if (character != null)
                                 GManager.Instance.Setting(character);

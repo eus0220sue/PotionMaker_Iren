@@ -49,9 +49,52 @@ MonoBehaviour:
   bgmSource: {fileID: 2005459567089839674}
   sfxSource: {fileID: 2980579407335312574}
   playerSounds: []
-  systemSounds:
-  - name: 
-    clip: {fileID: 8300000, guid: cc0692b5c68c37a41ab4f56186d6d99b, type: 3}
+  systemSounds: []
+--- !u!1 &1702548280217744352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1751944035826512093}
+  - component: {fileID: 3564012459071735680}
+  m_Layer: 0
+  m_Name: DialogueManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1751944035826512093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702548280217744352}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3062108528866999356}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3564012459071735680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702548280217744352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ca1b1423a88c4ba1bd7b6aad00f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_currentNode: {fileID: 0}
 --- !u!1 &3505873039884089711
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +130,8 @@ Transform:
   - {fileID: 932467225997373090}
   - {fileID: 5369828856826925211}
   - {fileID: 5163141974157126451}
+  - {fileID: 1751944035826512093}
+  - {fileID: 8997752482329104151}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4324888224491156355
@@ -115,7 +160,55 @@ MonoBehaviour:
   m_UIManager: {fileID: 6672975683815842906}
   m_craftUI: {fileID: 0}
   m_exchangeManager: {fileID: 1257249384944123867}
-  m_uiPrev: 0
+  m_dialogueManager: {fileID: 0}
+  m_questManager: {fileID: 0}
+  m_dialogueUI: {fileID: 0}
+  m_uIPrev: 0
+--- !u!1 &4276159095759392636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8997752482329104151}
+  - component: {fileID: 3916469181132979217}
+  m_Layer: 0
+  m_Name: QuestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8997752482329104151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4276159095759392636}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3062108528866999356}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3916469181132979217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4276159095759392636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2026f7b10d72546bc01ad0e5942c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_questDB: {fileID: 11400000, guid: 63818e410a6ae3348bd9c0f911db03d8, type: 2}
 --- !u!1 &4468303813501829250
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +299,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b85b56ef3a8ab47b5a8eb0325d7039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CraftUI: {fileID: 0}
+  PotionCraftUI: {fileID: 0}
+  ShopUI: {fileID: 0}
+  DialogueUI: {fileID: 0}
   CraftUIOpenFlag: 0
   PotionCraftUIOpenFlag: 0
   DialogueOpenFlag: 0

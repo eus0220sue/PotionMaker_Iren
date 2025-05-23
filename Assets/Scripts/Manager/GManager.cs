@@ -48,7 +48,6 @@ public class GManager : MonoBehaviour
     /// </summary>
     [SerializeField] InventoryUI m_inventoryUI = null;
     public InventoryUI IsInventoryUI { get { return m_inventoryUI; } }
-
     /// <summary>
     /// 인벤 매니저
     /// </summary>
@@ -66,7 +65,6 @@ public class GManager : MonoBehaviour
     /// 제작 UI
     /// </summary>
     [SerializeField] CraftUI m_craftUI = null;
-
     public CraftUI IsCraftUI { get { return m_craftUI; } }
     /// <summary>
     /// 교환 매니저
@@ -74,12 +72,31 @@ public class GManager : MonoBehaviour
     [SerializeField] ExchangeManager m_exchangeManager = null;
     public ExchangeManager IsExchangeManager { get {return  m_exchangeManager;} }
     /// <summary>
+    /// 대화 매니저
+    /// </summary>
+    [SerializeField] DialogueManager m_dialogueManager = null;
+    public DialogueManager IsDialogueManager { get { return m_dialogueManager; } }
+
+    /// <summary>
+    /// 퀘스트 매니저
+    /// </summary>
+    [SerializeField] QuestManager m_questManager = null;
+    public QuestManager IsQuestManager { get { return m_questManager; } }
+
+    /// <summary>
+    /// 제작 UI
+    /// </summary>
+    [SerializeField] DialogueUI m_dialogueUI = null;
+    public DialogueUI IsDialougeUI { get { return m_dialogueUI; } }
+
+
+    /// <summary>
     /// 세팅 플래그
     /// 맵 전환시 false로
     /// </summary>
     public bool IsSettingFlag { get; set; } = false;
 
-    public bool m_uiPrev = false;
+    public bool m_uIPrev = false;
 
     /// <summary>
     /// 싱글톤 인스턴스
@@ -111,16 +128,13 @@ public class GManager : MonoBehaviour
             if (m_character != null)
             {
                 Setting(m_character); // 여기서 IsUserTrans 설정됨
-                Debug.Log("[GManager] Setting() 호출됨: " + m_character.name);
             }
             else
             {
-                Debug.LogError("[GManager] MainGame 씬이지만 Character 오브젝트를 찾을 수 없음!");
             }
         }
         else
         {
-            Debug.Log($"[GManager] 현재 씬({currentScene})은 캐릭터 세팅이 필요 없는 씬입니다.");
         }
 
         InitFirstMapBounds();
@@ -137,11 +151,10 @@ public class GManager : MonoBehaviour
 
         bool isUI = IsUIManager.UIOpenFlag;
 
-        if (isUI != m_uiPrev)
+        if (isUI != m_uIPrev)
         {
             IsUserController.SetMoveFlag(!isUI);
-            Debug.Log($"[GManager] UI 상태 변경: 이동 {(isUI ? "차단" : "허용")}");
-            m_uiPrev = isUI;
+            m_uIPrev = isUI;
         }
     }    /// <summary>
          /// 세팅
@@ -151,7 +164,6 @@ public class GManager : MonoBehaviour
     {
         m_userObj = argUserObj;
         IsSettingFlag = true;
-        Debug.Log("[GManager] Setting 완료: 유저 = " + m_userObj.name);
     }
 
 
@@ -169,10 +181,6 @@ public class GManager : MonoBehaviour
         {
             StartCoroutine(TPAfterTeleportCoroutine());
         }
-        else
-        {
-            Debug.LogError("[GManager] FadeFadeInOut 연결 안 됨!");
-        }
     }
 
     private IEnumerator TPAfterTeleportCoroutine()
@@ -184,47 +192,79 @@ public class GManager : MonoBehaviour
     {
         if (currentMapGroup == null || IsCameraBase == null)
         {
-            Debug.LogWarning("[GManager] 맵 그룹 또는 카메라가 null이어서 제한 영역 설정 실패");
             return;
         }
 
         var collider = currentMapGroup.GetComponent<BoxCollider2D>();
         if (collider == null)
         {
-            Debug.LogWarning("[GManager] currentMapGroup에 BoxCollider2D가 없습니다");
             return;
         }
 
         Bounds bounds = collider.bounds;
         IsCameraBase.SetCameraBounds(bounds.min, bounds.max);
 
-        Debug.Log($"[GManager] 카메라 제한 영역 설정 완료: min={bounds.min}, max={bounds.max}");
     }
     public void AutoReferenceSceneObjects()
     {
-        currentMapGroup = GameObject.Find("MapM1_Sub01");
-        m_fadeInOut = FindObjectOfType<FadeInOut>();
+        // 카메라
         m_cameraBase = FindObjectOfType<CameraBase>();
-        m_potionCraftUI = FindObjectOfType<PotionCraftUI>();
-        m_shopUI = FindObjectOfType<ShopUI>();
-        m_inventoryUI = GameObject.Find("Inventory")?.GetComponent<InventoryUI>();
-        m_invenManager = FindObjectOfType<InventoryManager>();
-        m_UIManager = FindObjectOfType<UIManager>();
-        m_craftUI = FindObjectOfType<CraftUI>();
-        m_exchangeManager = FindObjectOfType<ExchangeManager>();
-        IsUserController = FindObjectOfType<UserController>();
+        Debug.Log($"[AutoRef] CameraBase: {(m_cameraBase != null ? "참조됨" : "NULL")}");
 
-        // UIManager 내부의 GameObject 필드도 자동 연결
+        // 컨트롤러
+        IsUserController = FindObjectOfType<UserController>();
+        Debug.Log($"[AutoRef] UserController: {(IsUserController != null ? "참조됨" : "NULL")}");
+
+        // 맵
+        currentMapGroup = GameObject.Find("MapM0_CityHall");
+        Debug.Log($"[AutoRef] currentMapGroup: {(currentMapGroup != null ? "참조됨" : "NULL")}");
+
+        // 페이드 인아웃
+        m_fadeInOut = FindObjectOfType<FadeInOut>();
+        Debug.Log($"[AutoRef] FadeInOut: {(m_fadeInOut != null ? "참조됨" : "NULL")}");
+
+        // UI
+        m_potionCraftUI = FindObjectOfType<PotionCraftUI>();
+        Debug.Log($"[AutoRef] PotionCraftUI: {(m_potionCraftUI != null ? "참조됨" : "NULL")}");
+
+        m_shopUI = FindObjectOfType<ShopUI>();
+        Debug.Log($"[AutoRef] ShopUI: {(m_shopUI != null ? "참조됨" : "NULL")}");
+
+        m_craftUI = FindObjectOfType<CraftUI>();
+        Debug.Log($"[AutoRef] CraftUI: {(m_craftUI != null ? "참조됨" : "NULL")}");
+
+        m_dialogueUI = FindObjectOfType<DialogueUI>();
+        Debug.Log($"[AutoRef] DialogueUI: {(m_dialogueUI != null ? "참조됨" : "NULL")}");
+
+        m_inventoryUI = GameObject.Find("Inventory")?.GetComponent<InventoryUI>();
+        Debug.Log($"[AutoRef] InventoryUI: {(m_inventoryUI != null ? "참조됨" : "NULL")}");
+
+        // 매니저
+        m_invenManager = FindObjectOfType<InventoryManager>();
+        Debug.Log($"[AutoRef] InventoryManager: {(m_invenManager != null ? "참조됨" : "NULL")}");
+
+        m_UIManager = FindObjectOfType<UIManager>();
+        Debug.Log($"[AutoRef] UIManager: {(m_UIManager != null ? "참조됨" : "NULL")}");
+
+        m_exchangeManager = FindObjectOfType<ExchangeManager>();
+        Debug.Log($"[AutoRef] ExchangeManager: {(m_exchangeManager != null ? "참조됨" : "NULL")}");
+
+        m_dialogueManager = FindObjectOfType<DialogueManager>();
+        Debug.Log($"[AutoRef] DialogueManager: {(m_dialogueManager != null ? "참조됨" : "NULL")}");
+
+        // UIManager 내부 필드도 자동 연결
         if (m_UIManager != null)
         {
             m_UIManager.CraftUI = GameObject.Find("CraftUI");
             m_UIManager.PotionCraftUI = GameObject.Find("PotionCraftUI");
             m_UIManager.ShopUI = GameObject.Find("ShopUI");
-            Debug.Log("[Debug] CraftUI: " + GameObject.Find("CraftUI"));
-            Debug.Log("[Debug] ShopUI: " + GameObject.Find("ShopUI"));
+            m_UIManager.DialogueUI = GameObject.Find("DialogueUI");
+
+            Debug.Log($"[AutoRef] UIManager 내부 CraftUI: {(m_UIManager.CraftUI != null ? "참조됨" : "NULL")}");
+            Debug.Log($"[AutoRef] UIManager 내부 PotionCraftUI: {(m_UIManager.PotionCraftUI != null ? "참조됨" : "NULL")}");
+            Debug.Log($"[AutoRef] UIManager 내부 ShopUI: {(m_UIManager.ShopUI != null ? "참조됨" : "NULL")}");
+            Debug.Log($"[AutoRef] UIManager 내부 DialogueUI: {(m_UIManager.DialogueUI != null ? "참조됨" : "NULL")}");
         }
     }
-
-
 
 }

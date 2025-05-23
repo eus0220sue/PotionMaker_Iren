@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class UserController : ParentController
 {
-    [SerializeField] private float m_moveSpeed = 5f; // 이동 속도
-    private Vector2 m_input = Vector2.zero;
-    private Rigidbody2D m_rb;
-    private int wallLayer; // 벽 레이어 저장
-    private float lastMoveX = 1f; // 처음에는 왼쪽 보는 걸로 가정
-    [SerializeField] private Animator animator;
+    [SerializeField] float m_moveSpeed = 5f; // 이동 속도
+    public Vector2 m_input = Vector2.zero;
+    public Rigidbody2D m_rb;
+    public float lastMoveX = 1f; // 처음에는 왼쪽 보는 걸로 가정
+
+    [SerializeField] Animator animator;
+
+    private bool wasInteractKeyPressedLastFrame = false;
+    private float m_interactCooldown = 0f;
+    private const float INTERACT_DELAY = 0.2f;
+
+
     /// <summary>
     /// 인터렉터블인터페이스
     /// </summary>
-    private IInteractableInterface currentTarget = null;
+    public IInteractableInterface currentTarget = null;
 
-    private List<Collider2D> interactablesInRangeList = new List<Collider2D>();
+    public List<Collider2D> interactablesInRangeList = new List<Collider2D>();
     /// <summary>
     /// 이동 플래그 
     /// </summary>
@@ -28,7 +34,6 @@ public class UserController : ParentController
     private void Start()
     {
         m_rb = GetComponent<Rigidbody2D>();
-        wallLayer = LayerMask.NameToLayer("Wall"); // "Wall" 레이어 가져오기
         // Rigidbody2D 설정
         m_rb.gravityScale = 0;
         m_rb.freezeRotation = true;
@@ -40,7 +45,10 @@ public class UserController : ParentController
     void Update()
     {
         if (GManager.Instance != null && GManager.Instance.TPFlag) return;
-        Interact();
+        if (m_interactCooldown > 0f)
+            m_interactCooldown -= Time.deltaTime;
+
+        InputBuffer();
         Move();
     }
     private void FixedUpdate()
@@ -156,28 +164,23 @@ public class UserController : ParentController
     private void Interact()
     {
         if (isInteracting) return; // 중복 인터렉션 차단
-        if (Input.GetKeyDown(KeyCode.Space))
+        isInteracting = true;
+
+        if (interactablesInRangeList.Count == 0)
         {
-            isInteracting = true;
+            return;
+        }
 
-            if (interactablesInRangeList.Count == 0)
+        foreach (var col in interactablesInRangeList)
+        {
+            Debug.Log($"[Interact] 대상 확인 중: {col.gameObject.name}");
+
+            var target = col.GetComponent<IInteractableInterface>();
+            if (target != null)
             {
-                Debug.Log($"[Interact] 대상 확인 실패:");
-                isInteracting = false;
-                return;
-            }
-
-            foreach (var col in interactablesInRangeList)
-            {
-                Debug.Log($"[Interact] 대상 확인 중: {col.gameObject.name}");
-
-                var target = col.GetComponent<IInteractableInterface>();
-                if (target != null)
-                {
-                    Debug.Log($"[Interact] 상호작용 시도: {col.gameObject.name}");
-                    target.Interact();
-                    break;
-                }
+                Debug.Log($"[Interact] 상호작용 시도: {col.gameObject.name}");
+                target.Interact();
+                break;
             }
         }
     }
@@ -190,4 +193,37 @@ public class UserController : ParentController
             animator.SetBool("isMove", false);
         }
     }
+
+    public void InputBuffer()
+    {
+        bool isPressedNow = Input.GetKey(KeyCode.Space);
+
+        //  쿨다운 중이면 입력 무시
+        if (m_interactCooldown > 0f)
+        {
+            wasInteractKeyPressedLastFrame = isPressedNow;
+            return;
+        }
+
+        //  인터렉트 중이면 입력 무시
+        if (isInteracting)
+        {
+            wasInteractKeyPressedLastFrame = isPressedNow;
+            return;
+        }
+
+        //  "떼었다가 다시 눌렀을 때"만 상호작용
+        if (!wasInteractKeyPressedLastFrame && isPressedNow)
+        {
+            Interact();
+        }
+
+        wasInteractKeyPressedLastFrame = isPressedNow;
+    }
+
+    public void StartInteractCooldown()
+    {
+        m_interactCooldown = INTERACT_DELAY;
+    }
+
 }

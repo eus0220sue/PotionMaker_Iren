@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5951135243459235357}
   - component: {fileID: 8506190119167035006}
   - component: {fileID: 8112098966005720421}
+  - component: {fileID: 5074174767448935493}
   m_Layer: 0
   m_Name: ObjM0_Tree01
   m_TagString: Untagged
@@ -141,3 +142,40 @@ PolygonCollider2D:
       - {x: -0.38595048, y: 0.052789345}
       - {x: 0.345557, y: 0.06705281}
   m_UseDelaunayMesh: 0
+--- !u!114 &5074174767448935493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110615225817449220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5783dbbad6a59184fa58aa75d79bcc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadowType: 1
+  shadowLayer: 0
+  shadowDistance: 0
+  shadowDistanceMin: 0.5
+  shadowDistanceMax: 1
+  shadowTranslucency: 0
+  maskType: 0
+  maskLit: 0
+  maskPivot: 0
+  maskLayer: 0
+  maskLitCustom: 1
+  bumpMapMode:
+    type: 0
+    textureType: 0
+    texture: {fileID: 0}
+    sprite: {fileID: 0}
+    invertX: 0
+    invertY: 0
+    depth: 1
+    spriteRenderer: {fileID: 8506190119167035006}
+  mainShape:
+    shadowType: 1
+    maskType: 0
+    maskPivot: 0
+    transform: {fileID: 5951135243459235357}

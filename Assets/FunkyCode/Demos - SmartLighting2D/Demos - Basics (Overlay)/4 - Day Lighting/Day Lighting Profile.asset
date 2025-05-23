@@ -62,12 +62,12 @@ MonoBehaviour:
     coreAxis: 0
     projection: 0
   dayLightingSettings:
-    direction: 201.4
+    direction: 101
     ShadowColor: {r: 0, g: 0, b: 0, a: 0.903}
-    height: 1.71
+    height: 0.74
     bumpMap:
-      height: 1
-      strength: 1
+      height: 0.53
+      strength: 0.99
   layers:
     colliderLayers:
       names:

@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MH_Main_Leaves_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2304.6665
+        width: 3888
+        height: 1152.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d786273e69640f478e17d578f324da4
+      internalID: 1733234038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MH_Main_Leaves_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152.6666
+        width: 3888
+        height: 1152.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c0acd069e64ac43bf402cf0c6f9f32
+      internalID: 976538076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MH_Main_Leaves_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.666626
+        width: 3888
+        height: 1152.3334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb0db2b1aa60784e9b31563021cd6da
+      internalID: -1078833986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +169,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MH_Main_Leaves_0: 1733234038
+      MH_Main_Leaves_1: 976538076
+      MH_Main_Leaves_2: -1078833986
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

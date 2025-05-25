@@ -1,0 +1,342 @@
+Using pre-set license
+Built from '2022.3/release' branch; Version is '2022.3.20f1 (61c2feb0970d) revision 6406910'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26100) 64bit Core' Language: 'ko' Physical Memory: 32621 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.20f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker8
+-projectPath
+D:/Unity/PotionMaker_Iren
+-logFile
+Logs/AssetImportWorker8.log
+-srvPort
+52154
+Successfully changed project path to: D:/Unity/PotionMaker_Iren
+D:/Unity/PotionMaker_Iren
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [1856] Host "[IP] 172.30.1.63 [Port] 0 [Flags] 2 [Guid] 888488167 [EditorId] 888488167 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-9O9OQEE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [1856] Host "[IP] 172.30.1.63 [Port] 0 [Flags] 2 [Guid] 888488167 [EditorId] 888488167 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-9O9OQEE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
+Refreshing native plugins compatible for Editor in 6.19 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.20f1 (61c2feb0970d)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.20f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity/PotionMaker_Iren/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4060 Ti (ID=0x2803)
+    Vendor:   NVIDIA
+    VRAM:     7949 MB
+    Driver:   32.0.15.7602
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.20f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.20f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.20f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56080
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.20f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.023575 seconds.
+- Loaded All Assemblies, in  0.380 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.238 seconds
+Domain Reload Profiling: 611ms
+	BeginReloadAssembly (133ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (85ms)
+	LoadAllAssembliesAndSetupDomain (116ms)
+		LoadAssemblies (127ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (114ms)
+			TypeCache.Refresh (112ms)
+				TypeCache.ScanAssembly (101ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (238ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (189ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (14ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (122ms)
+			ProcessInitializeOnLoadMethodAttributes (45ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.672 seconds
+Refreshing native plugins compatible for Editor in 3.33 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.624 seconds
+Domain Reload Profiling: 1290ms
+	BeginReloadAssembly (178ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (18ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (52ms)
+	LoadAllAssembliesAndSetupDomain (399ms)
+		LoadAssemblies (363ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (158ms)
+			TypeCache.Refresh (130ms)
+				TypeCache.ScanAssembly (118ms)
+			ScanForSourceGeneratedMonoScriptInfo (17ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (624ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (507ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (62ms)
+			ProcessInitializeOnLoadAttributes (357ms)
+			ProcessInitializeOnLoadMethodAttributes (56ms)
+			AfterProcessingInitializeOnLoad (18ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 4.63 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5185 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 113 unused Assets / (2.5 MB). Loaded Objects now: 5636.
+Memory consumption went from 244.7 MB to 242.2 MB.
+Total: 4.002200 ms (FindLiveObjects: 0.278600 ms CreateObjectMapping: 0.167700 ms MarkObjects: 2.571300 ms  DeleteObjects: 0.983700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 0f5f72dab822025b0759b197a3119d15 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 74051.034215 seconds.
+  path: Assets/Data/CraftData/Potion/Expert/P_L3_Block.asset
+  artifactKey: Guid(0111f4556d4154b45abcff70f3c654d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/CraftData/Potion/Expert/P_L3_Block.asset using Guid(0111f4556d4154b45abcff70f3c654d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef8b1cd132154816918976383ba35c8d') in 0.015153 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 80.172012 seconds.
+  path: Assets/리소스/도감/Book_P_2.png
+  artifactKey: Guid(6cc944ae4d5c6d44590cec05d8448a98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/리소스/도감/Book_P_2.png using Guid(6cc944ae4d5c6d44590cec05d8448a98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24bffd97ec9097681304ca008584ca81') in 0.094492 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 107.781763 seconds.
+  path: Assets/리소스/도감/포션도감2.png
+  artifactKey: Guid(6cc944ae4d5c6d44590cec05d8448a98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/리소스/도감/포션도감2.png using Guid(6cc944ae4d5c6d44590cec05d8448a98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c38f69eb44d52329247a20c53bdd82c') in 0.031382 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 7.520774 seconds.
+  path: Assets/리소스/도감/포션재료.png
+  artifactKey: Guid(b28009cca3f2eca46a971658939ce47a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/리소스/도감/포션재료.png using Guid(b28009cca3f2eca46a971658939ce47a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f7d461c76e50b32d3eed6ea61d1fad5') in 0.028612 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 46.508311 seconds.
+  path: Assets/Sprites/인게임/mission/산성열매(AcidFruit)
+  artifactKey: Guid(fb4d013255527d94d8f3bcc6d1f0ab80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/인게임/mission/산성열매(AcidFruit) using Guid(fb4d013255527d94d8f3bcc6d1f0ab80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8092dca6da8468e5e8c70cc569e0d784') in 0.000584 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.366649 seconds.
+  path: Assets/Sprites/인게임/mission/산성열매(AcidFruit)/R_M0_0_Acidic Berry 01.png
+  artifactKey: Guid(e32e6c9515a687b4fa1a04fecc61c264) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/인게임/mission/산성열매(AcidFruit)/R_M0_0_Acidic Berry 01.png using Guid(e32e6c9515a687b4fa1a04fecc61c264) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ad52e0f85f1eda71d88e2f0de0a5f18') in 0.035397 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 2.255247 seconds.
+  path: Assets/Sprites/인게임/mission
+  artifactKey: Guid(fca8b6a605b99c94bbddccfc6341ae2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/인게임/mission using Guid(fca8b6a605b99c94bbddccfc6341ae2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac352d55c504bf42f364dffccaa6185d') in 0.000477 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 13.205218 seconds.
+  path: Assets/Sprites/인게임/mission/New Folder
+  artifactKey: Guid(d3bdfa8af1d451b45bfb6c65dde0e18d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/인게임/mission/New Folder using Guid(d3bdfa8af1d451b45bfb6c65dde0e18d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fa18deebf38ebe93c5c97ac70924183') in 0.000459 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.033206 seconds.
+  path: Assets/Sprites/인게임/mission/메아리 조개껍질
+  artifactKey: Guid(d3bdfa8af1d451b45bfb6c65dde0e18d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/인게임/mission/메아리 조개껍질 using Guid(d3bdfa8af1d451b45bfb6c65dde0e18d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '951f3f01a2529e8616b5ae1921a9493a') in 0.000368 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.039298 seconds.
+  path: Assets/Sprites/인게임/mission/메아리 조개껍질 1
+  artifactKey: Guid(d76de923698fc574e8e00add66b305da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/인게임/mission/메아리 조개껍질 1 using Guid(d76de923698fc574e8e00add66b305da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6df05fff708ad95f2dd16cf3b0d6e411') in 0.000472 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.740164 seconds.
+  path: Assets/Sprites/인게임/mission/메아리 조개껍질 2
+  artifactKey: Guid(8568b0e6c0b312146a86aea01bd86314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/인게임/mission/메아리 조개껍질 2 using Guid(8568b0e6c0b312146a86aea01bd86314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09419051aa40edf8b7a66cc3b6a702bc') in 0.000606 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.680087 seconds.
+  path: Assets/Sprites/인게임/mission/메아리 조개껍질 3
+  artifactKey: Guid(1d30fa20534bf5d44b1880b6e0d0d592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/인게임/mission/메아리 조개껍질 3 using Guid(1d30fa20534bf5d44b1880b6e0d0d592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24a4e742fa238ac7ea2df3364a08d4e7') in 0.000479 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 196.137828 seconds.
+  path: Assets/Sprites/인게임/mission/보호 마도
+  artifactKey: Guid(800cdc63057fedb4db3a14b8ba332fbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/인게임/mission/보호 마도 using Guid(800cdc63057fedb4db3a14b8ba332fbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '467f46f9d08fcb0587f46547945430e7') in 0.001528 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.962022 seconds.
+  path: Assets/Sprites/인게임/mission/개미 버섯(Ant Mushroom)
+  artifactKey: Guid(8568b0e6c0b312146a86aea01bd86314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/인게임/mission/개미 버섯(Ant Mushroom) using Guid(8568b0e6c0b312146a86aea01bd86314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7835f9676d1e0a394e29a19a21fa4c2c') in 0.000384 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 22.269956 seconds.
+  path: Assets/Sprites/인게임/mission/보호구(Flower Protector
+  artifactKey: Guid(800cdc63057fedb4db3a14b8ba332fbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/인게임/mission/보호구(Flower Protector using Guid(800cdc63057fedb4db3a14b8ba332fbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de211f525fd7036018b94d8449adcd20') in 0.000489 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.190189 seconds.
+  path: Assets/Sprites/인게임/mission/보호구(Flower Protector)
+  artifactKey: Guid(800cdc63057fedb4db3a14b8ba332fbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/인게임/mission/보호구(Flower Protector) using Guid(800cdc63057fedb4db3a14b8ba332fbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4734cccc38271b8ff57c9c37be3d0719') in 0.000741 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 503.428055 seconds.
+  path: Assets/Data/CraftData/Potion/Novice/P_L1_0.asset
+  artifactKey: Guid(143e0fb542ea2fe4cb978c43709f7bd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/CraftData/Potion/Novice/P_L1_0.asset using Guid(143e0fb542ea2fe4cb978c43709f7bd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd73c97cf7f2eb85d8f837e1b21077cd1') in 0.003099 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.060301 seconds.
+  path: Assets/Data/CraftData/Potion/Novice/P_L1_4.asset
+  artifactKey: Guid(4d99e6be000f2004b8bb40c0f6d3b9f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/CraftData/Potion/Novice/P_L1_4.asset using Guid(4d99e6be000f2004b8bb40c0f6d3b9f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cdb738181274e73b59ec5b82936630b') in 0.002377 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Data/CraftData/Potion/Novice/P_L1_7.asset
+  artifactKey: Guid(7fc968a05c6e2ad45927bcf6d0755fc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/CraftData/Potion/Novice/P_L1_7.asset using Guid(7fc968a05c6e2ad45927bcf6d0755fc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94c6f34ea628f5ca71e815e3c6cca79c') in 0.003039 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Data/CraftData/Potion/Novice/P_L1_6.asset
+  artifactKey: Guid(e05c64726b0289a468689fc4a00f3ec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/CraftData/Potion/Novice/P_L1_6.asset using Guid(e05c64726b0289a468689fc4a00f3ec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd42bf2e282eaa650b9c4d67449b4d66e') in 0.003924 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: ������ ���� �Ǵ� ���� ���α׷� ��û ������ I/O �۾��� ��ҵǾ����ϴ�.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

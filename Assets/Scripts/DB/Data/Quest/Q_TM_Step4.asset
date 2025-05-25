@@ -21,7 +21,7 @@ MonoBehaviour:
       \uC804\uB2EC\uD558\uAE30"
     m_stepType: 3
     m_requiredAmount: 0
-    m_targetItem: {fileID: 0}
+    m_targetItem: {fileID: 11400000, guid: 2a643c52ab99e58449fa76a017a25590, type: 2}
     m_targetNpcId: Max
     m_targetMapId: 
   m_rewardItems: []

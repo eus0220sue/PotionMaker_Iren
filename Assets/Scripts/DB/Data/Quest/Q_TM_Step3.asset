@@ -20,13 +20,13 @@ MonoBehaviour:
   - m_description: "\uC57C\uAD11 \uBC84\uC12F \uCC44\uC9D1\uD558\uAE30"
     m_stepType: 1
     m_requiredAmount: 0
-    m_targetItem: {fileID: 0}
+    m_targetItem: {fileID: 11400000, guid: 4b925b31f3f7f6041a0a30c048c1422e, type: 2}
     m_targetNpcId: 
     m_targetMapId: 
   - m_description: "\uD478\uB978 \uC218\uBD84\uCD08 \uCC44\uC9D1\uD558\uAE30"
     m_stepType: 1
     m_requiredAmount: 0
-    m_targetItem: {fileID: 0}
+    m_targetItem: {fileID: 11400000, guid: 72c2054dcd5416d46a8bc945915923c8, type: 2}
     m_targetNpcId: 
     m_targetMapId: 
   - m_description: "\uC791\uC5C5\uC2E4\uB85C \uC774\uB3D9\uD558\uAE30"
@@ -38,13 +38,13 @@ MonoBehaviour:
   - m_description: "\uC57C\uAD11 \uBC84\uC12F \uAC00\uACF5\uD558\uAE30"
     m_stepType: 1
     m_requiredAmount: 0
-    m_targetItem: {fileID: 0}
+    m_targetItem: {fileID: 11400000, guid: dd266de2b27c51849b5af192a2ffed31, type: 2}
     m_targetNpcId: 
     m_targetMapId: 
   - m_description: "\uD3EC\uC158 \uC81C\uC791\uD558\uAE30"
     m_stepType: 2
     m_requiredAmount: 0
-    m_targetItem: {fileID: 0}
+    m_targetItem: {fileID: 11400000, guid: 2a643c52ab99e58449fa76a017a25590, type: 2}
     m_targetNpcId: 
     m_targetMapId: 
   - m_description: "\uD3EC\uC158\uC744 \uB4E4\uACE0 \uC8FC\uC810\uC73C\uB85C \uC774\uB3D9\uD558\uAE30"

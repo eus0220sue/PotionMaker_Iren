@@ -17,7 +17,7 @@ MonoBehaviour:
   m_pName: "\uD0C4\uC0B0 \uD3EC\uC158"
   m_index: 2
   m_inputI1: {fileID: 11400000, guid: 45634bb67b6076f4fb4303142f4c0958, type: 2}
-  m_inputI2: {fileID: 11400000, guid: c61c393d608237943b27f5cc5878e351, type: 2}
+  m_inputI2: {fileID: 11400000, guid: f6ebe4b94baba674a879c1d1b16dfc35, type: 2}
   m_outputItemData: {fileID: 11400000, guid: 0a016e038aec45c449450def1f9292e4, type: 2}
   m_OAmount: 1
   m_IAmount1: 1

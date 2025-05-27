@@ -111,13 +111,11 @@ public class InventoryData
     {
         if (slots == null)
         {
-            Debug.LogError("[HasItem] 슬롯 리스트(slots)가 null입니다.");
             return false;
         }
 
         if (item == null)
         {
-            Debug.LogError("[HasItem] 찾으려는 item 자체가 null입니다.");
             return false;
         }
 
@@ -128,27 +126,22 @@ public class InventoryData
         {
             if (slot == null)
             {
-                Debug.LogError($"[HasItem] [{index}] slot이 null입니다. → 절대 이러면 안 됨!");
             }
             else if (slot.itemData == null)
             {
-                Debug.Log($"[HasItem] [{index}] 빈 슬롯 (수량: {slot.quantity})");
             }
             else
             {
-                Debug.Log($"[HasItem] [{index}] {slot.itemData.m_itemName} x{slot.quantity}");
 
                 if (slot.itemData == item)
                 {
                     total += slot.quantity;
-                    Debug.Log($"[HasItem]   → 누적 수량: {total}");
                 }
             }
 
             index++;
         }
 
-        Debug.Log($"[HasItem] 최종 누적 수량: {total}, 필요한 수량: {amount}");
         return total >= amount;
     }
 
@@ -173,5 +166,15 @@ public class InventoryData
         }
 
         return false;
+    }
+    public int GetItemCount(ItemData item)
+    {
+        int count = 0;
+        foreach (var slot in slots)
+        {
+            if (slot.itemData == item)
+                count += slot.quantity;
+        }
+        return count;
     }
 }

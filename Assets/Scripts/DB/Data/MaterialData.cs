@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class MaterialData : ScriptableObject
 {
+    public int gatherSoundIndex;
+
     public string m_MaterialName;
     /// <summary>
     /// 필드 오브젝트 스프라이트 인덱스

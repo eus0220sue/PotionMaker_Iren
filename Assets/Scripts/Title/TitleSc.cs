@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.Video;
 
 public class TitleSc : MonoBehaviour
 {
@@ -62,48 +64,22 @@ public class TitleSc : MonoBehaviour
                 {
                     if (result)
                     {
-                        GManager.Instance.IsQuestManager.StartQuest("MQ_0");
-                        if (GManager.Instance == null)
-                        {
-                            Debug.LogError("[Test] GManager.Instance == null");
-                        }
-                        else if (GManager.Instance.IsQuestManager == null)
-                        {
-                            Debug.LogError("[Test] GManager.Instance.IsQuestManager == null");
-                        }
-                        else
-                        {
-                            Debug.Log($"[Test] GManager.Instance.IsQuestManager OK: {GManager.Instance.IsQuestManager.name}");
-                            GManager.Instance.IsQuestManager.StartQuest("MQ_0");
-                        }
+                        // 최초 퀘스트 시작
+                        GManager.Instance.IsQuestManager?.StartQuest("Q_TM_0");
 
-                        SceneLoader.LoadScene("MainGame", afterLoad: () =>
-                        {
-                            GameObject character = GameObject.Find("Character");
-                            GameObject map = GameObject.Find("MapM0_CityHall");
+                        // 새로하기니까 최초 플레이 플래그 true
+                        GManager.Instance.IsFirstPlay = true;
 
-                            if (character != null)
-                                GManager.Instance.Setting(character);
-
-                            if (map != null)
-                            {
-                                GManager.Instance.currentMapGroup = map;
-
-                                BoxCollider2D col = map.GetComponent<BoxCollider2D>();
-                                if (col != null && GManager.Instance.IsCameraBase != null)
-                                {
-                                    Bounds b = col.bounds;
-                                    GManager.Instance.IsCameraBase.SetCameraBounds(b.min, b.max);
-                                }
-                            }
-                        });
+                        // 여기서 'MainGame'으로 가고 싶으면 MainGame으로!
+                        SceneLoader.LoadScene("MainGame", true);
                     }
                 });
                 break;
 
-
             case MenuType.Continue:
                 Debug.Log("이어하기는 아직 구현되지 않았습니다.");
+                GManager.Instance.IsFirstPlay = false;
+                SceneLoader.LoadScene("MainGame", false);
                 m_boxOpenFlag = false;
                 break;
 
@@ -131,4 +107,21 @@ public class TitleSc : MonoBehaviour
         if (rect != null && m_selected != null)
             m_selected.anchoredPosition = rect.anchoredPosition + new Vector2(0, -50f);
     }
+
+    public void OnNewGameButton()
+    {
+        Debug.Log("[메뉴] 새로하기 버튼 클릭됨!");
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LoadingScene");
+        StartCoroutine(LoadAndPlayIntro());
+    }
+
+    private IEnumerator LoadAndPlayIntro()
+    {
+        yield return new WaitForSeconds(3.0f); // 실제로는 로딩씬 완료 여부를 체크!
+
+        var introClip = Resources.Load<VideoClip>("Video/MV_Op");
+        GManager.Instance.IsVideoManager.PlayVideoRoutine(introClip);
+    }
+
 }

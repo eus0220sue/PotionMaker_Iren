@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: NewNode_0
   m_EditorClassIdentifier: 
   m_nodeName: 0
+  m_id: Q_TS_3_Step5_0
   m_nodeType: 0
   m_position: {x: 139.40002, y: 280.00003}
   m_speakerPosition: 1
@@ -40,6 +41,7 @@ MonoBehaviour:
   m_Name: NewNode_1
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_1
+  m_id: Q_TS_3_Step5_1
   m_nodeType: 0
   m_position: {x: 387.40002, y: 279.4}
   m_speakerPosition: 0
@@ -85,7 +87,8 @@ MonoBehaviour:
   m_Name: NewNode_2
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_2
-  m_nodeType: 0
+  m_id: Q_TS_3_Step5_2
+  m_nodeType: 3
   m_position: {x: 660, y: 278}
   m_speakerPosition: 0
   m_speakerName: 
@@ -97,4 +100,4 @@ MonoBehaviour:
   ifTrueNode: {fileID: 0}
   ifFalseNode: {fileID: 0}
   m_cutSceneSprite: {fileID: 0}
-  m_talkNpcID: Hootie
+  m_talkNpcID: 

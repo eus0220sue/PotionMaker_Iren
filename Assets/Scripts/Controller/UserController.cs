@@ -29,6 +29,7 @@ public class UserController : ParentController
     public bool IsMoveLock { get; private set; } = false;
 
     public bool isInteracting = false;
+    private bool m_wasMovingLastFrame = false;
 
 
     private void Start()
@@ -68,6 +69,7 @@ public class UserController : ParentController
         {
             m_input = Vector2.zero;
             animator.SetBool("isMove", false);
+            StopFootstepSound();
             return;
         }
         if (GManager.Instance == null)
@@ -123,6 +125,18 @@ public class UserController : ParentController
             }
             animator.SetFloat("moveX", lastMoveX);
         }
+        if (isMove != m_wasMovingLastFrame)
+        {
+            if (isMove)
+            {
+                PlayFootstepSound();
+            }
+            else
+            {
+                StopFootstepSound();
+            }
+            m_wasMovingLastFrame = isMove;
+        }
     }
     /// <summary>
     /// 충돌체크
@@ -136,7 +150,6 @@ public class UserController : ParentController
             if (!interactablesInRangeList.Contains(other))
             {
                 interactablesInRangeList.Add(other);
-                Debug.Log($"[TriggerEnter] 리스트에 추가됨: {other.gameObject.name}");
             }
         }
     }
@@ -164,6 +177,16 @@ public class UserController : ParentController
     private void Interact()
     {
         if (isInteracting) return; // 중복 인터렉션 차단
+
+        // UI가 열려 있으면 상호작용 막기
+        if (GManager.Instance != null && GManager.Instance.IsUIManager != null)
+        {
+            if (GManager.Instance.IsUIManager.UIOpenFlag)
+            {
+                return;
+            }
+        }
+
         isInteracting = true;
 
         if (interactablesInRangeList.Count == 0)
@@ -173,17 +196,16 @@ public class UserController : ParentController
 
         foreach (var col in interactablesInRangeList)
         {
-            Debug.Log($"[Interact] 대상 확인 중: {col.gameObject.name}");
 
             var target = col.GetComponent<IInteractableInterface>();
             if (target != null)
             {
-                Debug.Log($"[Interact] 상호작용 시도: {col.gameObject.name}");
                 target.Interact();
                 break;
             }
         }
     }
+
     public void ResetMoveAndAnimation()
     {
         m_input = Vector2.zero;
@@ -224,6 +246,17 @@ public class UserController : ParentController
     public void StartInteractCooldown()
     {
         m_interactCooldown = INTERACT_DELAY;
+    }
+
+    private void PlayFootstepSound()
+    {
+        // 0번 사운드(발소리)를 반복 재생
+        SoundManager.Instance.PlayPlayerSoundLoop(0); // SoundManager에 루프 재생 함수가 있어야 함
+    }
+
+    private void StopFootstepSound()
+    {
+        SoundManager.Instance.StopPlayerSound(0); // 사운드 정지 함수 필요
     }
 
 }

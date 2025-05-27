@@ -20,7 +20,6 @@ public class DialogueEditorWindow : EditorWindow
     {
         if (m_graph != null)
         {
-            Debug.Log("[Editor] OnEnable: 그래프 있음. 노드 로드 시도");
             LoadNodeViews();
         }
     }

@@ -537,8 +537,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 30abb67e35c82e243940bf73ee23f784, type: 2}
   craftListContent: {fileID: 514272601428465457}
   scrollRect: {fileID: 655094546482960921}
-  m_powderTagAnimator: {fileID: 7263755581917672565}
-  m_oilTagAnimator: {fileID: 1821262500167183531}
 --- !u!1 &2017416830684156231
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,6 +628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 1164441606828912984}
   countText: {fileID: 6085595573781406921}
+  m_iconImage: {fileID: 1164441606828912984}
 --- !u!1 &2312603737941243321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,7 +1478,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7687145428776780769}
   m_HandleRect: {fileID: 5187938245769679319}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2893,6 +2892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 8543476878757989737}
   countText: {fileID: 4381394202599431666}
+  m_iconImage: {fileID: 4029155969474459167}
 --- !u!1 &7296908703538973324
 GameObject:
   m_ObjectHideFlags: 0
@@ -3039,7 +3039,6 @@ GameObject:
   - component: {fileID: 496721325314329465}
   - component: {fileID: 4631407557449105677}
   - component: {fileID: 4340590857120515998}
-  - component: {fileID: 7263755581917672565}
   m_Layer: 5
   m_Name: PowderTag
   m_TagString: Untagged
@@ -3087,7 +3086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4943396, g: 0.4943396, b: 0.4943396, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3104,27 +3103,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &7263755581917672565
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7388342887798847527}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0b2c843de85612d459b78a57dc0a00f8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7622842664094542622
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,7 +3114,6 @@ GameObject:
   - component: {fileID: 3452275217247225488}
   - component: {fileID: 4733833586219709283}
   - component: {fileID: 4350691899895136609}
-  - component: {fileID: 1821262500167183531}
   m_Layer: 5
   m_Name: OilTag
   m_TagString: Untagged
@@ -3201,27 +3178,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &1821262500167183531
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7622842664094542622}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1ab275442f5344148b4c42876a116985, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7647425751385188083
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,6 +3269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 4047930149176591460}
   countText: {fileID: 1330299378795711855}
+  m_iconImage: {fileID: 4047930149176591460}
 --- !u!1 &7690307225503024924
 GameObject:
   m_ObjectHideFlags: 0
@@ -3561,7 +3518,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: -0.00039672852}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &7696646685623501651
@@ -3998,6 +3955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 4938579261650388318}
   countText: {fileID: 5965963744244292477}
+  m_iconImage: {fileID: 4938579261650388318}
 --- !u!1 &8755343305033553409
 GameObject:
   m_ObjectHideFlags: 0
@@ -4166,6 +4124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 4029155969474459167}
   countText: {fileID: 8707321933099233254}
+  m_iconImage: {fileID: 0}
 --- !u!1 &8956823826205765689
 GameObject:
   m_ObjectHideFlags: 0

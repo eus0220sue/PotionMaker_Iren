@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: NewNode_0
   m_EditorClassIdentifier: 
   m_nodeName: 0
+  m_nodeID: 
   m_nodeType: 0
-  m_position: {x: 91.400024, y: 203.00003}
+  m_position: {x: 92.20001, y: 203.00003}
   m_speakerPosition: 1
   m_speakerName: "\uC774\uB80C"
   m_dialogueText: "\uC5EC\uAE30\uC11C \uC232\uC774 \uB354 \uAC00\uAE4C\uC6B0\uB2C8\uAE4C,
@@ -41,7 +42,8 @@ MonoBehaviour:
   m_Name: NewNode_2
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_2
-  m_nodeType: 0
+  m_nodeID: 
+  m_nodeType: 3
   m_position: {x: 585, y: 208}
   m_speakerPosition: 0
   m_speakerName: 
@@ -53,7 +55,7 @@ MonoBehaviour:
   ifTrueNode: {fileID: 0}
   ifFalseNode: {fileID: 0}
   m_cutSceneSprite: {fileID: 0}
-  m_talkNpcID: Hootie
+  m_talkNpcID: 
 --- !u!114 &-1666587971315323250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,12 +69,14 @@ MonoBehaviour:
   m_Name: NewNode_1
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_1
+  m_nodeID: 
   m_nodeType: 0
   m_position: {x: 338.40002, y: 200.4}
   m_speakerPosition: 0
   m_speakerName: "\uD6C4\uD2F0"
-  m_dialogueText: "\uC57C\uAD11 \uBC84\uC12F\uC740 \uB098\uBB34 \uADF8\uB298\uC5D0\uC11C
-    \uC798 \uC790\uB77C\uB2C8\uAE4C, \uCD5C\uB300\uD55C \uC5B4\uB450\uC6B4 \uACF3\uC744
+  m_dialogueText: "\uADF8\uB798!, \uC232\uC740 \uB9C8\uC744 \uC704\uCABD\uC774\uC57C.
+    \uC57C\uAD11 \uBC84\uC12F\uC740 \uB098\uBB34 \uADF8\uB298\uC5D0\uC11C \uC798
+    \uC790\uB77C\uB2C8\uAE4C, \uCD5C\uB300\uD55C \uC5B4\uB450\uC6B4 \uACF3\uC744
     \uC798 \uC0B4\uD3B4\uBD10!"
   m_characterPortrait: {fileID: 21300000, guid: 9ad650f9f775e3447b088833326b3ec5,
     type: 3}

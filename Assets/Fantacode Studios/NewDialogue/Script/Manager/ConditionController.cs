@@ -17,7 +17,7 @@ public static class ConditionController
             string itemId = key.Split('.')[1];
             bool shouldHave = bool.Parse(expectedValue);
 
-            return GManager.Instance.IsinvenManager.HasItemById(itemId) == shouldHave;
+            return GManager.Instance.IsInvenManager.HasItemById(itemId) == shouldHave;
         }
 
 

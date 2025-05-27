@@ -47,10 +47,13 @@ public class MapPortal : MonoBehaviour
             nextMapGroup.SetActive(true);
             Debug.Log($"[MapPortal] 다음 맵 활성화: {nextMapGroup.name}");
 
-            //  여기에 추가
             GManager.Instance.currentMapGroup = nextMapGroup;
-            Debug.Log($"[MapPortal] currentMapGroup 설정: {GManager.Instance.currentMapGroup.name}");
-
+            // 채집 오브젝트 상태 초기화
+            var gatheringObjects = nextMapGroup.GetComponentsInChildren<GatheringObject>();
+            foreach (var gather in gatheringObjects)
+            {
+                gather.ResetCollectState();
+            }
             // 카메라 제한 자동 계산
             SetCameraBoundsByNextMap();
 

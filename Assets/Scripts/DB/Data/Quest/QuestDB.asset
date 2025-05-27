@@ -15,8 +15,16 @@ MonoBehaviour:
   questGroups:
   - groupName: M0
     quests:
-    - questId: MQ_0
+    - questId: Q_TM_0
       questData: {fileID: 11400000, guid: eccfb2f4e419afe40b01306816f888d8, type: 2}
+    - questId: Q_TM_1
+      questData: {fileID: 11400000, guid: 74fae053fcd2f4043b9be375ee24d255, type: 2}
+    - questId: Q_TM_2
+      questData: {fileID: 11400000, guid: a28563882254f904fa07a3f3d327cbf2, type: 2}
+    - questId: Q_TM_3
+      questData: {fileID: 11400000, guid: ff11e64c3c4fd5f42881b97680575cc8, type: 2}
+    - questId: Q_TM_4
+      questData: {fileID: 11400000, guid: b828ba0278bee1e4c9740c9bdb1ec7b8, type: 2}
   - groupName: M1
     quests: []
   - groupName: M2

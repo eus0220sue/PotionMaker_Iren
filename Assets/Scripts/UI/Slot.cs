@@ -6,6 +6,7 @@ public class Slot : MonoBehaviour
 {
     [SerializeField] private Image icon;
     [SerializeField] private TMP_Text countText;
+    [SerializeField] private Image m_iconImage;  // 슬롯 아이콘 이미지 참조
 
     public void Set(ItemData item, int amount)
     {
@@ -25,5 +26,11 @@ public class Slot : MonoBehaviour
         icon.sprite = null ;
         icon.enabled = false;
         countText.text = "";
+    }
+    // Slot.cs 에서 이미지 컬러 제어 메서드
+    public void SetIconColor(Color color)
+    {
+        if (m_iconImage != null)
+            m_iconImage.color = color;
     }
 }

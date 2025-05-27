@@ -15,12 +15,6 @@ public class GatheringObject : MonoBehaviour, InterAct.IInteractable
     
     [SerializeField] private GameObject guideImage; // 인식 시 표시할 가이드 오브젝트
 
-
-    /// <summary>
-    /// 해당 아이템의 인덱스 (현재 사용 안함)
-    /// </summary>
-    //[SerializeField] private int m_index = 0;
-
     private void Start()
     {
         // 스프라이트 세팅
@@ -109,7 +103,24 @@ public class GatheringObject : MonoBehaviour, InterAct.IInteractable
         SetSprite(2);            // 채집 완료 스프라이트
         SetGuideVisible(false);  // 가이드 숨김
 
-        if (GManager.Instance.IsinvenManager != null)
-            GManager.Instance.IsinvenManager.AddItem(data.m_itemData, data.amount);
+        // gatherSoundIndex가 0 이상이고 gatherSounds 리스트 범위 내일 때 재생
+        if (data.gatherSoundIndex >= 0 && data.gatherSoundIndex < SoundManager.Instance.gatherSounds.Count)
+        {
+            SoundManager.Instance.PlayGatherSound(data.gatherSoundIndex);
+        }
+
+        if (GManager.Instance.IsInvenManager != null)
+            GManager.Instance.IsInvenManager.AddItem(data.m_itemData, data.amount);
     }
+
+    public void ResetCollectState()
+    {
+        isCollected = false;
+        isInRange = false;
+
+        // 스프라이트도 기본 상태로 되돌리기
+        SetSprite(0);
+        SetGuideVisible(false);
+    }
+
 }

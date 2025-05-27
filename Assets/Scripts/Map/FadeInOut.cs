@@ -1,62 +1,72 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class FadeInOut : MonoBehaviour
 {
-    [SerializeField] private Image fadeImage;
+    [SerializeField] private Image m_fadeImage;
     [SerializeField] private float fadeDuration = 1f;
 
     private void Awake()
     {
-        if (fadeImage != null)
+        if (m_fadeImage != null)
         {
             // 게임 시작할 때 fadeImage를 투명하게 초기화
-            Color color = fadeImage.color;
+            Color color = m_fadeImage.color;
             color.a = 0f; // 알파를 0으로
-            fadeImage.color = color;
+            m_fadeImage.color = color;
         }
         else
         {
-            Debug.LogError("[FadeInOut] fadeImage가 연결되어 있지 않습니다!");
         }
     }
 
-    public IEnumerator FadeOut()
+    public IEnumerator FadeOut(float duration = 1f)
     {
-        if (fadeImage == null) yield break;
-
-        Color color = fadeImage.color;
         float timer = 0f;
+        Color color = m_fadeImage.color;
 
-        while (timer < fadeDuration)
+        while (timer < duration)
         {
             timer += Time.deltaTime;
-            color.a = Mathf.Lerp(0f, 1f, timer / fadeDuration);
-            fadeImage.color = color;
+            color.a = Mathf.Lerp(0f, 1f, timer / duration);
+            m_fadeImage.color = color;
             yield return null;
         }
 
         color.a = 1f;
-        fadeImage.color = color;
+        m_fadeImage.color = color;
     }
 
-    public IEnumerator FadeIn()
+
+    public IEnumerator FadeIn(float duration = 1f)
     {
-        if (fadeImage == null) yield break;
-
-        Color color = fadeImage.color;
         float timer = 0f;
+        Color color = m_fadeImage.color;
 
-        while (timer < fadeDuration)
+        while (timer < duration)
         {
             timer += Time.deltaTime;
-            color.a = Mathf.Lerp(1f, 0f, timer / fadeDuration);
-            fadeImage.color = color;
+            color.a = Mathf.Lerp(1f, 0f, timer / duration);
+            m_fadeImage.color = color;
             yield return null;
         }
 
         color.a = 0f;
-        fadeImage.color = color;
+        m_fadeImage.color = color;
     }
+
+    public IEnumerator LoadSceneWithFade(string sceneName)
+    {
+        //  FadeOut 시작
+        yield return StartCoroutine(FadeOut());
+
+        //  실제 씬 전환
+        SceneManager.LoadScene(sceneName);
+
+        //  FadeIn 시작
+        yield return StartCoroutine(FadeIn());
+    }
+
 }

@@ -159,6 +159,7 @@ public class TitleSc : MonoBehaviour
     {
         yield return new WaitForSeconds(3.0f); // 실제로는 로딩씬 완료 여부를 체크!
 
+<<<<<<< HEAD
         var introClip = Resources.Load<VideoClip>("Video/OP_KR.ver");
         GManager.Instance.IsVideoManager.PlayVideoRoutine(introClip);
     }
@@ -178,4 +179,10 @@ public class TitleSc : MonoBehaviour
             m_quitPopup.gameObject.SetActive(false);
         }
     }
+=======
+        var introClip = Resources.Load<VideoClip>("Video/MV_Op");
+        GManager.Instance.IsVideoManager.PlayVideoRoutine(introClip);
+    }
+
+>>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
 }

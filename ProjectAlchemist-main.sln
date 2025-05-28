@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
+<<<<<<<< HEAD:ProjectAlchemist-main.sln
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{D40D6DE3-2CC6-7F9F-7FE6-4E0461BF9CC6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{3BA917CF-0312-554F-DF78-F9B86476812D}"
+========
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{966C0E39-942E-0E67-B76A-A687FD7B22ED}"
+>>>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1:ProjectAlchemist.sln
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,6 +17,7 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<<< HEAD:ProjectAlchemist-main.sln
 		{D40D6DE3-2CC6-7F9F-7FE6-4E0461BF9CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D40D6DE3-2CC6-7F9F-7FE6-4E0461BF9CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D40D6DE3-2CC6-7F9F-7FE6-4E0461BF9CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -19,6 +26,16 @@ Global
 		{3BA917CF-0312-554F-DF78-F9B86476812D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BA917CF-0312-554F-DF78-F9B86476812D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BA917CF-0312-554F-DF78-F9B86476812D}.Release|Any CPU.Build.0 = Release|Any CPU
+========
+		{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FB04BF9-8FB7-CE47-FDDF-6D68C694E318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{966C0E39-942E-0E67-B76A-A687FD7B22ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{966C0E39-942E-0E67-B76A-A687FD7B22ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{966C0E39-942E-0E67-B76A-A687FD7B22ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{966C0E39-942E-0E67-B76A-A687FD7B22ED}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1:ProjectAlchemist.sln
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

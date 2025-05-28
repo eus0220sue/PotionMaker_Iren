@@ -13,6 +13,7 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
         SceneManager.sceneLoaded += OnSceneLoaded;
+<<<<<<< HEAD
         DontDestroyOnLoad(this.gameObject);
 
     }
@@ -22,10 +23,15 @@ public class SceneLoader : MonoBehaviour
             GManager.Instance.mapBGMController.StopBGM();
 
         GManager.Instance.StartCoroutine(GManager.Instance.IsFadeInOut.LoadSceneWithFade(sceneName));
+=======
+
+        DontDestroyOnLoad(gameObject);
+>>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+<<<<<<< HEAD
         if (GManager.Instance != null)
         {
             GManager.Instance.AutoReferenceSceneObjects();
@@ -45,8 +51,62 @@ public class SceneLoader : MonoBehaviour
                 default:
                     Debug.Log("[SceneLoader] BGM 미설정 씬: " + scene.name);
                     break;
-            }
+=======
+
+        if (GManager.Instance != null)
+        {
+            GManager.Instance.AutoReferenceSceneObjects();
         }
+        StartCoroutine(DelayedStart(scene));
+    }
+
+    private IEnumerator DelayedStart(Scene scene)
+    {
+        yield return null;  // 씬 오브젝트가 모두 로드되고 활성화될 때까지 한 프레임 대기
+
+        if (scene.name == "LoadingScene")
+        {
+            GManager.Instance.IsLoadingManager.StartLoading(targetScene, playIntro);
+        }
+        else if (scene.name == "MainGame")
+        {
+
+            // 맵 찾기
+            GameObject map = GameObject.Find("MapM0_CityHall"); // 씬에 맞게 이름 조정
+            if (map != null)
+            {
+                BoxCollider2D mapCollider = map.GetComponent<BoxCollider2D>();
+                if (mapCollider != null && GManager.Instance.IsCameraBase != null)
+                {
+                    var bounds = mapCollider.bounds;
+                    GManager.Instance.IsCameraBase.SetCameraBounds(bounds.min, bounds.max);
+                }
+
+            }
+
+
+            // 캐릭터 찾기 및 세팅
+            var character = GameObject.Find("Character");
+            if (character != null)
+            {
+                GManager.Instance.Setting(character);
+            }
+
+
+            // onAfterSceneLoad 액션이 있으면 호출
+            if (onAfterSceneLoad != null)
+            {
+>>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
+            }
+            onAfterSceneLoad?.Invoke();
+            onAfterSceneLoad = null;
+        }
+        else
+        {
+            onAfterSceneLoad?.Invoke();
+            onAfterSceneLoad = null;
+        }
+<<<<<<< HEAD
 
         StartCoroutine(DelayedStart(scene));
     }
@@ -103,6 +163,17 @@ public class SceneLoader : MonoBehaviour
             onAfterSceneLoad?.Invoke();
             onAfterSceneLoad = null;
         }
+=======
+    }
+
+    public static void LoadScene(string sceneName, bool isPlayIntro, Action afterLoad = null)
+    {
+        targetScene = sceneName;
+        playIntro = isPlayIntro;
+        onAfterSceneLoad = afterLoad;
+
+        GManager.Instance.StartCoroutine(GManager.Instance.IsFadeInOut.LoadSceneWithFade("LoadingScene"));
+>>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
     }
 
     public static void LoadScene(string sceneName, bool isPlayIntro, Action afterLoad = null)

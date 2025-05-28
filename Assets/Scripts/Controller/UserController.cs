@@ -136,8 +136,11 @@ public class UserController : ParentController
             if (!interactablesInRangeList.Contains(other))
             {
                 interactablesInRangeList.Add(other);
+<<<<<<< HEAD
                 UpdateFocus();
 
+=======
+>>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
             }
         }
     }
@@ -196,6 +199,7 @@ public class UserController : ParentController
     /// </summary>
     private void Interact()
     {
+<<<<<<< HEAD
         Debug.Log("[UserController] Interact() 호출됨");
 
         if (isInteracting)
@@ -209,6 +213,19 @@ public class UserController : ParentController
             Debug.Log("[UserController] UI가 열려 있어 상호작용 불가");
             return; // UI 열려있으면 인터렉션 차단
         }
+=======
+        if (isInteracting) return; // 중복 인터렉션 차단
+
+        // UI가 열려 있으면 상호작용 막기
+        if (GManager.Instance != null && GManager.Instance.IsUIManager != null)
+        {
+            if (GManager.Instance.IsUIManager.UIOpenFlag)
+            {
+                return;
+            }
+        }
+
+>>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
         isInteracting = true;
 
         if (m_focusedInteractable != null)
@@ -222,9 +239,24 @@ public class UserController : ParentController
             isInteracting = false;
         }
 
+<<<<<<< HEAD
     }
 
 
+=======
+        foreach (var col in interactablesInRangeList)
+        {
+
+            var target = col.GetComponent<IInteractableInterface>();
+            if (target != null)
+            {
+                target.Interact();
+                break;
+            }
+        }
+    }
+
+>>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
     public void ResetMoveAndAnimation()
     {
         m_input = Vector2.zero;
@@ -277,10 +309,13 @@ public class UserController : ParentController
     {
         SoundManager.Instance.StopPlayerSound(0); // 사운드 정지 함수 필요
     }
+<<<<<<< HEAD
     // 예시: 인터랙션 완료 콜백 메서드 추가
     public void OnInteractionComplete()
     {
         isInteracting = false;
     }
+=======
+>>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
 
 }

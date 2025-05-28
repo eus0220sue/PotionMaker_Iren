@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6942252593728253970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_12
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_12
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 708, y: 196.80069}
+  m_speakerPosition: 0
+  m_speakerName: "\uC774\uB80C"
+  m_dialogueText: "\uB2EC\uBE5B \uBB3C\uC57D\uC774\uB77C... \uAD50\uC721 \uC2DC\uAC04\uC5D0
+    \uB4E4\uC5B4\uBCF8 \uAC83 \uAC19\uC740\uB370, \uAE30\uC5B5\uC774 \uC798 \uC548
+    \uB098\uB124."
+  m_characterPortrait: {fileID: 21300000, guid: c2f0765f02a95cd428e6032c986dff76,
+    type: 3}
+  m_nextNode: {fileID: -5704105000068147336}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
 --- !u!114 &-6831869115065462841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,8 +43,9 @@ MonoBehaviour:
   m_Name: NewNode_3
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_3
+  m_nodeID: 
   m_nodeType: 0
-  m_position: {x: 455.40027, y: 102.79999}
+  m_position: {x: 398.6003, y: 32.39995}
   m_speakerPosition: 1
   m_speakerName: "\uB9E5\uC2A4"
   m_dialogueText: "\uADF8\uB7F0\uB370, \uB108\uB294 \uCC98\uC74C \uBCF4\uB294 \uC5BC\uAD74\uC778\uB370? "
@@ -40,8 +71,9 @@ MonoBehaviour:
   m_Name: NewNode_7
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_7
+  m_nodeID: 
   m_nodeType: 0
-  m_position: {x: 206.19977, y: 253.19992}
+  m_position: {x: 149.39981, y: 182.7999}
   m_speakerPosition: 0
   m_speakerName: "\uC774\uB80C"
   m_dialogueText: "\uB3C4\uC640\uB4DC\uB9B4 \uC218\uB294 \uC788\uC9C0\uB9CC... \uC81C\uAC00
@@ -51,6 +83,36 @@ MonoBehaviour:
   m_characterPortrait: {fileID: 21300000, guid: c2f0765f02a95cd428e6032c986dff76,
     type: 3}
   m_nextNode: {fileID: -4389381422043417602}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-5704105000068147336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_13
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_13
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 973.59985, y: 195.99997}
+  m_speakerPosition: 1
+  m_speakerName: "\uD6C4\uD2F0"
+  m_dialogueText: "\uC774\uB80C, F \uB97C \uB20C\uB7EC \uB3C4\uAC10\uC744 \uC5F4\uC5B4
+    \uBD10. \uAC70\uAE30\uC5D0 \uAD50\uC721 \uC2DC\uAC04\uC5D0 \uBC30\uC6E0\uB358
+    \uD3EC\uC158 \uB808\uC2DC\uD53C\uAC00 \uC788\uC744 \uAC70\uC57C."
+  m_characterPortrait: {fileID: 21300000, guid: 4f7c2e2e4a043654cb324a267ee742f8,
+    type: 3}
+  m_nextNode: {fileID: 1397729147981339346}
   choices: []
   conditionFlag: 
   ifTrueNode: {fileID: 0}
@@ -70,8 +132,9 @@ MonoBehaviour:
   m_Name: NewNode_8
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_8
+  m_nodeID: 
   m_nodeType: 0
-  m_position: {x: 459.20032, y: 254.59995}
+  m_position: {x: 401.60037, y: 180.99991}
   m_speakerPosition: 1
   m_speakerName: "\uB9E5\uC2A4"
   m_dialogueText: "\uADF8\uB7FC! \uC544\uBB34\uB834 \uC77C\uC8FC\uC77C\uBCF4\uB2E4
@@ -79,7 +142,7 @@ MonoBehaviour:
     \uC644\uC131\uD558\uBA74 \uB2E4\uC2DC \uB0A0 \uCC3E\uC544\uC624\uB834."
   m_characterPortrait: {fileID: 21300000, guid: 1e7a09b29993e99449b6c2e665c6752d,
     type: 3}
-  m_nextNode: {fileID: 1397729147981339346}
+  m_nextNode: {fileID: -6942252593728253970}
   choices: []
   conditionFlag: 
   ifTrueNode: {fileID: 0}
@@ -99,8 +162,9 @@ MonoBehaviour:
   m_Name: NewNode_0
   m_EditorClassIdentifier: 
   m_nodeName: 0
+  m_nodeID: 
   m_nodeType: 0
-  m_position: {x: -304.59998, y: 103.00003}
+  m_position: {x: -361.40002, y: 32.59999}
   m_speakerPosition: 1
   m_speakerName: "\uB9E5\uC2A4"
   m_dialogueText: "\uC774\uC81C \uC5B4\uCA4C\uBA74 \uC88B\uC9C0? \uC7A5\uC0AC \uB2E4
@@ -127,8 +191,9 @@ MonoBehaviour:
   m_Name: NewNode_5
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_5
+  m_nodeID: 
   m_nodeType: 0
-  m_position: {x: -278.19995, y: 248.39993}
+  m_position: {x: -335, y: 177.99988}
   m_speakerPosition: 1
   m_speakerName: "\uB9E5\uC2A4"
   m_dialogueText: "\uB09C \uC774 \uC8FC\uC810\uC758 \uC8FC\uC778\uC778 \uB9E5\uC2A4\uC57C.
@@ -156,18 +221,19 @@ MonoBehaviour:
   m_Name: NewNode_10
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_10
+  m_nodeID: 
   m_nodeType: 0
-  m_position: {x: 223, y: 376}
+  m_position: {x: 154.20004, y: 333.60062}
   m_speakerPosition: 0
   m_speakerName: "\uC870\uAC74\uD655\uC778\uC6A9"
   m_dialogueText: "\uC870\uAC74 \uD655\uC778\uC6A9"
   m_characterPortrait: {fileID: 21300000, guid: 1e7a09b29993e99449b6c2e665c6752d,
     type: 3}
-  m_nextNode: {fileID: -4389381422043417602}
+  m_nextNode: {fileID: -315485932627820299}
   choices: []
   conditionFlag: Q_Tu_Step9
   ifTrueNode: {fileID: 0}
-  ifFalseNode: {fileID: -4389381422043417602}
+  ifFalseNode: {fileID: -315485932627820299}
   m_cutSceneSprite: {fileID: 0}
   m_talkNpcID: 
 --- !u!114 &-1666587971315323250
@@ -183,8 +249,9 @@ MonoBehaviour:
   m_Name: NewNode_1
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_1
+  m_nodeID: 
   m_nodeType: 0
-  m_position: {x: -47.599976, y: 104.399994}
+  m_position: {x: -104.39993, y: 33.999954}
   m_speakerPosition: 0
   m_speakerName: "\uC774\uB80C"
   m_dialogueText: "\uC800\uAE30, \uBB34\uC2A8 \uC77C \uC788\uC73C\uC138\uC694? \uC544\uAE4C\uBD80\uD130
@@ -192,6 +259,35 @@ MonoBehaviour:
   m_characterPortrait: {fileID: 21300000, guid: c2f0765f02a95cd428e6032c986dff76,
     type: 3}
   m_nextNode: {fileID: 8485325484590717188}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-315485932627820299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_11
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_11
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 422.4, y: 334.4006}
+  m_speakerPosition: 1
+  m_speakerName: 
+  m_dialogueText: "\uC5EC\uAE30\uC11C \uAE30\uB2E4\uB9B4\uD14C\uB2C8, \uC644\uC131\uD558\uBA74
+    \uB2E4\uC2DC \uB0A0 \uCC3E\uC544\uC624\uB834."
+  m_characterPortrait: {fileID: 21300000, guid: 1e7a09b29993e99449b6c2e665c6752d,
+    type: 3}
+  m_nextNode: {fileID: 1397729147981339346}
   choices: []
   conditionFlag: 
   ifTrueNode: {fileID: 0}
@@ -222,6 +318,9 @@ MonoBehaviour:
   - {fileID: -4389381422043417602}
   - {fileID: 1397729147981339346}
   - {fileID: -2711462520871141676}
+  - {fileID: -315485932627820299}
+  - {fileID: -6942252593728253970}
+  - {fileID: -5704105000068147336}
 --- !u!114 &1397729147981339346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,8 +334,9 @@ MonoBehaviour:
   m_Name: NewNode_9
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_9
+  m_nodeID: 
   m_nodeType: 3
-  m_position: {x: 717.40027, y: 253.99991}
+  m_position: {x: 1241.4001, y: 285.99985}
   m_speakerPosition: 0
   m_speakerName: 
   m_dialogueText: 
@@ -261,8 +361,9 @@ MonoBehaviour:
   m_Name: NewNode_6
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_6
+  m_nodeID: 
   m_nodeType: 0
-  m_position: {x: -40.600098, y: 251.59988}
+  m_position: {x: -97.400055, y: 181.19986}
   m_speakerPosition: 1
   m_speakerName: "\uB9E5\uC2A4"
   m_dialogueText: "\uC774\uB80C, \uAE68\uC9C4 \uC870\uBA85\uC744 \uB300\uC2E0\uD560
@@ -291,8 +392,9 @@ MonoBehaviour:
   m_Name: NewNode_4
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_4
+  m_nodeID: 
   m_nodeType: 0
-  m_position: {x: 724.99915, y: 104.400085}
+  m_position: {x: 668.19916, y: 34.000046}
   m_speakerPosition: 0
   m_speakerName: "\uC774\uB80C"
   m_dialogueText: "\uC544, \uC800\uB294 \uD3EC\uC158 \uBD80\uC11C\uC758 \uC0C8\uB85C\uC6B4
@@ -319,8 +421,9 @@ MonoBehaviour:
   m_Name: NewNode_2
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_2
+  m_nodeID: 
   m_nodeType: 0
-  m_position: {x: 193.79987, y: 104.399994}
+  m_position: {x: 136.99991, y: 33.999954}
   m_speakerPosition: 1
   m_speakerName: "\uB9E5\uC2A4"
   m_dialogueText: "\uC5B4\uC82F\uBC24 \uC190\uB2D8 \uB450 \uBA85\uC774 \uAC00\uAC8C\uC5D0\uC11C

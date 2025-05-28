@@ -14,7 +14,10 @@ public class ItemData : ScriptableObject
     public int m_maxStack;
     public Sprite m_itemIcon;
     public ItemType ItemType;
-    [TextArea] public string description;
+    public int m_buyValue;
+    public int m_sellValue;
+
+    [TextArea] public string m_description;
     public bool m_usableItem;
 
     public ItemType.Type IsItemType {  get { return m_itemType; } }

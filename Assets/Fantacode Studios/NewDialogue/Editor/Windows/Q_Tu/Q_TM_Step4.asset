@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: NewNode_4
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_4
-  m_nodeType: 0
-  m_position: {x: 756, y: 228}
+  m_nodeType: 3
+  m_position: {x: 562, y: 157}
   m_speakerPosition: 0
   m_speakerName: 
   m_dialogueText: 
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_3
   m_nodeType: 0
-  m_position: {x: 486.40027, y: 224.79999}
+  m_position: {x: 292.40027, y: 153.79999}
   m_speakerPosition: 1
   m_speakerName: "\uC774\uB80C"
   m_dialogueText: "\uB9E5\uC2A4 \uC544\uC800\uC528 \uC77C\uC774 \uC798 \uD574\uACB0\uB3FC\uC11C
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nodeName: 0
   m_nodeType: 0
-  m_position: {x: -280.59998, y: 221.00003}
+  m_position: {x: -474.59998, y: 150.00003}
   m_speakerPosition: 1
   m_speakerName: "\uC774\uB80C"
   m_dialogueText: "\uB9E5\uC2A4 \uC544\uC800\uC528! \uBD80\uD0C1\uD558\uC2E0 \uB2EC\uBE5B
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_1
   m_nodeType: 0
-  m_position: {x: -23.599976, y: 221.4}
+  m_position: {x: -217.59998, y: 150.4}
   m_speakerPosition: 0
   m_speakerName: "\uB9E5\uC2A4"
   m_dialogueText: "\uC624, \uC138\uC0C1\uC5D0! \uC815\uB9D0 \uACE0\uB9C8\uC6CC,."
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_2
   m_nodeType: 0
-  m_position: {x: 210.79987, y: 228.4}
+  m_position: {x: 16.799866, y: 157.4}
   m_speakerPosition: 1
   m_speakerName: "\uB9E5\uC2A4"
   m_dialogueText: "\uC55E\uC73C\uB85C \uC6B0\uB9AC \uC8FC\uC810\uC740 \uC870\uBA85

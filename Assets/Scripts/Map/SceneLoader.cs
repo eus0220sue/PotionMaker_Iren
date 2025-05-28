@@ -1,52 +1,121 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using System.Collections;
 
 public class SceneLoader : MonoBehaviour
 {
+    private static string targetScene;
     private static Action onAfterSceneLoad;
+    private static bool playIntro;
 
     void Awake()
     {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
         SceneManager.sceneLoaded += OnSceneLoaded;
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this.gameObject);
+
+    }
+    public static void LoadScene(string sceneName)
+    {
+        if (GManager.Instance?.mapBGMController != null)
+            GManager.Instance.mapBGMController.StopBGM();
+
+        GManager.Instance.StartCoroutine(GManager.Instance.IsFadeInOut.LoadSceneWithFade(sceneName));
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log($"[SceneLoader] 씬 로드됨: {scene.name}");
-
-        GManager.Instance?.AutoReferenceSceneObjects();
-
-        if (scene.name == "MainGame")
+        if (GManager.Instance != null)
         {
-            GManager.Instance.InitFirstMapBounds();
+            GManager.Instance.AutoReferenceSceneObjects();
+            if (GManager.Instance?.mapBGMController != null)
+                GManager.Instance.mapBGMController.StopBGM();
+            // 씬별 BGM 재생 (Title, MainGame 등)
+            switch (scene.name)
+            {
+                case "Title":
+                    GManager.Instance.mapBGMController.PlayTitleBGM();
+                    break;
+                case "MainGame":
+                    // 코루틴이 아니라 바로 실행
+                    SetupMainGame();
 
-            GameObject character = GameObject.Find("Character");
-            if (character != null)
-            {
-                GManager.Instance?.Setting(character);
-                Debug.Log("[SceneLoader] GManager.Setting 호출 완료");
-            }
-            else
-            {
-                Debug.LogError("[SceneLoader] MainGame에 Character가 없음");
+                    break;
+                default:
+                    Debug.Log("[SceneLoader] BGM 미설정 씬: " + scene.name);
+                    break;
             }
         }
 
-        onAfterSceneLoad?.Invoke(); // 단 한 번만 실행
-        onAfterSceneLoad = null;    // 실행 후 제거
+        StartCoroutine(DelayedStart(scene));
     }
 
-    public static void LoadScene(string sceneName, Action afterLoad = null)
+    private void SetupMainGame()
     {
-        onAfterSceneLoad = afterLoad; // 씬 로드 후 실행될 콜백 저장
-        SceneManager.LoadScene(sceneName);
+
+        if (GManager.Instance?.mapBGMController != null)
+        {
+            GManager.Instance.mapBGMController.SetupMapsAfterSceneLoad();
+
+            var mapObj = GameObject.Find("MapM0_CityHall");
+            if (mapObj != null)
+            {
+                GManager.Instance.mapBGMController.PlayBGMForMap(mapObj);
+            }
+        }
     }
 
-    public void LoadScene(string sceneName)
+    private IEnumerator DelayedStart(Scene scene)
     {
-        onAfterSceneLoad = null; // 콜백 없이 로드
-        SceneManager.LoadScene(sceneName);
+        yield return null;  // 씬 오브젝트가 모두 로드되고 활성화될 때까지 한 프레임 대기
+
+        if (scene.name == "LoadingScene")
+        {
+            GManager.Instance.IsLoadingManager.StartLoading(targetScene, playIntro);
+        }
+        else if (scene.name == "MainGame")
+        {
+
+            // 맵 찾기
+            GameObject map = GameObject.Find("MapM0_CityHall"); // 씬에 맞게 이름 조정
+            if (map != null)
+            {
+                BoxCollider2D mapCollider = map.GetComponent<BoxCollider2D>();
+                if (mapCollider != null && GManager.Instance.IsCameraBase != null)
+                {
+                    var bounds = mapCollider.bounds;
+                    GManager.Instance.IsCameraBase.SetCameraBounds(bounds.min, bounds.max);
+                }
+
+            }
+
+
+            // 캐릭터 찾기 및 세팅
+            var character = GameObject.Find("Character");
+            if (character != null)
+            {
+                GManager.Instance.Setting(character);
+            }
+        }
+        else
+        {
+            onAfterSceneLoad?.Invoke();
+            onAfterSceneLoad = null;
+        }
     }
+
+    public static void LoadScene(string sceneName, bool isPlayIntro, Action afterLoad = null)
+    {
+        targetScene = sceneName;
+        playIntro = isPlayIntro;
+        onAfterSceneLoad = afterLoad;
+
+        GManager.Instance.StartCoroutine(GManager.Instance.IsFadeInOut.LoadSceneWithFade("LoadingScene"));
+    }
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
 }

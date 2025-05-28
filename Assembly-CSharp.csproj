@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5EE040AE-953E-2EAF-C92D-E5068B4D52D4}</ProjectGuid>
+    <ProjectGuid>{D40D6DE3-2CC6-7F9F-7FE6-4E0461BF9CC6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\UI\Slot.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Camera\LightingCameras.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\SuperTilemapEditor\Components\TilemapRoom2D.cs" />
+    <Compile Include="Assets\Scripts\UI\ResBookUI.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Triangulation\Advanced Triangulator\TriangulationSets.cs" />
     <Compile Include="Assets\Scripts\DB\Data\MaterialData.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Lightmap\Sorting\SortDepthList.cs" />
@@ -80,7 +81,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Components\LightCollider\LightTilemapCollider2D.cs" />
     <Compile Include="Assets\SNJLib\2D\Pathfinding\Heuristic.cs" />
-    <Compile Include="Assets\Scripts\UI\HUDUI.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\MaterialSystem.cs" />
     <Compile Include="Assets\AmplifyColor\Plugins\Runtime\VolumeEffects.cs" />
     <Compile Include="Assets\Scripts\Interface\InterActionObj\UI\NPCInterAct.cs" />
@@ -105,12 +105,14 @@
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Components\Event Handling\LightEventListener.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Graphics\Max2DMesh.cs" />
+    <Compile Include="Assets\Scripts\UI\ErrorMessage.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\UI\UITextScale.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Components\Occlusion\LightTilemapOcclusion2D.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Utilities\2D\Vector2D.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Material\Lighting2DMaterials.cs" />
+    <Compile Include="Assets\Scripts\UI\Shop\ShopUI.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Components\Lightmap\LightTexture2D.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Day\Shadow\SpriteRendererShadow.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Utilities\2D\Math2D.cs" />
@@ -120,6 +122,7 @@
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Camera\CameraLightmap.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Utilities\2\Polygon2\Polygon2ListCollider2D.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Components\Lightmap\LightRoom2D.cs" />
+    <Compile Include="Assets\Scripts\UI\BookUI.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Event Handling\LightCollision2D.cs" />
     <Compile Include="Assets\Scripts\UI\InvenUI.cs" />
     <Compile Include="Assets\Scripts\Manager\InventoryManager.cs" />
@@ -139,9 +142,9 @@
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Day\Masks\SpriteRenderer2D.cs" />
     <Compile Include="Assets\Scripts\Obj\CollectManager.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\UI\UICanvasScale.cs" />
+    <Compile Include="Assets\Scripts\HUD\QuestEntity.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Components\Lightmap\Light2D.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Components\LightTilemap2D\Types\Base.cs" />
-    <Compile Include="Assets\FunkyCode\Demos - SmartLighting2D\Demos - Intermediate\1 - Demo Dungeon\Scripts\SortingOrderByY.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Buffers\LightBuffer.cs" />
     <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorTriggerProxy.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Components\Occlusion\LightOcclusion2D.cs" />
@@ -150,9 +153,9 @@
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Utilities\2\Polygon2\Polygon2Helper.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Lightmap\Objects\TextureRenderer.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Light\Sorting\SortObject.cs" />
-    <Compile Include="Assets\Scripts\UI\CraftListUI.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Components\Lightmap\LightParticleSystem2D.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Components\Effects\LightFlicker.cs" />
+    <Compile Include="Assets\Scripts\UI\GetMessage.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Utilities\2\Polygon2\Polygon2Collider2D.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
@@ -170,7 +173,7 @@
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Light\ShadowEngine\Algorithm\SpriteProjection.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Components\DayLightCollider2D\DayLightColliderShape.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Settings\Presets\EventPresets.cs" />
-    <Compile Include="Assets\Scripts\UI\PotionCraftListUI.cs" />
+    <Compile Include="Assets\Scripts\UI\Craft\CraftListUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Light\ShadowEngine\Extensions\TilemapCollider.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Light\ShadowEngine\Algorithm\SoftDefault.cs" />
@@ -186,7 +189,6 @@
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Components\LightTilemap2D\TilemapProperties.cs" />
     <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorVolume2D.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Lightmap\Objects\Particle.cs" />
-    <Compile Include="Assets\Scripts\UI\PotionCraftUI.cs" />
     <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorTriggerProxyBase.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Lightmap\Objects\ParticleRenderer.cs" />
     <Compile Include="Assets\Fantacode Studios\NewDialogue\Script\Node\DialogueNode.cs" />
@@ -202,10 +204,12 @@
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Misc\LightTexture.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Components\LightTilemapOcclusion\OcclusionTileset.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Utilities\Misc\TimerHelper.cs" />
+    <Compile Include="Assets\Scripts\Manager\VideoManager.cs" />
     <Compile Include="Assets\FunkyCode\Demos - SmartLighting2D\Demos - Intermediate\5 - Race\Scripts\FollowRacer.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Day\Pass.cs" />
     <Compile Include="Assets\FunkyCode\Demos - SmartLighting2D\Scripts\DemoFollowMouse.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Event Handling\Base.cs" />
+    <Compile Include="Assets\Scripts\UI\HUD_UI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Settings\LightingSettings.cs" />
     <Compile Include="Assets\Scripts\Quest\QuestData.cs" />
@@ -225,6 +229,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Universal\Base.cs" />
+    <Compile Include="Assets\Scripts\Loading\LoadingManager.cs" />
     <Compile Include="Assets\Scripts\Title\TitleSc.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Event Handling\LightTilemap.cs" />
     <Compile Include="Assets\AmplifyColor\Plugins\Runtime\VersionInfo.cs" />
@@ -243,6 +248,7 @@
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Day\Shadow\Shadow.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Triangulation\DefaultTriagulator\UnityDefaultTriangulator.cs" />
     <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorRenderMask.cs" />
+    <Compile Include="Assets\Scripts\UI\Potion\PotionCraftUI.cs" />
     <Compile Include="Assets\Scripts\Interface\InterActionObj\UI\ShopInterAction.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
@@ -270,14 +276,15 @@
     <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorVolume.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\MeshRendererManager.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Settings\Presets\LightPresets.cs" />
+    <Compile Include="Assets\Scripts\HUD\QuestHUD.cs" />
     <Compile Include="Assets\Fantacode Studios\NewDialogue\ScriptableObjects\DialogueGraph.cs" />
+    <Compile Include="Assets\Scripts\UI\Potion\PotionCraftListUI.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Camera\LightmapShaders.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Utilities\Misc\DestroyTimer.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Day\Sorting\SortDepth.cs" />
     <Compile Include="Assets\Scripts\Type\EntityType.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Utilities\2\Polygon2\Polygon2ListCollider3D.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Components\LightOcclusion2D\LightingOcclussion.cs" />
-    <Compile Include="Assets\Scripts\UI\CraftUI.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Event Handling\LightCollider.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Misc\GizmosHelper.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Manager.cs" />
@@ -289,7 +296,6 @@
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Utilities\2D\Mathd.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Components\LightTilemap2D\TilemapEvents.cs" />
     <Compile Include="Assets\Scripts\Interface\InterActionObj\UI\CraftBox.cs" />
-    <Compile Include="Assets\CutSceneEnter.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Camera\CameraSettings.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Components\Camera\CameraTransform.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Utilities\2D\Polygon\Polygon2DCollider2D.cs" />
@@ -315,11 +321,11 @@
     <Compile Include="Assets\FunkyCode\Demos - SmartLighting2D\Demos - Intermediate\5 - Race\Scripts\RacerRoad.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\LightShapes\Extensions\Collider3DShape.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Components\Lightmap\LightSprite2D.cs" />
+    <Compile Include="Assets\Scripts\UI\Craft\CraftUI.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Light\Mask\Tile.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Day\Sorting\SortDepthList.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Components\LightCollider\LightCollider2D.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Light\ShadowEngine\Algorithm\Soft.cs" />
-    <Compile Include="Assets\Scripts\Obj\ParentSortingManager.cs" />
     <Compile Include="Assets\Scripts\DB\Data\CraftData\OilCraftData.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Components\Effects\LightCycle.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Light\ShadowEngine\Algorithm\SoftShadowSorter.cs" />
@@ -348,6 +354,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Buffers\LightBuffer2D.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Light\NoSort.cs" />
+    <Compile Include="Assets\Scripts\CutSceneEnter.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\SceneView\SceneView.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Lightmap\Sorting\SortDepth.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\LightShapes\Extensions\SpriteShape.cs" />
@@ -371,8 +378,8 @@
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Triangulation\Advanced Triangulator\TriangulationAlgorithm.cs" />
     <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorTriggerProxy2D.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Components\LightTilemap2D\Types\Rectangle.cs" />
+    <Compile Include="Assets\Scripts\UI\PotionBookUI.cs" />
     <Compile Include="Assets\Scripts\UI\HUD\HPUI.cs" />
-    <Compile Include="Assets\Scripts\UI\ShopUI.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Components\Light2D\LightTransform.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Debug\LightingDebug.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Light\ShadowEngine\Algorithm\LegacyCPU.cs" />
@@ -380,10 +387,12 @@
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Utilities\2D\Polygon\Polygon2DListCollider2D.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Camera\LightmapMaterials.cs" />
     <Compile Include="Assets\SNJLib\2D\Pathfinding\AStar.cs" />
+    <Compile Include="Assets\Scripts\EscapeKeyUI.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Buffers\LightMainBuffer2D.cs" />
     <Compile Include="Assets\Scripts\Quest\QuestDB.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Components\LightTilemap2D\LightTile.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Buffers\Manager.cs" />
+    <Compile Include="Assets\Scripts\Sound\MapBGMInfo.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\LightShapes\Extensions\SpritePhysicsShape.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Universal\Objects\Texture.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\SuperTilemapEditor\Rendering\Light\Shadow\Grid.cs" />
@@ -398,7 +407,7 @@
     <Compile Include="Assets\FunkyCode\Demos - SmartLighting2D\Scripts\DemoLightColorChange.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Sprite Mesh\SpriteMeshObject.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Material\Extended\Shadow.cs" />
-    <Compile Include="Assets\Scripts\UI\ShopSlot.cs" />
+    <Compile Include="Assets\Scripts\UI\Shop\ShopSlot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

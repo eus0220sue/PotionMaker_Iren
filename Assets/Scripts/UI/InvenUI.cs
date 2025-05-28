@@ -34,16 +34,33 @@ public class InventoryUI : MonoBehaviour
 
     public void OpenInventory()
     {
-        isOpen = !isOpen;
-        Inven.SetActive(isOpen);
-        Debug.Log($"인벤토리 상태: {isOpen}");
+        // 인벤토리가 열려있으면 그냥 닫기 (항상 허용)
+        if (isOpen)
+        {
+            isOpen = false;
+            Inven.SetActive(false);
+            Debug.Log("인벤토리 닫음");
+            return;
+        }
 
+        // UI가 열려있으면 인벤토리 열기 차단
+        if (GManager.Instance.IsUIManager.UIOpenFlag)
+        {
+            Debug.Log("다른 UI가 열려있어 인벤토리 열기 차단");
+            return;
+        }
+
+        // 인벤토리 열기
+        isOpen = true;
+        Inven.SetActive(true);
+        Debug.Log("인벤토리 열림");
     }
+
 
 
     public void UpdateUI()
     {
-        var data = GManager.Instance.IsinvenManager.IsInventoryData;
+        var data = GManager.Instance.IsInvenManager.IsInventoryData;
 
         for (int i = 0; i < m_invenSlot.Length; i++)
         {

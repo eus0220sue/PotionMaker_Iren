@@ -33,6 +33,10 @@ public class QuestDialogueEntry
 
 public class NPCInterAct : MonoBehaviour, IInteractableInterface
 {
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Sprite normalSprite;
+    [SerializeField] private Sprite highlightSprite;
+    [SerializeField] private GameObject guideUI;
     [Header("NPC 고유 ID")]
     public string m_npcID;
     [Header("퀘스트 조건별 대사")]
@@ -46,11 +50,14 @@ public class NPCInterAct : MonoBehaviour, IInteractableInterface
 
     public void Interact()
     {
+        Debug.Log($"[NPCInterAct] Interact called on NPC {m_npcID}");
+
         // 1. 퀘스트 조건 최우선
         foreach (var entry in m_questDialogues)
         {
             bool allQuestConditionsMet = entry.questConditions.All(IsQuestConditionMet);
             bool allFlagsMet = entry.requiredFlags.All(flag => GManager.Instance.IsQuestManager.GetQuestFlag(flag));
+
 
             if (allQuestConditionsMet && allFlagsMet)
             {
@@ -62,7 +69,9 @@ public class NPCInterAct : MonoBehaviour, IInteractableInterface
         // 2. 퀘스트 조건에 부합하는 것이 없을 때만 플래그 조건 확인
         foreach (var entry in m_flagDialogues)
         {
-            if (GManager.Instance.IsQuestManager.GetQuestFlag(entry.flagName))
+            bool flagSet = GManager.Instance.IsQuestManager.GetQuestFlag(entry.flagName);
+
+            if (flagSet)
             {
                 GManager.Instance.IsUIManager.OpenDialogueUI(entry.dialogue);
                 return;
@@ -70,7 +79,13 @@ public class NPCInterAct : MonoBehaviour, IInteractableInterface
         }
 
         // 3. 기본 대사
-        GManager.Instance.IsUIManager.OpenDialogueUI(m_defaultNode);
+        if (m_defaultNode != null)
+        {
+            GManager.Instance.IsUIManager.OpenDialogueUI(m_defaultNode);
+        }
+        else
+        {
+        }
     }
 
     private bool IsQuestConditionMet(QuestDialogueCondition cond)
@@ -89,6 +104,24 @@ public class NPCInterAct : MonoBehaviour, IInteractableInterface
         }
 
         return true;
+    }
+
+    public void OnFocusEnter()
+    {
+        SetHighlight(true);
+    }
+
+    public void OnFocusExit()
+    {
+        SetHighlight(false);
+    }
+    public void SetHighlight(bool active)
+    {
+        if (spriteRenderer != null)
+            spriteRenderer.sprite = active ? highlightSprite : normalSprite;
+
+        if (guideUI != null)
+            guideUI.SetActive(active);
     }
 }
 

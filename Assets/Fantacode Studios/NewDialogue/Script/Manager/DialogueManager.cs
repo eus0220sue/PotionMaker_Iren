@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,8 +9,11 @@ public class DialogueManager : MonoBehaviour
 
     private DialogueNode m_pendingNextNode = null;
     private bool m_isCutScene = false;
+    public event Action OnDialogueEnded;
 
     public Dictionary<string, bool> m_flagTable = new Dictionary<string, bool>();
+    private Dictionary<string, DialogueNode> m_dialogueNodes = new Dictionary<string, DialogueNode>();
+    public event Action OnDialogueStarted;
 
     private void Update()
     {
@@ -38,6 +42,8 @@ public class DialogueManager : MonoBehaviour
     {
         m_currentNode = startNode;
         m_currentNode.Execute(this);
+
+        OnDialogueStarted?.Invoke();  // 대화 시작 신호 발생
     }
     public void ShowDialogue(string speaker, string text, Sprite portrait, SpeakerPosition position, DialogueNode nextNode)
     {
@@ -59,7 +65,15 @@ public class DialogueManager : MonoBehaviour
         m_pendingNextNode = nextNode;
         m_dialougeUI.ShowCutScene(sprite);
     }
-
+    // 대화 노드 조회 함수
+    public DialogueNode GetDialogueNodeByID(string dialogueID)
+    {
+        if (m_dialogueNodes.TryGetValue(dialogueID, out var node))
+        {
+            return node;
+        }
+        return null;
+    }
 
     private void OnChoiceSelected(int index)
     {
@@ -86,13 +100,9 @@ public class DialogueManager : MonoBehaviour
 
         GManager.Instance.IsUIManager.DialogueOpenFlag = false;
         GManager.Instance.IsUserController.isInteracting = false;
-
-        //  상호작용 쿨다운 시작
         GManager.Instance.IsUserController.StartInteractCooldown();
-
-        Debug.Log("[DialogueManager] 대화 종료 완료 + 인터렉트 잠금 시작");
+        OnDialogueEnded?.Invoke();  // 반드시 호출되어야 함
     }
-
 
     public void SetFlag(string flagName, bool value)
     {

@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: C_P_M4_3
   m_EditorClassIdentifier: 
   m_itemType: 1
+  m_itemID: 
   m_itemName: "\uBBF8\uB04C \uBC14\uC704 \uAC00\uB8E8"
   m_maxStack: 20
-  m_itemIcon: {fileID: 21300000, guid: 16f16ccf8a91bb54db09a26d2848a61f, type: 3}
-  description: 
+  m_itemIcon: {fileID: 21300000, guid: 0f0c3e185cdefa3478e964f15b640e07, type: 3}
+  m_buyValue: 0
+  m_sellValue: 0
+  m_description: 
   m_usableItem: 0

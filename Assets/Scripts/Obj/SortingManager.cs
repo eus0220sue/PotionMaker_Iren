@@ -80,7 +80,7 @@ public class SortingManager : MonoBehaviour
             {
                 if (playerTransform.position.y > child.position.y)
                 {
-                    childRenderer.sortingOrder = playerRenderer.sortingOrder + 1;
+                    childRenderer.sortingOrder = playerRenderer.sortingOrder + 0;
                 }
                 else
                 {

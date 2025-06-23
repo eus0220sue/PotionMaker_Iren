@@ -74,9 +74,8 @@ MonoBehaviour:
   m_position: {x: 338.40002, y: 200.4}
   m_speakerPosition: 0
   m_speakerName: "\uD6C4\uD2F0"
-  m_dialogueText: "\uADF8\uB798!, \uC232\uC740 \uB9C8\uC744 \uC704\uCABD\uC774\uC57C.
-    \uC57C\uAD11 \uBC84\uC12F\uC740 \uB098\uBB34 \uADF8\uB298\uC5D0\uC11C \uC798
-    \uC790\uB77C\uB2C8\uAE4C, \uCD5C\uB300\uD55C \uC5B4\uB450\uC6B4 \uACF3\uC744
+  m_dialogueText: "\uC57C\uAD11 \uBC84\uC12F\uC740 \uB098\uBB34 \uADF8\uB298\uC5D0\uC11C
+    \uC798 \uC790\uB77C\uB2C8\uAE4C, \uCD5C\uB300\uD55C \uC5B4\uB450\uC6B4 \uACF3\uC744
     \uC798 \uC0B4\uD3B4\uBD10!"
   m_characterPortrait: {fileID: 21300000, guid: 9ad650f9f775e3447b088833326b3ec5,
     type: 3}

@@ -17,5 +17,8 @@ MonoBehaviour:
   m_itemName: "\uC0B0\uC131\uC5F4\uB9E4"
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: 7f44665ed79a49a4cbf2d371836132f3, type: 3}
-  m_description: 1
+  m_buyValue: 0
+  m_sellValue: 0
+  m_description: "\uAC15\uD55C \uC0B0\uC131 \uC131\uBD84\uC774 \uC788\uB294 \uC5F4\uB9E4\uB85C,
+    \uACFC\uC999\uC774 \uB2FF\uB294 \uBD80\uBD84\uC744 \uBE60\uB974\uAC8C \uB179\uC5EC\uBC84\uB9B0\uB2E4. "
   m_usableItem: 0

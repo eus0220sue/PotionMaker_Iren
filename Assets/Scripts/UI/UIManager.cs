@@ -11,7 +11,6 @@ public class UIManager : MonoBehaviour
     public GameObject BookUI;
     public GameObject QuestUIOpen;
     public GameObject QuestUIClosed;
-<<<<<<< HEAD
     public GameObject EscapeKeyUIPrefab;
     public GameObject m_escapeKeyUIInstance;
     public bool escapeKeyUIOpenFlag = false;
@@ -25,9 +24,6 @@ public class UIManager : MonoBehaviour
             Debug.Log($"[UIManager] EscapeKeyUIOpenFlag set to: {escapeKeyUIOpenFlag}");
         }
     }
-=======
-
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
     void Awake()
     {
         if (QuestUIOpen == null)
@@ -39,7 +35,6 @@ public class UIManager : MonoBehaviour
                 QuestUIClosed = parent.transform.Find("QuestUIClosed")?.gameObject;
             }
         }
-<<<<<<< HEAD
         if (EscapeKeyUIPrefab != null && m_escapeKeyUIInstance == null)
         {
             m_escapeKeyUIInstance = Instantiate(EscapeKeyUIPrefab);
@@ -52,9 +47,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-=======
-    }
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
 
     /// <summary>
     /// 플래그 세팅
@@ -89,7 +81,6 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-<<<<<<< HEAD
         if (m_escapeKeyUIInstance == null)
         {
             if (EscapeKeyUIPrefab != null)
@@ -157,14 +148,6 @@ public class UIManager : MonoBehaviour
                 HideEscapeKeyUI();
             }
 
-=======
-        HandleBookUIOpen();
-        HandleQuestUIOpen();
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            CloseUI();
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
         }
     }
     public void OpenCraftUI()
@@ -216,10 +199,7 @@ public class UIManager : MonoBehaviour
         GManager.Instance.IsDialogueManager.StartDialogue(startNode);
     }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
     private void HandleBookUIOpen()
     {
         if (Input.GetKeyDown(KeyCode.F))
@@ -237,7 +217,6 @@ public class UIManager : MonoBehaviour
             }
         }
     }
-
 
     public void OpenQuestUI()
     {

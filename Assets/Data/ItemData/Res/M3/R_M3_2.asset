@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: R_M3_2
   m_EditorClassIdentifier: 
   m_itemType: 0
+  m_itemID: 
   m_itemName: "\uC6B8\uB9BC \uB098\uBB34"
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: 560866c6040491546936e33361e76b0a, type: 3}
-  description: "\uC18C\uB9AC\uB97C \uACF5\uBA85\uC2DC\uCF1C \uBA40\uB9AC\uAE4C\uC9C0
+  m_buyValue: 0
+  m_sellValue: 0
+  m_description: "\uC18C\uB9AC\uB97C \uACF5\uBA85\uC2DC\uCF1C \uBA40\uB9AC\uAE4C\uC9C0
     \uC804\uB2EC\uD558\uB294 \uD2B9\uBCC4\uD55C \uB098\uBB47\uAC00\uC9C0\uB85C, \uC18C\uB9AC\uC758
     \uD30C\uC7A5\uC744 \uC99D\uD3ED \uC2DC\uD0A8\uB2E4."
   m_usableItem: 0

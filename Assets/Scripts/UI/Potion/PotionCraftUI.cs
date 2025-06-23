@@ -68,7 +68,6 @@ public class PotionCraftUI : MonoBehaviour
 
     [SerializeField] GameObject[] toggleObjects; // 비활성/활성 할 4개 오브젝트
     [SerializeField] VideoClip potionMakeLv1Cutscene;
-<<<<<<< HEAD
 
 
 
@@ -88,28 +87,9 @@ public class PotionCraftUI : MonoBehaviour
     public float holdTimer = 0f;
 
     private bool m_inputLock = false;
-    private float m_inputLockDuration = 0.5f;
+    private float m_inputLockDuration = 2f;
     private float m_inputLockTimer = 0f;
 
-=======
-
-
-
-    public float scrollStepY = 70f;     // 슬롯 하나 높이
-
-
-    public enum TabType { Novice, Expert, Master }
-    public TabType currentTab = TabType.Novice;
-
-    public List<PotionCraftListUI> slotList = new List<PotionCraftListUI>();
-    public int selectedIndex = 0;
-    public int GetSelectedIndex() => selectedIndex;
-    public enum UIState { List, Craft }
-    public UIState currentState = UIState.List;
-
-    public float holdDelay = 0.2f;
-    public float holdTimer = 0f;
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
 
     void Start()
     {
@@ -128,13 +108,23 @@ public class PotionCraftUI : MonoBehaviour
     {
         if (!gameObject.activeSelf) return;
 
-        // m_inputLock 타이머 처리 (항상 매 프레임 실행)
+        // m_inputLock 타이머 처리
+        if (GManager.Instance.IsUIManager.DialogueOpenFlag) // 여기에 실제 대화 중 플래그로!
+        {
+            if (!m_inputLock) // 이미 잠금 중이 아니라면
+            {
+                m_inputLock = true;
+                m_inputLockTimer = 1f; // 2초 잠금
+                Debug.Log("[LockInput] 대화 종료 후 2초 입력 막힘 시작됨!");
+            }
+        }
         if (m_inputLock)
         {
             m_inputLockTimer -= Time.deltaTime;
             if (m_inputLockTimer <= 0f)
             {
                 m_inputLock = false;
+                Debug.Log("[LockInput] 입력 막힘 해제됨!");
             }
         }
 
@@ -160,23 +150,17 @@ public class PotionCraftUI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+
             if (currentState == UIState.List && !m_inputLock)
             {
                 TrySelected();
             }
             else if (currentState == UIState.Craft && !m_inputLock)
             {
-<<<<<<< HEAD
+                Debug.Log("[SpaceKey] 스페이스바 입력됨!");
                 StartCoroutine(TryCraftCoroutine());
             }
         }
-=======
-                StartCoroutine(TryCraftCoroutine()); // 코루틴으로 제작 시도
-            }
-        }
-
-        if (!gameObject.activeSelf) return;
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
 
         if (Input.GetKeyDown(KeyCode.Z) && currentState == UIState.Craft)
         {
@@ -403,12 +387,10 @@ public class PotionCraftUI : MonoBehaviour
         yield return StartCoroutine(PlayPotionCompleteSequence(data));
 
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         m_exchangeManager.PotionCraft(data);
         Debug.Log($"[TryCraft] 제작 성공! {data.IsOutputItem.m_itemName} × {data.IsOAmount}");
-        UpdateInputSlotDim(data);
-        PlayPotionCompleteSequence();
     }
 
 
@@ -518,9 +500,10 @@ public class PotionCraftUI : MonoBehaviour
                 return "기타";
         }
     }
-<<<<<<< HEAD
     public IEnumerator PlayPotionCompleteSequence(PotionCraftData data)
     {
+        Debug.Log("[Cutscene] 연출 시작됨!");
+
         foreach (var obj in toggleObjects)
             obj.SetActive(false);
 
@@ -528,30 +511,10 @@ public class PotionCraftUI : MonoBehaviour
         var clip = GManager.Instance.IsVideoManager.GetVideoClipByName("PotionMake_Lv1_CutScene");
         if (clip != null)
         {
-=======
-    public void PlayPotionCompleteSequence()
-    {
-        // 1. toggleObjects 4개만 비활성화
-        foreach (var obj in toggleObjects)
-            obj.SetActive(false);
-
-        // 2. 영상 재생 코루틴 실행 (이 스크립트 붙은 오브젝트는 활성화 상태 유지)
-        StartCoroutine(PlayVideoAndShowCompletePanel());
-    }
-
-    private IEnumerator PlayVideoAndShowCompletePanel()
-    {
-        // 영상 클립 가져오기
-        var clip = GManager.Instance.IsVideoManager.GetVideoClipByName("PotionMake_Lv1_CutScene");
-        if (clip != null)
-        {
-            // 영상 재생
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
             yield return StartCoroutine(GManager.Instance.IsVideoManager.PlayVideoRoutine(clip));
         }
         else
         {
-<<<<<<< HEAD
             Debug.LogWarning("[PlayPotionCompleteSequence] 영상 클립을 찾을 수 없습니다.");
         }
 
@@ -560,7 +523,7 @@ public class PotionCraftUI : MonoBehaviour
         m_resultPotion_name.text = $"{data.IsName} 제작 완료!";
         completePanel.SetActive(true);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         completePanel.SetActive(false);
         foreach (var obj in toggleObjects)
@@ -568,32 +531,10 @@ public class PotionCraftUI : MonoBehaviour
 
         currentState = UIState.List;
         HighlightSlot();
+        Debug.Log("[Cutscene] 연출 끝남!");
+
         LockInputTemporarily();
 
-=======
-            Debug.LogWarning("[PlayVideoAndShowCompletePanel] 영상 클립을 찾을 수 없습니다.");
-        }
-
-        // 3. 영상 종료 후 완료 패널 활성화
-        completePanel.SetActive(true);
-
-        // 4. 스페이스 키 입력 대기
-        yield return new WaitForSeconds(2f);
-
-        // 5. 완료 패널 비활성화 및 UI 복원
-        completePanel.SetActive(false);
-
-        m_potionCraftUI.SetActive(true);
-        // 상세 UI는 필요시 활성화
-        m_bookCraftUI.SetActive(false);
-
-        foreach (var obj in toggleObjects)
-            obj.SetActive(true);
-
-        // 6. 상태 초기화
-        currentState = UIState.List;
-        HighlightSlot();
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
     }
     private void UpdateInputSlotDim(PotionCraftData data)
     {
@@ -609,14 +550,12 @@ public class PotionCraftUI : MonoBehaviour
         bool shouldDimOutput = !hasInput1 || !hasInput2;
         m_OutputSlot.SetIconColor(shouldDimOutput ? dimmedColor : normalColor);
     }
-<<<<<<< HEAD
     // 대화 연출 끝난 뒤 또는 제작 연출 끝난 뒤에 호출
     private void LockInputTemporarily()
     {
         m_inputLock = true;
         m_inputLockTimer = m_inputLockDuration;
+        Debug.Log($"[LockInput] 입력 막힘 시작됨! (지속시간: {m_inputLockDuration}초)");
     }
-=======
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
 
 }

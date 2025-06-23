@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: R_M1_5
   m_EditorClassIdentifier: 
   m_itemType: 0
+  m_itemID: 
   m_itemName: "\uB124\uBAA8 \uB124\uBAA8 \uBC30"
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: e8b74785fc9a2f544b679b683df067df, type: 3}
-  description: "\uB124\uBAA8\uB09C \uBAA8\uC591\uC758 \uB2EC\uCF64\uD55C \uBC30."
+  m_buyValue: 0
+  m_sellValue: 0
+  m_description: "\uB124\uBAA8\uB09C \uBAA8\uC591\uC758 \uB2EC\uCF64\uD55C \uBC30."
   m_usableItem: 0

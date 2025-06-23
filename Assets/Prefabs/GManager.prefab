@@ -128,11 +128,7 @@ MonoBehaviour:
   m_videoCanvas: {fileID: 9210199640985305665}
   m_videoPlayer: {fileID: 2138250003167456073}
   videoClips:
-<<<<<<< HEAD
   - {fileID: 32900000, guid: dcfd0c67fa2fc214cbdec9bef42c69ca, type: 3}
-=======
-  - {fileID: 32900000, guid: d4afba7cc02916e44a4d217621995685, type: 3}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   - {fileID: 32900000, guid: 101fecef54d5ee844b58088bb3b6b1a8, type: 3}
 --- !u!1 &1702548280217744352
 GameObject:
@@ -532,17 +528,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 7189545200242105092}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-=======
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2426468351383148493
 CanvasRenderer:
@@ -693,11 +682,8 @@ MonoBehaviour:
   BookUI: {fileID: 0}
   QuestUIOpen: {fileID: 0}
   QuestUIClosed: {fileID: 0}
-<<<<<<< HEAD
   EscapeKeyUIPrefab: {fileID: 7490406563458699892, guid: 1465c1f8a1d988649b2732f6649cff42,
     type: 3}
-=======
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   CraftUIOpenFlag: 0
   PotionCraftUIOpenFlag: 0
   DialogueOpenFlag: 0
@@ -795,7 +781,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -928,7 +914,6 @@ MonoBehaviour:
   mapGroups:
   - groupType: 2
     groupBGM: {fileID: 8300000, guid: 1fbb6df2fddcaee4c86192f8726a9c72, type: 3}
-<<<<<<< HEAD
     maps:
     - mapObject: {fileID: 0}
       overrideBGM: {fileID: 0}
@@ -943,12 +928,6 @@ MonoBehaviour:
   - groupType: 4
     groupBGM: {fileID: 8300000, guid: 46d4655eb030e2e4c838f7168a767a6a, type: 3}
     maps: []
-=======
-    maps: []
-  - groupType: 3
-    groupBGM: {fileID: 8300000, guid: 46d4655eb030e2e4c838f7168a767a6a, type: 3}
-    maps: []
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
 --- !u!1 &8242688818425508817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,11 +1181,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-<<<<<<< HEAD
   m_Volume: 0
-=======
-  m_Volume: 1
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_Pitch: 1
   Loop: 0
   Mute: 0

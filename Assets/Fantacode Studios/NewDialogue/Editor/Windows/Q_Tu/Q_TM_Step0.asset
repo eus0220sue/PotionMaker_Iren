@@ -13,13 +13,8 @@ MonoBehaviour:
   m_Name: NewNode_7
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_7
-  m_nodeID: 
   m_nodeType: 0
-<<<<<<< HEAD
   m_position: {x: 637.59875, y: -228.79977}
-=======
-  m_position: {x: 609.59875, y: -175.79977}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 0
   m_speakerName: "\uC774\uB80C"
   m_dialogueText: "\uADF8\uB7FC \uBE68\uB9AC \uBC94\uC778\uC744 \uC7A1\uC544\uC11C,
@@ -46,13 +41,8 @@ MonoBehaviour:
   m_Name: NewNode_1
   m_EditorClassIdentifier: 
   m_nodeName: 1
-  m_nodeID: 
   m_nodeType: 0
-<<<<<<< HEAD
   m_position: {x: -122.8006, y: -391.80005}
-=======
-  m_position: {x: -150.8006, y: -338.80005}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 1
   m_speakerName: "\uBCA0\uB974\uADF8\uB974"
   m_dialogueText: "\uBC18\uAC00\uC6CC. \uB098\uB294 \uC774 \uB9C8\uC744\uC758 \uAD00\uB9AC\uC790\uC778
@@ -80,13 +70,8 @@ MonoBehaviour:
   m_Name: NewNode_15
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_15
-  m_nodeID: 
   m_nodeType: 3
-<<<<<<< HEAD
   m_position: {x: 694.39844, y: 92.400024}
-=======
-  m_position: {x: 666.39844, y: 145.40002}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 0
   m_speakerName: 
   m_dialogueText: 
@@ -111,13 +96,8 @@ MonoBehaviour:
   m_Name: NewNode_17
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_17
-  m_nodeID: 
   m_nodeType: 2
-<<<<<<< HEAD
   m_position: {x: 960.7991, y: -395.00018}
-=======
-  m_position: {x: 932.7991, y: -342.00018}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 0
   m_speakerName: "\uCEF7\uC52C"
   m_dialogueText: 
@@ -142,14 +122,8 @@ MonoBehaviour:
   m_Name: NewNode_19
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_19
-<<<<<<< HEAD
   m_nodeType: 0
   m_position: {x: 409, y: 279}
-=======
-  m_nodeID: 
-  m_nodeType: 0
-  m_position: {x: 381, y: 332}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 1
   m_speakerName: "\uBCA0\uB974\uADF8\uB974"
   m_dialogueText: "\uC544\uB974\uBBF8\uC2A4\uC5D0 \uB300\uD574 \uB354 \uC790\uC138\uD558\uAC8C
@@ -177,13 +151,8 @@ MonoBehaviour:
   m_Name: NewNode_5
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_5
-  m_nodeID: 
   m_nodeType: 0
-<<<<<<< HEAD
   m_position: {x: 104.59967, y: -225.7998}
-=======
-  m_position: {x: 76.59967, y: -172.7998}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 1
   m_speakerName: "\uBCA0\uB974\uADF8\uB974"
   m_dialogueText: "\uAE00\uC384, \uB098\uB3C4 \uC798 \uBAA8\uB974\uACA0\uC5B4. \uC774
@@ -211,15 +180,10 @@ MonoBehaviour:
   m_Name: NewNode_12
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_12
-  m_nodeID: 
   m_nodeType: 0
-<<<<<<< HEAD
   m_position: {x: -157.40045, y: 84.19995}
-=======
-  m_position: {x: -185.40045, y: 137.19995}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 0
-  m_speakerName: "\uC774\uB80C"
+  m_speakerName: iren
   m_dialogueText: "\uB4E3\uACE0 \uBCF4\uB2C8, \uADF8\uB7F0 \uAC83 \uAC19\uAE30\uB3C4
     \uD558\uACE0..."
   m_characterPortrait: {fileID: 21300000, guid: c2f0765f02a95cd428e6032c986dff76,
@@ -244,13 +208,8 @@ MonoBehaviour:
   m_Name: NewNode_8
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_8
-  m_nodeID: 
   m_nodeType: 0
-<<<<<<< HEAD
   m_position: {x: -134.40045, y: -61.799988}
-=======
-  m_position: {x: -162.40045, y: -8.799988}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 1
   m_speakerName: "\uBCA0\uB974\uADF8\uB974"
   m_dialogueText: "\uB098\uB3C4 \uADF8\uB7EC\uACE0 \uC2F6\uC9C0\uB9CC, \uC774\uBBF8
@@ -312,14 +271,8 @@ MonoBehaviour:
   m_Name: NewNode_20
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_20
-<<<<<<< HEAD
   m_nodeType: 3
   m_position: {x: 682, y: 280}
-=======
-  m_nodeID: 
-  m_nodeType: 3
-  m_position: {x: 654, y: 333}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 0
   m_speakerName: 
   m_dialogueText: 
@@ -344,13 +297,8 @@ MonoBehaviour:
   m_Name: NewNode_10
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_10
-  m_nodeID: 
   m_nodeType: 0
-<<<<<<< HEAD
   m_position: {x: 384.5984, y: -73.80011}
-=======
-  m_position: {x: 356.5984, y: -20.80011}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 0
   m_speakerName: "\uC774\uB80C"
   m_dialogueText: "\uB124? \uC81C\uAC00\uC694? \uC800\uB294 \uC544\uC9C1 \uC2E0\uC785\uC778\uB370,
@@ -377,13 +325,8 @@ MonoBehaviour:
   m_Name: NewNode_18
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_18
-  m_nodeID: 
   m_nodeType: 1
-<<<<<<< HEAD
   m_position: {x: 125.19995, y: 379.7998}
-=======
-  m_position: {x: 109.19995, y: 341.7998}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 0
   m_speakerName: "\uC870\uAC74 \uD655\uC778\uC6A9"
   m_dialogueText: "\uC870\uAC74 \uD655\uC778\uC6A9"
@@ -409,13 +352,8 @@ MonoBehaviour:
   m_Name: NewNode_3
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_3
-  m_nodeID: 
   m_nodeType: 0
-<<<<<<< HEAD
   m_position: {x: 615.59827, y: -389.80005}
-=======
-  m_position: {x: 587.59827, y: -336.80005}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 1
   m_speakerName: "\uBCA0\uB974\uADF8\uB974"
   m_dialogueText: "\uC791\uC5C5\uC2E4\uC740 \uB9C8\uC744 \uAC00\uC7A5 \uC624\uB978\uCABD\uC5D0
@@ -443,13 +381,8 @@ MonoBehaviour:
   m_Name: NewNode_14
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_14
-  m_nodeID: 
   m_nodeType: 0
-<<<<<<< HEAD
   m_position: {x: 410.5984, y: 92.19995}
-=======
-  m_position: {x: 382.5984, y: 145.19995}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 1
   m_speakerName: "\uBCA0\uB974\uADF8\uB974"
   m_dialogueText: "\uC544\uB974\uBBF8\uC2A4\uC5D0 \uB300\uD574 \uB354 \uC790\uC138\uD558\uAC8C
@@ -477,13 +410,8 @@ MonoBehaviour:
   m_Name: NewNode_9
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_9
-  m_nodeID: 
   m_nodeType: 0
-<<<<<<< HEAD
   m_position: {x: 120.59943, y: -63.80011}
-=======
-  m_position: {x: 92.59943, y: -10.80011}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 1
   m_speakerName: "\uBCA0\uB974\uADF8\uB974"
   m_dialogueText: "\uADF8\uB798, \uC774\uB80C! \uB124\uAC00 \uBC94\uC778\uC744 \uCC3E\uC544\uC11C,
@@ -510,13 +438,8 @@ MonoBehaviour:
   m_Name: NewNode_16
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_16
-  m_nodeID: 
   m_nodeType: 2
-<<<<<<< HEAD
   m_position: {x: 111.199524, y: -391.39996}
-=======
-  m_position: {x: 83.199524, y: -338.39996}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 0
   m_speakerName: "\uCEF7\uC52C"
   m_dialogueText: 
@@ -541,13 +464,8 @@ MonoBehaviour:
   m_Name: NewNode_13
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_13
-  m_nodeID: 
   m_nodeType: 0
-<<<<<<< HEAD
   m_position: {x: 122.599365, y: 92.20007}
-=======
-  m_position: {x: 94.599365, y: 145.20007}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 1
   m_speakerName: "\uBCA0\uB974\uADF8\uB974"
   m_dialogueText: "\uB3D9\uC758\uD55C \uAC70\uC9C0? \uADF8\uB7FC, \uC815\uC2DD\uC73C\uB85C
@@ -576,13 +494,8 @@ MonoBehaviour:
   m_Name: NewNode_2
   m_EditorClassIdentifier: 
   m_nodeName: 2
-  m_nodeID: 
   m_nodeType: 0
-<<<<<<< HEAD
   m_position: {x: 362.5985, y: -392.80005}
-=======
-  m_position: {x: 334.5985, y: -339.80005}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 1
   m_speakerName: "\uBCA0\uB974\uADF8\uB974"
   m_dialogueText: "\uD655\uC778 \uB2E4 \uB410\uB2E4. \uB108\uB294 \uC774\uC81C \uC815\uC2DD\uC73C\uB85C
@@ -612,13 +525,8 @@ MonoBehaviour:
   m_Name: NewNode_4
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_4
-  m_nodeID: 
   m_nodeType: 0
-<<<<<<< HEAD
   m_position: {x: -165.2005, y: -227.39975}
-=======
-  m_position: {x: -193.2005, y: -174.39975}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 0
   m_speakerName: "\uC774\uB80C"
   m_dialogueText: "\uB124! \uAC10\uC0AC\uD569\uB2C8\uB2E4! \uADFC\uB370, \uCD95\uC81C\uAC00
@@ -645,13 +553,8 @@ MonoBehaviour:
   m_Name: NewNode_11
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_11
-  m_nodeID: 
   m_nodeType: 0
-<<<<<<< HEAD
   m_position: {x: 642.59827, y: -66.80011}
-=======
-  m_position: {x: 614.59827, y: -13.80011}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 1
   m_speakerName: "\uBCA0\uB974\uADF8\uB974"
   m_dialogueText: "\uC2E0\uC785\uC778 \uB108\uC5D0\uAC8C\uB294 \uC5B4\uB824\uC6B4
@@ -679,13 +582,8 @@ MonoBehaviour:
   m_Name: NewNode_0
   m_EditorClassIdentifier: 
   m_nodeName: 0
-  m_nodeID: 
   m_nodeType: 0
-<<<<<<< HEAD
   m_position: {x: -386.00037, y: -392.6001}
-=======
-  m_position: {x: -414.00037, y: -339.6001}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 1
   m_speakerName: "\uBCA0\uB974\uADF8\uB974"
   m_dialogueText: "\uC548\uB155, \uB124\uAC00 \uC774\uBC88\uC5D0 \uD3EC\uC158 \uBD80\uC11C\uC5D0
@@ -712,13 +610,8 @@ MonoBehaviour:
   m_Name: NewNode_6
   m_EditorClassIdentifier: 
   m_nodeName: NewNode_6
-  m_nodeID: 
   m_nodeType: 0
-<<<<<<< HEAD
   m_position: {x: 362.5985, y: -225.7998}
-=======
-  m_position: {x: 334.5985, y: -172.7998}
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
   m_speakerPosition: 1
   m_speakerName: "\uBCA0\uB974\uADF8\uB974"
   m_dialogueText: "\uC544\uB974\uBBF8\uC2A4\uAC00 \uC5C6\uB294 \uC774\uC0C1, \uCD95\uC81C\uB294

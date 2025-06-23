@@ -25,12 +25,9 @@ public class SoundManager : MonoBehaviour
     [Header("Gathering 사운드 목록")]
     public List<NamedSound> gatherSounds;
 
-<<<<<<< HEAD
     public float m_bgmVolume = 0.5f;
     public float m_systemVolume = 0.5f;
 
-=======
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
     private Dictionary<string, AudioClip> playerSoundDict;
     private Dictionary<string, AudioClip> systemSoundDict;
     private Dictionary<string, AudioClip> gatherSoundDict;
@@ -155,7 +152,6 @@ public class SoundManager : MonoBehaviour
             Debug.Log($"[SoundManager] 시스템 사운드 루프 정지: {playerSounds[index].name}");
         }
     }
-<<<<<<< HEAD
     public void SetBGMVolume(float volume)
     {
         m_bgmVolume = Mathf.Clamp01(volume);
@@ -171,10 +167,6 @@ public class SoundManager : MonoBehaviour
             sfxSource.volume = m_systemVolume;
         Debug.Log($"[SoundManager] 시스템 사운드 볼륨 조절: {m_systemVolume}");
     }
-=======
-
-
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
 }
 
 [System.Serializable]

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: R_M2_6
   m_EditorClassIdentifier: 
   m_itemType: 0
+  m_itemID: 
   m_itemName: "\uB2E4\uC774\uC544 \uC9C4\uC8FC"
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: 433b5ceeb3680404bb58cdaa918ae2c5, type: 3}
-  description: "\uB2E8\uB2E8\uD558\uACE0, \uC2E0\uBE44\uB85C\uC6B4 \uBE5B\uC744 \uB0B4\uB294
-    \uC9C4\uADC0\uD55C \uC9C4\uC8FC. \uC9C4\uC8FC\uC5D0\uC11C \uB098\uC624\uB294
-    \uBE5B\uC740 \uC601\uC6D0\uD788 \uC0AC\uB77C\uC9C0\uC9C0 \uC54A\uB294\uB2E4.
-    \uC5D0\uC13C\uC2A4\uB85C \uB18D\uCD95 \uC2DC\uD0AC \uC2DC, \uBCF4\uD638\uACBD
-    \uD544\uC218."
+  m_buyValue: 0
+  m_sellValue: 0
+  m_description: "\uB2E8\uB2E8\uD558\uACE0, \uC2E0\uBE44\uB85C\uC6B4 \uBE5B\uC744
+    \uB0B4\uB294 \uC9C4\uADC0\uD55C \uC9C4\uC8FC. "
   m_usableItem: 0

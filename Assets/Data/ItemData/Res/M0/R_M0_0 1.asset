@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemType: 0
   m_itemID: 
-  m_itemName: Healing Aloe
+  m_itemName: "\uD790\uB9C1 \uC54C\uB85C\uC5D0"
   m_maxStack: 20
-  m_itemIcon: {fileID: 21300000, guid: 01b2455e2352d7149ac96dd5113137d4, type: 3}
-  m_description: 2
+  m_itemIcon: {fileID: 21300000, guid: 512682233c5b9bc4facbddfa03177185, type: 3}
+  m_buyValue: 0
+  m_sellValue: 0
+  m_description: "\uCD09\uCD09\uD55C \uC810\uC561\uC9C8\uC744 \uAC00\uC9C4 \uC54C\uB85C\uC5D0\uB85C,
+    \uD53C\uBD80 \uC7AC\uC0DD\uC5D0 \uD0C1\uC6D4\uD55C \uD6A8\uACFC\uB97C \uBCF4\uC778\uB2E4. "
   m_usableItem: 0

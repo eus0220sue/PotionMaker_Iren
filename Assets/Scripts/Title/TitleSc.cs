@@ -12,6 +12,8 @@ public class TitleSc : MonoBehaviour
 
     [SerializeField] PopUp m_newGamePopup;
     [SerializeField] PopUp m_quitPopup;
+    [SerializeField] PopUp m_nullPopup;
+
 
     public int selectedIndex = 0;
     public bool m_boxOpenFlag = false;
@@ -116,10 +118,12 @@ public class TitleSc : MonoBehaviour
                 break;
 
             case MenuType.Continue:
-                Debug.Log("이어하기는 아직 구현되지 않았습니다.");
-                GManager.Instance.IsFirstPlay = false;
-                SceneLoader.LoadScene("MainGame", false);
-                m_boxOpenFlag = false;
+                m_nullPopup.gameObject.SetActive(true);
+                m_nullPopup.Open(result =>
+                {
+                    // 어떤 결과든 상관없이 팝업 닫기
+                    ClosePopup();
+                });
                 break;
 
             case MenuType.Exit:
@@ -159,7 +163,6 @@ public class TitleSc : MonoBehaviour
     {
         yield return new WaitForSeconds(3.0f); // 실제로는 로딩씬 완료 여부를 체크!
 
-<<<<<<< HEAD
         var introClip = Resources.Load<VideoClip>("Video/OP_KR.ver");
         GManager.Instance.IsVideoManager.PlayVideoRoutine(introClip);
     }
@@ -179,10 +182,4 @@ public class TitleSc : MonoBehaviour
             m_quitPopup.gameObject.SetActive(false);
         }
     }
-=======
-        var introClip = Resources.Load<VideoClip>("Video/MV_Op");
-        GManager.Instance.IsVideoManager.PlayVideoRoutine(introClip);
-    }
-
->>>>>>> 642329f552b3543e6b6f0ae4156dbb3ba21693b1
 }

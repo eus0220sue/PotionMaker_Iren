@@ -20,12 +20,9 @@ MonoBehaviour:
   - m_description: "\uC8FC\uC810 \uC544\uC800\uC528\uC5D0\uAC8C \uB2EC\uBE5B \uD3EC\uC158
       \uC804\uB2EC\uD558\uAE30"
     m_stepType: 3
-    m_requiredAmount: 1
+    m_requiredAmount: 0
     m_targetItem: {fileID: 11400000, guid: 2a643c52ab99e58449fa76a017a25590, type: 2}
     m_targetNpcId: Max
     m_targetMapId: 
-    m_nextQuestID: 
-    m_afterDia: {fileID: 0}
-    m_preDia: {fileID: 0}
   m_rewardItems: []
   m_rewardGold: 0

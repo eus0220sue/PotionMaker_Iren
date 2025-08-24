@@ -1,0 +1,414 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7848495086861091035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_12
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_12
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 271, y: 405}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: "A voice-enhancing potion\u2026 Ah! An Echo Potion should work!"
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: -1026551938177212616}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-5851517417589496044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_1
+  m_EditorClassIdentifier: 
+  m_nodeName: 1
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -18.800598, y: -35.80005}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: "Huh? Sorry, I can\u2019t hear you!"
+  m_characterPortrait: {fileID: 21300000, guid: 98f77520bbfa8144083a25efaa51d4d2,
+    type: 3}
+  m_nextNode: {fileID: 5463122435850636211}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-5797719818690575781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_6
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_6
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -15, y: 152}
+  m_speakerPosition: 0
+  m_speakerName: Frodo
+  m_dialogueText: Yes, the Golden flower, that village people like.
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: -2591162752301710093}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-5141109609045817487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_9
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_9
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 645, y: 152}
+  m_speakerPosition: 0
+  m_speakerName: Hootie
+  m_dialogueText: Ummm Your voice is too quiet to hear well.
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: -2796800776349529798}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-2912210199259118046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_5
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_5
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -227, y: 152}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: A flower?
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: -5797719818690575781}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-2796800776349529798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_10
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_10
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -229, y: 392}
+  m_speakerPosition: 0
+  m_speakerName: Frodo
+  m_dialogueText: Yeah, I know... not a very mighty voice for a lake guardian, huh?
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 2912148685673959558}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-2591162752301710093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_7
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_7
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 205, y: 152}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: Do you know where this intruder is now?
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 6677513590609355186}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-1026551938177212616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_13
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_13
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 519, y: 411}
+  m_speakerPosition: 0
+  m_speakerName: 
+  m_dialogueText: 
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 0}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c799a5ee1de7de4891b51c16680d12f, type: 3}
+  m_Name: Q_M2_1_Step2
+  m_EditorClassIdentifier: 
+  m_nodes:
+  - {fileID: 7201767837969887034}
+  - {fileID: -5851517417589496044}
+  - {fileID: 5463122435850636211}
+  - {fileID: 3047050357002580982}
+  - {fileID: 7092383961082517275}
+  - {fileID: -2912210199259118046}
+  - {fileID: -5797719818690575781}
+  - {fileID: -2591162752301710093}
+  - {fileID: 6677513590609355186}
+  - {fileID: -5141109609045817487}
+  - {fileID: -2796800776349529798}
+  - {fileID: 2912148685673959558}
+  - {fileID: -7848495086861091035}
+  - {fileID: -1026551938177212616}
+--- !u!114 &2912148685673959558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_11
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_11
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 16, y: 395}
+  m_speakerPosition: 0
+  m_speakerName: Frodo
+  m_dialogueText: Wait! If you can make my voice louder, then I can guide you easily!
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: -7848495086861091035}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &3047050357002580982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_3
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_3
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 529.59827, y: -38.80005}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: Yes! I did! But what made the lake this muddy in the first place?
+  m_characterPortrait: {fileID: 21300000, guid: 87091056cf6777447be6a8c934747625,
+    type: 3}
+  m_nextNode: {fileID: 7092383961082517275}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &5463122435850636211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_2
+  m_EditorClassIdentifier: 
+  m_nodeName: 2
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 270.5985, y: -38.80005}
+  m_speakerPosition: 1
+  m_speakerName: Frodo
+  m_dialogueText: "I asked\u2014did you restore this lake?"
+  m_characterPortrait: {fileID: 21300000, guid: 87091056cf6777447be6a8c934747625,
+    type: 3}
+  m_nextNode: {fileID: 3047050357002580982}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &6677513590609355186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_8
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_8
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 425, y: 152}
+  m_speakerPosition: 0
+  m_speakerName: Frodo
+  m_dialogueText: "Sorry, I never leave the lake, so I don\u2019t know. But I\u2019ll
+    guide you to the lake fairies\u2014they\u2019re the ones with news!"
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: -5141109609045817487}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &7092383961082517275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_4
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_4
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 784, y: -45}
+  m_speakerPosition: 0
+  m_speakerName: Frodo
+  m_dialogueText: Well... An intruder holding a flower entered the lake, and after
+    that, it turned muddy.
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 0}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &7201767837969887034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_0
+  m_EditorClassIdentifier: 
+  m_nodeName: 0
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -294.00037, y: -33.600098}
+  m_speakerPosition: 1
+  m_speakerName: Frodo
+  m_dialogueText: I am Frodo, the guardian of this lake. Was it you who restored
+    it?
+  m_characterPortrait: {fileID: 21300000, guid: 98f77520bbfa8144083a25efaa51d4d2,
+    type: 3}
+  m_nextNode: {fileID: -5851517417589496044}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 

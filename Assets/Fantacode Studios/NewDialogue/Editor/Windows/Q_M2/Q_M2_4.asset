@@ -1,0 +1,333 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5851517417589496044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_1
+  m_EditorClassIdentifier: 
+  m_nodeName: 1
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 359.19946, y: 130.19995}
+  m_speakerPosition: 1
+  m_speakerName: Fairies
+  m_dialogueText: The intruder with the flower? Of course I saw them! They were huge!
+  m_characterPortrait: {fileID: 21300000, guid: 98f77520bbfa8144083a25efaa51d4d2,
+    type: 3}
+  m_nextNode: {fileID: 5463122435850636211}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-3241063032219283300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_5
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_5
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 135, y: 359}
+  m_speakerPosition: 0
+  m_speakerName: Fairies
+  m_dialogueText: "I understand, but we can\u2019t just give the info for free. Do
+    us one favor first."
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 3371527743221347869}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-2207383293586230620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_7
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_7
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 575, y: 359}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: "I\u2019ve never seen such a huge flytrap!"
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 3244253057909775783}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-2200656150870695603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_4
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_4
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 1210, y: 127}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: Because the flower they took is vital for our village festival.
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: -3241063032219283300}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-384728814340494960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_9
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_9
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 1038, y: 356}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: "There\u2019s a way! Flytraps are weak to the scent of rainbow
+    flowers, but it goes wild before it can even smell them."
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 2779956132846776949}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c799a5ee1de7de4891b51c16680d12f, type: 3}
+  m_Name: Q_M2_4
+  m_EditorClassIdentifier: 
+  m_nodes:
+  - {fileID: 7201767837969887034}
+  - {fileID: -5851517417589496044}
+  - {fileID: 5463122435850636211}
+  - {fileID: 3047050357002580982}
+  - {fileID: -2200656150870695603}
+  - {fileID: -3241063032219283300}
+  - {fileID: 3371527743221347869}
+  - {fileID: -2207383293586230620}
+  - {fileID: 3244253057909775783}
+  - {fileID: -384728814340494960}
+  - {fileID: 2779956132846776949}
+--- !u!114 &2779956132846776949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_10
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_10
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 1325, y: 350}
+  m_speakerPosition: 0
+  m_speakerName: 
+  m_dialogueText: 
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 0}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &3047050357002580982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_3
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_3
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 912.59827, y: 127.19995}
+  m_speakerPosition: 1
+  m_speakerName: Fairies
+  m_dialogueText: Why are you looking for that intruder?
+  m_characterPortrait: {fileID: 21300000, guid: 87091056cf6777447be6a8c934747625,
+    type: 3}
+  m_nextNode: {fileID: -2200656150870695603}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &3244253057909775783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_8
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_8
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 796, y: 359}
+  m_speakerPosition: 0
+  m_speakerName: Hootie
+  m_dialogueText: "Now\u2019s not the time to be amazed! How are we supposed to handle
+    that thing?"
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: -384728814340494960}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &3371527743221347869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_6
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_6
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 355, y: 359}
+  m_speakerPosition: 0
+  m_speakerName: Fairies
+  m_dialogueText: "We can\u2019t return home because of that giant Venus flytrap
+    over there. Deal with it, and we\u2019ll tell you where the intruder went."
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: -2207383293586230620}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &5463122435850636211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_2
+  m_EditorClassIdentifier: 
+  m_nodeName: 2
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 651.5985, y: 127.19995}
+  m_speakerPosition: 1
+  m_speakerName: Fairies
+  m_dialogueText: "Not just big\u2014they floated too. It was creepy. And they were
+    carrying a flower?"
+  m_characterPortrait: {fileID: 21300000, guid: 87091056cf6777447be6a8c934747625,
+    type: 3}
+  m_nextNode: {fileID: 3047050357002580982}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &7201767837969887034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_0
+  m_EditorClassIdentifier: 
+  m_nodeName: 0
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 90.99963, y: 137.3999}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: HI, I'm Iren, Frodo sent me here. I heard you guys saw something
+    suspicious, can you tell me?
+  m_characterPortrait: {fileID: 21300000, guid: 98f77520bbfa8144083a25efaa51d4d2,
+    type: 3}
+  m_nextNode: {fileID: -5851517417589496044}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 

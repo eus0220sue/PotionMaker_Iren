@@ -1,0 +1,304 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6831869115065462841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_3
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_3
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 149.60034, y: 183.39996}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: "We found it near the forest entrance. It didn\u2019t look ordinary."
+  m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
+    type: 3}
+  m_nextNode: {fileID: 7689456825589109257}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-6118684291174417216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_7
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_7
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -99.60022, y: 333.7999}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: That means the thief who stole Armis was in the forest?
+  m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
+    type: 3}
+  m_nextNode: {fileID: -4389381422043417602}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-4389381422043417602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_8
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_8
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 152.60034, y: 331.9999}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: "Let\u2019s go, Hooty! They might still be in the forest!"
+  m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
+    type: 3}
+  m_nextNode: {fileID: 1397729147981339346}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-4194535444022604628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_0
+  m_EditorClassIdentifier: 
+  m_nodeName: 0
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -610.4, y: 183.59998}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: Hi Dylan! We came because we need your help.
+  m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
+    type: 3}
+  m_nextNode: {fileID: -1666587971315323250}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-3198109200166384244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_5
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_5
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -584, y: 328.99988}
+  m_speakerPosition: 1
+  m_speakerName: Dylan
+  m_dialogueText: Vergre personally asked me to make it to protect Armis.
+  m_characterPortrait: {fileID: 21300000, guid: ac4f4e39bbf8ec94c9cd23ecaae7cb6d,
+    type: 3}
+  m_nextNode: {fileID: 1757587956252754487}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-1666587971315323250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_1
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_1
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -353.3999, y: 184.99994}
+  m_speakerPosition: 0
+  m_speakerName: Dylan
+  m_dialogueText: Help? Did one of your tools break?
+  m_characterPortrait: {fileID: 21300000, guid: ac4f4e39bbf8ec94c9cd23ecaae7cb6d,
+    type: 3}
+  m_nextNode: {fileID: 8485325484590717188}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c799a5ee1de7de4891b51c16680d12f, type: 3}
+  m_Name: Q_M1_1_Step0
+  m_EditorClassIdentifier: 
+  m_nodes:
+  - {fileID: -4194535444022604628}
+  - {fileID: -1666587971315323250}
+  - {fileID: 8485325484590717188}
+  - {fileID: -6831869115065462841}
+  - {fileID: 7689456825589109257}
+  - {fileID: -3198109200166384244}
+  - {fileID: 1757587956252754487}
+  - {fileID: -6118684291174417216}
+  - {fileID: -4389381422043417602}
+  - {fileID: 1397729147981339346}
+--- !u!114 &1397729147981339346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_9
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_9
+  m_nodeID: 
+  m_nodeType: 3
+  m_position: {x: 439.40015, y: 327.99988}
+  m_speakerPosition: 0
+  m_speakerName: 
+  m_dialogueText: 
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 0}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: Dylan
+--- !u!114 &1757587956252754487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_6
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_6
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -346.40002, y: 332.19986}
+  m_speakerPosition: 1
+  m_speakerName: Hootie
+  m_dialogueText: So, if it was found at the forest entrance...
+  m_characterPortrait: {fileID: 21300000, guid: c98dbd1280d819c419ff559e07d8b490,
+    type: 3}
+  m_nextNode: {fileID: -6118684291174417216}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &7689456825589109257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_4
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_4
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 419.19922, y: 185.00006}
+  m_speakerPosition: 0
+  m_speakerName: Dylan
+  m_dialogueText: Let me see... This looks like a protective artifact I made.
+  m_characterPortrait: {fileID: 21300000, guid: ac4f4e39bbf8ec94c9cd23ecaae7cb6d,
+    type: 3}
+  m_nextNode: {fileID: -3198109200166384244}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &8485325484590717188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_2
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_2
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -109.00012, y: 182.99994}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: Nope! We just wanted to know if you recognize this metal piece.
+  m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
+    type: 3}
+  m_nextNode: {fileID: -6831869115065462841}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 

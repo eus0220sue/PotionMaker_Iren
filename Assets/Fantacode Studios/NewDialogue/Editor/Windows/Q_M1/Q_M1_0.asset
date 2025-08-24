@@ -1,0 +1,163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5851517417589496044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_1
+  m_EditorClassIdentifier: 
+  m_nodeName: 1
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -73.8006, y: 228.19995}
+  m_speakerPosition: 1
+  m_speakerName: Hootie
+  m_dialogueText: We definitely need something to support the bridge. Iren, check
+    the potion guide for something helpful.
+  m_characterPortrait: {fileID: 21300000, guid: 6f1abee13edd8fd40860175b1f4abc91,
+    type: 3}
+  m_nextNode: {fileID: 5463122435850636211}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-1867781279618050338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_17
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_17
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 784, y: 234}
+  m_speakerPosition: 0
+  m_speakerName: 
+  m_dialogueText: 
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 0}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c799a5ee1de7de4891b51c16680d12f, type: 3}
+  m_Name: Q_M1_0
+  m_EditorClassIdentifier: 
+  m_nodes:
+  - {fileID: 7201767837969887034}
+  - {fileID: -5851517417589496044}
+  - {fileID: 5463122435850636211}
+  - {fileID: 3047050357002580982}
+  - {fileID: -1867781279618050338}
+--- !u!114 &3047050357002580982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_3
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_3
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 477.59827, y: 225.19995}
+  m_speakerPosition: 1
+  m_speakerName: Hootie
+  m_dialogueText: "Sounds like a plan. Let\u2019s gather the ingredients first and
+    make potion!"
+  m_characterPortrait: {fileID: 21300000, guid: c98dbd1280d819c419ff559e07d8b490,
+    type: 3}
+  m_nextNode: {fileID: -1867781279618050338}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &5463122435850636211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_2
+  m_EditorClassIdentifier: 
+  m_nodeName: 2
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 218.59851, y: 225.19995}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: Let's use a Growth Boost Potion to make the nearby vines grow!
+    Those tough vines will surely support the bridge.
+  m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
+    type: 3}
+  m_nextNode: {fileID: 3047050357002580982}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &7201767837969887034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_0
+  m_EditorClassIdentifier: 
+  m_nodeName: 0
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -342.00037, y: 235.3999}
+  m_speakerPosition: 1
+  m_speakerName: Hootie
+  m_dialogueText: The bridge looks incredibly unstable. It could snap with just one
+    step.
+  m_characterPortrait: {fileID: 21300000, guid: 6f1abee13edd8fd40860175b1f4abc91,
+    type: 3}
+  m_nextNode: {fileID: -5851517417589496044}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 

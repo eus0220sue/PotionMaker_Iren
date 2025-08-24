@@ -1,0 +1,189 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5851517417589496044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_1
+  m_EditorClassIdentifier: 
+  m_nodeName: 1
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 1.1994019, y: 139.19995}
+  m_speakerPosition: 1
+  m_speakerName: Dylan
+  m_dialogueText: "Hmm... Yes. This is also a part of the protective artifact I made.
+    To disassemble such a tough artifact\u2026 whoever did this is no ordinary person."
+  m_characterPortrait: {fileID: 21300000, guid: 98f77520bbfa8144083a25efaa51d4d2,
+    type: 3}
+  m_nextNode: {fileID: 6992780517068287981}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-1613774400185612727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_5
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_5
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 1, y: 300}
+  m_speakerPosition: 0
+  m_speakerName: 
+  m_dialogueText: 
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 0}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c799a5ee1de7de4891b51c16680d12f, type: 3}
+  m_Name: Q_M2_0_Step1
+  m_EditorClassIdentifier: 
+  m_nodes:
+  - {fileID: 7201767837969887034}
+  - {fileID: -5851517417589496044}
+  - {fileID: 6992780517068287981}
+  - {fileID: 7058123537859379618}
+  - {fileID: 2068700054958362136}
+  - {fileID: -1613774400185612727}
+--- !u!114 &2068700054958362136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_4
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_4
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -266, y: 303}
+  m_speakerPosition: 0
+  m_speakerName: 
+  m_dialogueText: "The main body has four iron pieces attached. We\u2019ve found
+    two, so the other two must be elsewhere."
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: -1613774400185612727}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &6992780517068287981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_2
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_2
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 269, y: 143}
+  m_speakerPosition: 0
+  m_speakerName: 
+  m_dialogueText: "Dylan, do you happen to have a blueprint showing the artifact\u2019s
+    structure?"
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 7058123537859379618}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &7058123537859379618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_3
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_3
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 510, y: 138}
+  m_speakerPosition: 0
+  m_speakerName: 
+  m_dialogueText: "Yes. Hold on, I\u2019ll go get it."
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 2068700054958362136}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &7201767837969887034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_0
+  m_EditorClassIdentifier: 
+  m_nodeName: 0
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -268.00037, y: 138.3999}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: Dylan! Take a look at this! It looks just like the artifact you
+    showed us before!
+  m_characterPortrait: {fileID: 21300000, guid: 98f77520bbfa8144083a25efaa51d4d2,
+    type: 3}
+  m_nextNode: {fileID: -5851517417589496044}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 

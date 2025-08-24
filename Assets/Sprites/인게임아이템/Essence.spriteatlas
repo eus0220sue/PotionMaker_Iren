@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Essence
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: f9e9efd2d7b3d55489bacb5ee166dcc2, type: 3}
+    - {fileID: 2800000, guid: ec36ab287fb9a454a8e0db52f35b8d92, type: 3}
+    - {fileID: 2800000, guid: 3686233afb9f442489ac5b963a7035fd, type: 3}
+    - {fileID: 2800000, guid: 7351543b03d2b8d4bb786da6562a1474, type: 3}
+    - {fileID: 2800000, guid: 49dfb1bb62b9eba4bab6b6801e1f6cbe, type: 3}
+    - {fileID: 2800000, guid: f35043b2d37265548952f4f08c3746df, type: 3}
+    - {fileID: 2800000, guid: 54ccc4d4e70991041bff597f2c82d947, type: 3}
+    - {fileID: 2800000, guid: 8160c5415da55ff4ba778cc77fcff9e2, type: 3}
+    - {fileID: 2800000, guid: be443ec11dd16e74b8ec53af70c0e16f, type: 3}
+    - {fileID: 2800000, guid: 545d87a06d05a28489153c87adf73a40, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 545d87a06d05a28489153c87adf73a40: 21300000
+    - 8160c5415da55ff4ba778cc77fcff9e2: 21300000
+    - be443ec11dd16e74b8ec53af70c0e16f: 21300000
+    - f35043b2d37265548952f4f08c3746df: 21300000
+    - f9e9efd2d7b3d55489bacb5ee166dcc2: 21300000
+    - 54ccc4d4e70991041bff597f2c82d947: 21300000
+    - ec36ab287fb9a454a8e0db52f35b8d92: 21300000
+    - 3686233afb9f442489ac5b963a7035fd: 21300000
+    - 7351543b03d2b8d4bb786da6562a1474: 21300000
+    - 49dfb1bb62b9eba4bab6b6801e1f6cbe: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 545d87a06d05a28489153c87adf73a40, type: 3}
+  - {fileID: 21300000, guid: 8160c5415da55ff4ba778cc77fcff9e2, type: 3}
+  - {fileID: 21300000, guid: be443ec11dd16e74b8ec53af70c0e16f, type: 3}
+  - {fileID: 21300000, guid: f35043b2d37265548952f4f08c3746df, type: 3}
+  - {fileID: 21300000, guid: f9e9efd2d7b3d55489bacb5ee166dcc2, type: 3}
+  - {fileID: 21300000, guid: 54ccc4d4e70991041bff597f2c82d947, type: 3}
+  - {fileID: 21300000, guid: ec36ab287fb9a454a8e0db52f35b8d92, type: 3}
+  - {fileID: 21300000, guid: 3686233afb9f442489ac5b963a7035fd, type: 3}
+  - {fileID: 21300000, guid: 7351543b03d2b8d4bb786da6562a1474, type: 3}
+  - {fileID: 21300000, guid: 49dfb1bb62b9eba4bab6b6801e1f6cbe, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - "C_E_M4_\uFF13_Squishite Essence"
+  - C_E_M4_1_Stickite Crystal Essence
+  - C_E_M4_2_White Scorp Venom Essence
+  - C_E_M3_0_Tumbler Berry Essence
+  - C_E_M1_0_Cursed Moss Essence
+  - C_E_M4_0_Crag Berry Essence
+  - C_E_M1_1_Umbrella Leaf Essence
+  - C_E_M2_0_Ice Fog Essence
+  - 'C_E_M2_2_Diamond Pearl Essence '
+  - C_E_M2_1_Rubber Flower Essence
+  m_RenderDataMap: {}
+  m_Tag: Essence
+  m_IsVariant: 0

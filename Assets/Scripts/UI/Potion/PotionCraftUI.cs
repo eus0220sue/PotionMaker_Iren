@@ -87,7 +87,7 @@ public class PotionCraftUI : MonoBehaviour
     public float holdTimer = 0f;
 
     private bool m_inputLock = false;
-    private float m_inputLockDuration = 2f;
+    private float m_inputLockDuration = 0.5f;
     private float m_inputLockTimer = 0f;
 
 
@@ -108,23 +108,13 @@ public class PotionCraftUI : MonoBehaviour
     {
         if (!gameObject.activeSelf) return;
 
-        // m_inputLock 타이머 처리
-        if (GManager.Instance.IsUIManager.DialogueOpenFlag) // 여기에 실제 대화 중 플래그로!
-        {
-            if (!m_inputLock) // 이미 잠금 중이 아니라면
-            {
-                m_inputLock = true;
-                m_inputLockTimer = 1f; // 2초 잠금
-                Debug.Log("[LockInput] 대화 종료 후 2초 입력 막힘 시작됨!");
-            }
-        }
+        // m_inputLock 타이머 처리 (항상 매 프레임 실행)
         if (m_inputLock)
         {
             m_inputLockTimer -= Time.deltaTime;
             if (m_inputLockTimer <= 0f)
             {
                 m_inputLock = false;
-                Debug.Log("[LockInput] 입력 막힘 해제됨!");
             }
         }
 
@@ -150,14 +140,12 @@ public class PotionCraftUI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
             if (currentState == UIState.List && !m_inputLock)
             {
                 TrySelected();
             }
             else if (currentState == UIState.Craft && !m_inputLock)
             {
-                Debug.Log("[SpaceKey] 스페이스바 입력됨!");
                 StartCoroutine(TryCraftCoroutine());
             }
         }
@@ -387,7 +375,7 @@ public class PotionCraftUI : MonoBehaviour
         yield return StartCoroutine(PlayPotionCompleteSequence(data));
 
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         m_exchangeManager.PotionCraft(data);
         Debug.Log($"[TryCraft] 제작 성공! {data.IsOutputItem.m_itemName} × {data.IsOAmount}");
@@ -502,8 +490,6 @@ public class PotionCraftUI : MonoBehaviour
     }
     public IEnumerator PlayPotionCompleteSequence(PotionCraftData data)
     {
-        Debug.Log("[Cutscene] 연출 시작됨!");
-
         foreach (var obj in toggleObjects)
             obj.SetActive(false);
 
@@ -523,7 +509,7 @@ public class PotionCraftUI : MonoBehaviour
         m_resultPotion_name.text = $"{data.IsName} 제작 완료!";
         completePanel.SetActive(true);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         completePanel.SetActive(false);
         foreach (var obj in toggleObjects)
@@ -531,8 +517,6 @@ public class PotionCraftUI : MonoBehaviour
 
         currentState = UIState.List;
         HighlightSlot();
-        Debug.Log("[Cutscene] 연출 끝남!");
-
         LockInputTemporarily();
 
     }
@@ -555,7 +539,6 @@ public class PotionCraftUI : MonoBehaviour
     {
         m_inputLock = true;
         m_inputLockTimer = m_inputLockDuration;
-        Debug.Log($"[LockInput] 입력 막힘 시작됨! (지속시간: {m_inputLockDuration}초)");
     }
 
 }

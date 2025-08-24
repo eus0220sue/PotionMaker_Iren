@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M1_Obj
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: e47028cf5baffe14e880760a385a4c00, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 7879a4f0b7192a1409ca0345d4f4c091: 21300000
+    - 4b8ee415d35522c4abac4ab3b451cfc5: 21300000
+    - 164aa5c5ed741f14bb8f71860a26d0d2: 21300000
+    - 61ecc0167ca5b8747ae5f244d3895274: 21300000
+    - 19e3a1671d015ca448fed4ddae74da5a: 21300000
+    - bc8aa7a70ad7e7b438ccc8083b048760: 21300000
+    - ca353e59a1dd9f14ea21896c1f502453: 21300000
+    - 490aac9b941523546957fac6d77aba26: 21300000
+    - 3019259e5bfd8fe4ba55e1e03d2f0000: 21300000
+    - f322aeae8b60b1844935a976dc8438da: 21300000
+    - 66dfdeee846a5354a916078fddf33474: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 7879a4f0b7192a1409ca0345d4f4c091, type: 3}
+  - {fileID: 21300000, guid: 4b8ee415d35522c4abac4ab3b451cfc5, type: 3}
+  - {fileID: 21300000, guid: 164aa5c5ed741f14bb8f71860a26d0d2, type: 3}
+  - {fileID: 21300000, guid: 61ecc0167ca5b8747ae5f244d3895274, type: 3}
+  - {fileID: 21300000, guid: 19e3a1671d015ca448fed4ddae74da5a, type: 3}
+  - {fileID: 21300000, guid: bc8aa7a70ad7e7b438ccc8083b048760, type: 3}
+  - {fileID: 21300000, guid: ca353e59a1dd9f14ea21896c1f502453, type: 3}
+  - {fileID: 21300000, guid: 490aac9b941523546957fac6d77aba26, type: 3}
+  - {fileID: 21300000, guid: 3019259e5bfd8fe4ba55e1e03d2f0000, type: 3}
+  - {fileID: 21300000, guid: f322aeae8b60b1844935a976dc8438da, type: 3}
+  - {fileID: 21300000, guid: 66dfdeee846a5354a916078fddf33474, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - M1_Stone02
+  - M1_Stone01
+  - M1_ThronVine
+  - M1_Bush
+  - M1_Flower03
+  - M1_WoodStick01
+  - M1_WoodStick02
+  - M1_FallLeaves
+  - M1_Flower01
+  - M1_Flower02
+  - M1Sub_RandomBox
+  m_RenderDataMap: {}
+  m_Tag: M1_Obj
+  m_IsVariant: 0

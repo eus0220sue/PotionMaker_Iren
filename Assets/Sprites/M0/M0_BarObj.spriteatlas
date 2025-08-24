@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M0_BarObj
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 70e87584c9beb4847924d51124284c57, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - e769bf705cf197d4892138b5417150fb: 21300000
+    - bb89bfc255b9c3b41956c06cb47594b4: 21300000
+    - c7bc0873bf38dfa43adaf5de2965616c: 21300000
+    - ec523d735128db14585eff9bcc5b5f5b: 21300000
+    - 2886caa42d822344b9e38ced489217d2: 21300000
+    - 07b26436af460b24281a4c66094c77ef: 21300000
+    - 88ce1a2ee68af3b479fdd914b142c2ef: 21300000
+    - ffae15ff730f7f34bb5887d95016554f: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: e769bf705cf197d4892138b5417150fb, type: 3}
+  - {fileID: 21300000, guid: bb89bfc255b9c3b41956c06cb47594b4, type: 3}
+  - {fileID: 21300000, guid: c7bc0873bf38dfa43adaf5de2965616c, type: 3}
+  - {fileID: 21300000, guid: ec523d735128db14585eff9bcc5b5f5b, type: 3}
+  - {fileID: 21300000, guid: 2886caa42d822344b9e38ced489217d2, type: 3}
+  - {fileID: 21300000, guid: 07b26436af460b24281a4c66094c77ef, type: 3}
+  - {fileID: 21300000, guid: 88ce1a2ee68af3b479fdd914b142c2ef, type: 3}
+  - {fileID: 21300000, guid: ffae15ff730f7f34bb5887d95016554f, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - M0BChair03
+  - M0BKithcenTable
+  - M0BChair02
+  - M0BCocktailTools
+  - M0BBarTable
+  - M0BFireStove
+  - M0BGlass
+  - M0BChair01
+  m_RenderDataMap: {}
+  m_Tag: M0_BarObj
+  m_IsVariant: 0

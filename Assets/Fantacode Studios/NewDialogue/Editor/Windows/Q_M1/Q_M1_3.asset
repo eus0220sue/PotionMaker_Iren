@@ -1,0 +1,246 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8293382936152037565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_4
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_4
+  m_nodeID: 
+  m_nodeType: 3
+  m_position: {x: 728, y: 36}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: '! '
+  m_characterPortrait: {fileID: 21300000, guid: 952d7665a12110b4796a39192a5c3332,
+    type: 3}
+  m_nextNode: {fileID: -4910814554251993488}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: Max
+--- !u!114 &-6831869115065462841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_3
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_3
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 458.40027, y: 32.799988}
+  m_speakerPosition: 1
+  m_speakerName: Vergre
+  m_dialogueText: I hate all rodents! Ugh, that rat has ruined my whole day.
+  m_characterPortrait: {fileID: 21300000, guid: a69a12e914b1bb545915979e87728b70,
+    type: 3}
+  m_nextNode: {fileID: -8293382936152037565}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-4910814554251993488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_5
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_5
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 51, y: 175}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: Mr. Vergre, if I get rid of the rat, will you do me a favor?
+  m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
+    type: 3}
+  m_nextNode: {fileID: 7883407327192980991}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-4194535444022604628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_0
+  m_EditorClassIdentifier: 
+  m_nodeName: 0
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -304.59998, y: 29.00003}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: Mr. Vergre! What are you doing under your desk?
+  m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
+    type: 3}
+  m_nextNode: {fileID: -1666587971315323250}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-1666587971315323250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_1
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_1
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -51.599976, y: 29.399994}
+  m_speakerPosition: 0
+  m_speakerName: Vergre
+  m_dialogueText: "Iren, run! There\u2019s a rat in the town hall!"
+  m_characterPortrait: {fileID: 21300000, guid: a69a12e914b1bb545915979e87728b70,
+    type: 3}
+  m_nextNode: {fileID: 8485325484590717188}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c799a5ee1de7de4891b51c16680d12f, type: 3}
+  m_Name: Q_M1_3
+  m_EditorClassIdentifier: 
+  m_nodes:
+  - {fileID: -4194535444022604628}
+  - {fileID: -1666587971315323250}
+  - {fileID: 8485325484590717188}
+  - {fileID: -6831869115065462841}
+  - {fileID: -8293382936152037565}
+  - {fileID: -4910814554251993488}
+  - {fileID: 7883407327192980991}
+  - {fileID: 6227793621379400342}
+--- !u!114 &6227793621379400342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_7
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_7
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 582, y: 172}
+  m_speakerPosition: 0
+  m_speakerName: 
+  m_dialogueText: 
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 0}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &7883407327192980991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_6
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_6
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 323, y: 177}
+  m_speakerPosition: 0
+  m_speakerName: Vergre
+  m_dialogueText: Deal! Just please get rid of that rat!
+  m_characterPortrait: {fileID: 21300000, guid: a69a12e914b1bb545915979e87728b70,
+    type: 3}
+  m_nextNode: {fileID: 6227793621379400342}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &8485325484590717188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_2
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_2
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 182.79987, y: 36.399994}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: Are you afraid of rats, Mr. Vergre?
+  m_characterPortrait: {fileID: 21300000, guid: 952d7665a12110b4796a39192a5c3332,
+    type: 3}
+  m_nextNode: {fileID: -6831869115065462841}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 

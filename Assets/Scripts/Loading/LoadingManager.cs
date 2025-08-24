@@ -22,44 +22,41 @@ public class LoadingManager : MonoBehaviour
         StartCoroutine(LoadRoutine(targetScene, playIntro));
     }
 
-
-    private IEnumerator LoadRoutine(string targetScene, bool playIntro)
+    public IEnumerator LoadRoutine(string targetScene, bool playIntro)
     {
-        var asyncOp = SceneManager.LoadSceneAsync(targetScene);
-        asyncOp.allowSceneActivation = false;
+        // 1) 메인 씬 비동기 로드 시작 (활성화 잠금)
+        var op = SceneManager.LoadSceneAsync(targetScene);
+        op.allowSceneActivation = false;
 
-        float fakeDuration = 4f; // 페이크 로딩 시간
-        float elapsed = 0f;
+        // 로딩바 초기화
+        if (m_loadingBar) m_loadingBar.value = 0f;
+        yield return null;
 
-        while (elapsed < fakeDuration)
+        // 2) 인트로: 새 게임일 때만 로딩씬에서 재생
+        if (playIntro && GManager.Instance != null && GManager.Instance.IsFirstPlay)
         {
-            elapsed += Time.deltaTime;
-            float fakeProgress = Mathf.Clamp01(elapsed / fakeDuration);
-            m_loadingBar.value = fakeProgress;
+            yield return GManager.Instance.PlayIntroAndWait("Video/OP_KR.ver");
+            GManager.Instance.IsFirstPlay = false;
+        }
 
+        // 3) 로딩 완료까지 대기(진행도 UI 갱신)
+        while (op.progress < 0.9f)
+        {
+            if (m_loadingBar)
+            {
+                // 부드럽게 채우고 싶으면 Lerp, 즉각이면 바로 대입
+                float p = op.progress / 0.9f;
+                m_loadingBar.value = Mathf.MoveTowards(m_loadingBar.value, p, Time.unscaledDeltaTime);
+            }
             yield return null;
         }
+        if (m_loadingBar) m_loadingBar.value = 1f;
 
-        // 페이크 로딩 완료되면 프로그래스 바 1로 세팅
-        m_loadingBar.value = 1f;
+        // 4) 메인 씬 활성화
+        op.allowSceneActivation = true;
 
-        // 실제 씬이 로드 완료될 때까지 대기
-        while (asyncOp.progress < 0.9f)
-        {
-            yield return null;
-        }
-
-        yield return new WaitForSeconds(2f);
-
-        if (playIntro)
-        {
-            var introClip = Resources.Load<VideoClip>("Video/OP_KR.ver");
-            yield return StartCoroutine(GManager.Instance.IsVideoManager.PlayVideoRoutine(introClip));
-        }
-
-        asyncOp.allowSceneActivation = true;
+        // (선택) 다음 로딩을 위해 플래그 리셋
         m_isLoading = false;
     }
 }
-
 

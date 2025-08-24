@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d56d8937882a6b4b8b1974df8d029f1, type: 3}
+  m_Name: Q_M2_0
+  m_EditorClassIdentifier: 
+  m_questID: Q_M2_0
+  m_questType: 0
+  m_title: Retrieve the Magical Artifact
+  m_summary: 
+  m_questSteps:
+  - m_description: Find the Magical Artifact near the Lake
+    m_stepType: 1
+    m_requiredAmount: 0
+    m_targetItem: {fileID: 0}
+    m_targetNpcId: 
+    m_targetMapId: 
+    m_nextQuestID: 
+    m_afterDia: {fileID: 0}
+    m_preDia: {fileID: 0}
+  - m_description: Bring the Clue to Dylan and Talk to Him
+    m_stepType: 3
+    m_requiredAmount: 0
+    m_targetItem: {fileID: 0}
+    m_targetNpcId: Dylan
+    m_targetMapId: 
+    m_nextQuestID: Q_M2_1
+    m_afterDia: {fileID: 0}
+    m_preDia: {fileID: 0}
+  m_rewardItems: []
+  m_rewardGold: 0

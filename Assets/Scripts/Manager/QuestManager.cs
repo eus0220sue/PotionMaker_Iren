@@ -209,6 +209,8 @@ public class QuestManager : MonoBehaviour
             OnQuestProgressChanged?.Invoke(questID, m_currentSteps[questID]);
             Debug.Log("[AdvanceStep] 이벤트 호출 완료");
 
+            GManager.Instance?.SaveNow();
+
             var nextStep = data.m_questSteps[step + 1];
             if (nextStep.m_preDia != null)
             {
@@ -260,6 +262,9 @@ public class QuestManager : MonoBehaviour
 
         SetQuestFlag($"{questID}_Complete", true);
         OnQuestProgressChanged?.Invoke(questID, m_currentSteps[questID]);
+
+        GManager.Instance?.SaveNow();
+
         UpdateQuestInspectorList();
     }
 

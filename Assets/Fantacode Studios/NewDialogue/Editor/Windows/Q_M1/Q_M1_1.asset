@@ -1,0 +1,218 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6831869115065462841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_3
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_3
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 286.60034, y: 113.39995}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: Huh? What's this? Looks like it's made of metal.
+  m_characterPortrait: {fileID: 21300000, guid: 952d7665a12110b4796a39192a5c3332,
+    type: 3}
+  m_nextNode: {fileID: 7689456825589109257}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-4194535444022604628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_0
+  m_EditorClassIdentifier: 
+  m_nodeName: 0
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -473.40002, y: 113.59999}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: Aaah!
+  m_characterPortrait: {fileID: 21300000, guid: 952d7665a12110b4796a39192a5c3332,
+    type: 3}
+  m_nextNode: {fileID: -1666587971315323250}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-3198109200166384244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_5
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_5
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 60, y: 266.99988}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: "Let\u2019s leave this to the expert! Let\u2019s visit Dylan the
+    blacksmith!"
+  m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
+    type: 3}
+  m_nextNode: {fileID: 1397729147981339346}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-1666587971315323250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_1
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_1
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -216.3999, y: 114.999954}
+  m_speakerPosition: 0
+  m_speakerName: Hootie
+  m_dialogueText: Iren! Are you okay?
+  m_characterPortrait: {fileID: 21300000, guid: fe6dac3a9d822244d9577c17b729aaef,
+    type: 3}
+  m_nextNode: {fileID: 8485325484590717188}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c799a5ee1de7de4891b51c16680d12f, type: 3}
+  m_Name: Q_M1_1
+  m_EditorClassIdentifier: 
+  m_nodes:
+  - {fileID: -4194535444022604628}
+  - {fileID: -1666587971315323250}
+  - {fileID: 8485325484590717188}
+  - {fileID: -6831869115065462841}
+  - {fileID: 7689456825589109257}
+  - {fileID: -3198109200166384244}
+  - {fileID: 1397729147981339346}
+--- !u!114 &1397729147981339346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_9
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_9
+  m_nodeID: 
+  m_nodeType: 3
+  m_position: {x: 340.40015, y: 268.99985}
+  m_speakerPosition: 0
+  m_speakerName: 
+  m_dialogueText: 
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 0}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: Max
+--- !u!114 &7689456825589109257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_4
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_4
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -268.80078, y: 268.00006}
+  m_speakerPosition: 0
+  m_speakerName: Hootie
+  m_dialogueText: "Doesn\u2019t seem like ordinary scrap. Look, it's shimmering."
+  m_characterPortrait: {fileID: 21300000, guid: 6f1abee13edd8fd40860175b1f4abc91,
+    type: 3}
+  m_nextNode: {fileID: -3198109200166384244}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &8485325484590717188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_2
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_2
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 24.999878, y: 114.999954}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: I'm fine, I just tripped over something...
+  m_characterPortrait: {fileID: 21300000, guid: 523114771baf753448bd1b3f9451be98,
+    type: 3}
+  m_nextNode: {fileID: -6831869115065462841}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 

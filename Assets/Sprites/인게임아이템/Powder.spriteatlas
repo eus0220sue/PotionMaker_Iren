@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Powder
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 1071df1f2485101439b40a5d27c8ba2c, type: 3}
+    - {fileID: 2800000, guid: 6abca02f2f747494fbad38420d4f4db8, type: 3}
+    - {fileID: 2800000, guid: 88ba48cc470649342a76833776a5ae02, type: 3}
+    - {fileID: 2800000, guid: a5818f746df1e924f9e66cd381060f38, type: 3}
+    - {fileID: 2800000, guid: b7dcc13691af3db45b59dbb99389d511, type: 3}
+    - {fileID: 2800000, guid: 8072f7576f45ba44db92ad29c43597d5, type: 3}
+    - {fileID: 2800000, guid: 9efa8c61394ea3d42a7c549610540a1f, type: 3}
+    - {fileID: 2800000, guid: ff4c42c71d8ad0f4c92f7e01bfd268bb, type: 3}
+    - {fileID: 2800000, guid: 04b1507037141da44954633eaf73276b, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 04b1507037141da44954633eaf73276b: 21300000
+    - 9efa8c61394ea3d42a7c549610540a1f: 21300000
+    - a5818f746df1e924f9e66cd381060f38: 21300000
+    - b7dcc13691af3db45b59dbb99389d511: 21300000
+    - 8072f7576f45ba44db92ad29c43597d5: 21300000
+    - ff4c42c71d8ad0f4c92f7e01bfd268bb: 21300000
+    - 88ba48cc470649342a76833776a5ae02: 21300000
+    - 1071df1f2485101439b40a5d27c8ba2c: 21300000
+    - 6abca02f2f747494fbad38420d4f4db8: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 04b1507037141da44954633eaf73276b, type: 3}
+  - {fileID: 21300000, guid: 9efa8c61394ea3d42a7c549610540a1f, type: 3}
+  - {fileID: 21300000, guid: a5818f746df1e924f9e66cd381060f38, type: 3}
+  - {fileID: 21300000, guid: b7dcc13691af3db45b59dbb99389d511, type: 3}
+  - {fileID: 21300000, guid: 8072f7576f45ba44db92ad29c43597d5, type: 3}
+  - {fileID: 21300000, guid: ff4c42c71d8ad0f4c92f7e01bfd268bb, type: 3}
+  - {fileID: 21300000, guid: 88ba48cc470649342a76833776a5ae02, type: 3}
+  - {fileID: 21300000, guid: 1071df1f2485101439b40a5d27c8ba2c, type: 3}
+  - {fileID: 21300000, guid: 6abca02f2f747494fbad38420d4f4db8, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - C_P_M4_2_Limesweet
+  - C_P_M4_0_Cubic Stone
+  - C_P_M2_0_Glimmer Pebble
+  - C_P_M2_1_Rubber Flower
+  - C_P_M3_0_Golden Wheat
+  - C_P_M4_1_Glim Mushroom
+  - C_P_M1_2_Herbia
+  - C_P_M1_0_Glow Mushroom
+  - C_P_M1_1_Bloomie Moss
+  m_RenderDataMap: {}
+  m_Tag: Powder
+  m_IsVariant: 0

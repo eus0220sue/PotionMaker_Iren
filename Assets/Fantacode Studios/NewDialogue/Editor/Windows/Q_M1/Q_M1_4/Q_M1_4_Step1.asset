@@ -1,0 +1,218 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5521469971934772456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_6
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_6
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 94, y: 300}
+  m_speakerPosition: 0
+  m_speakerName: 
+  m_dialogueText: 
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 0}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-4194535444022604628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_0
+  m_EditorClassIdentifier: 
+  m_nodeName: 0
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -168.59998, y: 158.00003}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: "Hello, Mr. Max! How\u2019s business?"
+  m_characterPortrait: {fileID: 21300000, guid: 10566c80be9afda408424eac58bace0e,
+    type: 3}
+  m_nextNode: {fileID: -664702774661038372}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-664702774661038372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_1
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_1
+  m_nodeID: 
+  m_nodeType: 3
+  m_position: {x: 81, y: 161}
+  m_speakerPosition: 0
+  m_speakerName: Max
+  m_dialogueText: "Thanks to you, all\u2019s good! Want a glass of juice?"
+  m_characterPortrait: {fileID: 21300000, guid: e1a6357d7e3ccf140b5f898a24cfc666,
+    type: 3}
+  m_nextNode: {fileID: -297085492855822795}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-297085492855822795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_2
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_2
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 303, y: 158}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: Can I get something else instead of juice?
+  m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
+    type: 3}
+  m_nextNode: {fileID: 1656777165469427515}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c799a5ee1de7de4891b51c16680d12f, type: 3}
+  m_Name: Q_M1_4_Step1
+  m_EditorClassIdentifier: 
+  m_nodes:
+  - {fileID: -4194535444022604628}
+  - {fileID: -664702774661038372}
+  - {fileID: -297085492855822795}
+  - {fileID: 1656777165469427515}
+  - {fileID: 4691448819998186696}
+  - {fileID: 6586109415259599271}
+  - {fileID: -5521469971934772456}
+--- !u!114 &1656777165469427515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_3
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_3
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 523, y: 158}
+  m_speakerPosition: 0
+  m_speakerName: Max
+  m_dialogueText: Something else? For you, anything! What is it?
+  m_characterPortrait: {fileID: 21300000, guid: e1a6357d7e3ccf140b5f898a24cfc666,
+    type: 3}
+  m_nextNode: {fileID: 4691448819998186696}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &4691448819998186696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_4
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_4
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 743, y: 158}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: The Sun Catcher on the tavern
+  m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
+    type: 3}
+  m_nextNode: {fileID: 6586109415259599271}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &6586109415259599271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_5
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_5
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -181, y: 301}
+  m_speakerPosition: 0
+  m_speakerName: Max
+  m_dialogueText: "Oh, that? You\u2019ll have to talk to Emma, not me. She is the
+    creator and owner of all the tavern\u2019s accessories."
+  m_characterPortrait: {fileID: 21300000, guid: e1a6357d7e3ccf140b5f898a24cfc666,
+    type: 3}
+  m_nextNode: {fileID: -5521469971934772456}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 

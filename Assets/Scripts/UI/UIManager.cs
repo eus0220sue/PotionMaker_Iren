@@ -218,6 +218,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+
     public void OpenQuestUI()
     {
         QuestUIOpenFlag = true;

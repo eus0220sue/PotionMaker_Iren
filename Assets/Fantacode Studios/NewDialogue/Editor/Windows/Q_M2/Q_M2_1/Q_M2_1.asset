@@ -1,0 +1,277 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5851517417589496044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_1
+  m_EditorClassIdentifier: 
+  m_nodeName: 1
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 1.1994019, y: 106.19995}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: "I\u2019ve never seen a lake this dirty. From afar, you might mistake
+    it for a swamp."
+  m_characterPortrait: {fileID: 21300000, guid: 98f77520bbfa8144083a25efaa51d4d2,
+    type: 3}
+  m_nextNode: {fileID: 5463122435850636211}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-986100167773315448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_5
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_5
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -263, y: 344}
+  m_speakerPosition: 0
+  m_speakerName: Hootie
+  m_dialogueText: You sure love picking up more work.
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 8732514824224424839}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c799a5ee1de7de4891b51c16680d12f, type: 3}
+  m_Name: Q_M2_1
+  m_EditorClassIdentifier: 
+  m_nodes:
+  - {fileID: 7201767837969887034}
+  - {fileID: -5851517417589496044}
+  - {fileID: 5463122435850636211}
+  - {fileID: 3047050357002580982}
+  - {fileID: 4891309281616103187}
+  - {fileID: -986100167773315448}
+  - {fileID: 8732514824224424839}
+  - {fileID: 3466655243644312111}
+  - {fileID: 7453213832976698010}
+--- !u!114 &3047050357002580982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_3
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_3
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 552.59827, y: 103.19995}
+  m_speakerPosition: 1
+  m_speakerName: Hootie
+  m_dialogueText: "All the surrounding plants are withered. I bet even the animals
+    around here haven\u2019t had clean water for a while."
+  m_characterPortrait: {fileID: 21300000, guid: 87091056cf6777447be6a8c934747625,
+    type: 3}
+  m_nextNode: {fileID: 4891309281616103187}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &3466655243644312111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_7
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_7
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 296, y: 344}
+  m_speakerPosition: 0
+  m_speakerName: Hootie
+  m_dialogueText: "Then we better hurry! That beaver might strip the whole tree if
+    we\u2019re too slow!"
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 7453213832976698010}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &4891309281616103187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_4
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_4
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 812, y: 99}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: "This can\u2019t go on. Let\u2019s purify the lake with the Purification
+    Drops. No matter how busy we are, we can\u2019t ignore this."
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: -986100167773315448}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &5463122435850636211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_2
+  m_EditorClassIdentifier: 
+  m_nodeName: 2
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 293.5985, y: 103.19995}
+  m_speakerPosition: 1
+  m_speakerName: Iren
+  m_dialogueText: "The lake we saw in the forest was beautiful\u2026 What could\u2019ve
+    happened while we were in town?"
+  m_characterPortrait: {fileID: 21300000, guid: 87091056cf6777447be6a8c934747625,
+    type: 3}
+  m_nextNode: {fileID: 3047050357002580982}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &7201767837969887034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_0
+  m_EditorClassIdentifier: 
+  m_nodeName: 0
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -267.00037, y: 113.3999}
+  m_speakerPosition: 1
+  m_speakerName: Hootie
+  m_dialogueText: "Iren, is this really the lake? It\u2019s all muddy."
+  m_characterPortrait: {fileID: 21300000, guid: 98f77520bbfa8144083a25efaa51d4d2,
+    type: 3}
+  m_nextNode: {fileID: -5851517417589496044}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &7453213832976698010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_8
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_8
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 561, y: 344}
+  m_speakerPosition: 0
+  m_speakerName: 
+  m_dialogueText: 
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 0}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &8732514824224424839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_6
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_6
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 14, y: 345}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: "Don\u2019t complain, we\u2019ve already started.Let's find Purification
+    Tree to get some sap."
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 3466655243644312111}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 

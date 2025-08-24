@@ -244,7 +244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 2544856234916266083}
   quantityText: {fileID: 6849251099028361213}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 6692985060329696219}
 --- !u!1 &382948160901619208
 GameObject:
@@ -1769,7 +1770,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 5745957459334297000}
   quantityText: {fileID: 8061615914797062166}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 6984925507257281788}
 --- !u!1 &1908768562074968122
 GameObject:
@@ -2603,7 +2605,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 5719599572231418285}
   quantityText: {fileID: 6289193744337684936}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 4475590711288494648}
 --- !u!1 &2408037739243177286
 GameObject:
@@ -2698,7 +2701,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 7428911505294882659}
   quantityText: {fileID: 1835462362656203794}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 971572047525690539}
 --- !u!1 &2417758245323544222
 GameObject:
@@ -2869,7 +2873,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 2258692958862683687}
   quantityText: {fileID: 6519636131038698562}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 3128908147603458288}
 --- !u!1 &2600473888788244024
 GameObject:
@@ -3341,7 +3346,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 7502806593553334742}
   quantityText: {fileID: 5637032968302351033}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 8110048717275637991}
 --- !u!1 &2890105041574372989
 GameObject:
@@ -3436,7 +3442,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 122308770487359638}
   quantityText: {fileID: 8132544304078749938}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 6110263466293919740}
 --- !u!1 &3077055323841034922
 GameObject:
@@ -4817,7 +4824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5765955667720498029
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4832,6 +4839,7 @@ RectTransform:
   m_Children:
   - {fileID: 4930725776277128354}
   - {fileID: 7332211105001802057}
+  - {fileID: 4558820887159470134}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4892,22 +4900,9 @@ MonoBehaviour:
   m_shopUI: {fileID: 4063880733994581623}
   m_exchangeManager: {fileID: 0}
   m_shopGoodsList:
-  - {fileID: 11400000, guid: da3a8b620a1cdb8419d4e21d260efd94, type: 2}
-  - {fileID: 11400000, guid: 4b925b31f3f7f6041a0a30c048c1422e, type: 2}
-  - {fileID: 11400000, guid: dd266de2b27c51849b5af192a2ffed31, type: 2}
-  - {fileID: 11400000, guid: dacbc5f725f0b4d40b3a9c66ed1ca766, type: 2}
-  - {fileID: 11400000, guid: 4b925b31f3f7f6041a0a30c048c1422e, type: 2}
-  - {fileID: 11400000, guid: 2a643c52ab99e58449fa76a017a25590, type: 2}
-  - {fileID: 11400000, guid: 4b925b31f3f7f6041a0a30c048c1422e, type: 2}
-  - {fileID: 11400000, guid: 4b925b31f3f7f6041a0a30c048c1422e, type: 2}
-  - {fileID: 11400000, guid: 4b925b31f3f7f6041a0a30c048c1422e, type: 2}
-  - {fileID: 11400000, guid: 4b925b31f3f7f6041a0a30c048c1422e, type: 2}
-  - {fileID: 11400000, guid: 4b925b31f3f7f6041a0a30c048c1422e, type: 2}
-  - {fileID: 11400000, guid: 4b925b31f3f7f6041a0a30c048c1422e, type: 2}
-  - {fileID: 11400000, guid: 4b925b31f3f7f6041a0a30c048c1422e, type: 2}
-  - {fileID: 11400000, guid: 4b925b31f3f7f6041a0a30c048c1422e, type: 2}
-  - {fileID: 11400000, guid: 4b925b31f3f7f6041a0a30c048c1422e, type: 2}
-  - {fileID: 11400000, guid: 4b925b31f3f7f6041a0a30c048c1422e, type: 2}
+  - {fileID: 11400000, guid: a8d1e9f08ce0dfd469a16edc02d2f1df, type: 2}
+  - {fileID: 11400000, guid: fbb4994e91449ca46af2ab6212b86637, type: 2}
+  - {fileID: 11400000, guid: 16e21f03d1b8781408a7f86eba5489cf, type: 2}
   m_sellSlot:
   - {fileID: 2512492895847905090}
   - {fileID: 8196963845548111640}
@@ -4942,6 +4937,12 @@ MonoBehaviour:
   selectedSprite: {fileID: 21300000, guid: 9ca6271e50d5f8947a120e94ec8b061c, type: 3}
   m_sellGroup: {fileID: 6938012878824474662}
   m_purchaseGroup: {fileID: 905262476611608901}
+  currentIndex: 0
+  holdDelay: 0.5
+  repeatRate: 0.1
+  holdTimer: 0
+  currentTab: 0
+  selectedIndex: 0
 --- !u!1 &4174386134115450876
 GameObject:
   m_ObjectHideFlags: 0
@@ -5186,7 +5187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 8061764485579406111}
   quantityText: {fileID: 6017701675646229441}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 5608419623034537619}
 --- !u!1 &4266448704162095806
 GameObject:
@@ -5491,7 +5493,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 2375521046046753085}
   quantityText: {fileID: 7165314592130187261}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 6902465824630303634}
 --- !u!1 &4629782176796046200
 GameObject:
@@ -5586,7 +5589,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 2356471641088727746}
   quantityText: {fileID: 2005717817861495648}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 640095949973666588}
 --- !u!1 &4686862700620658558
 GameObject:
@@ -6420,7 +6424,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 6772783353918528217}
   quantityText: {fileID: 7068815313077665769}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 5122480542061356510}
 --- !u!1 &5192946570144847218
 GameObject:
@@ -7103,7 +7108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 3260717542584169432}
   quantityText: {fileID: 6695297609942549369}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 792669628938542708}
 --- !u!1 &5413792786784943690
 GameObject:
@@ -7273,7 +7279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 7431424524250368144}
   quantityText: {fileID: 1906633244786398092}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 5413792786784943690}
 --- !u!1 &5608419623034537619
 GameObject:
@@ -8047,7 +8054,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 4317656475085754574}
   quantityText: {fileID: 8024407453564270311}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 2675294898182168393}
 --- !u!1 &6214772275077067745
 GameObject:
@@ -8142,7 +8150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 6378950458603804864}
   quantityText: {fileID: 2712633020525939429}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 6486676996865943906}
 --- !u!1 &6354535681685490243
 GameObject:
@@ -8388,7 +8397,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 8411956847176816458}
   quantityText: {fileID: 1073296183391070634}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 6841294231713714871}
 --- !u!1 &6486676996865943906
 GameObject:
@@ -8634,7 +8644,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 3792482488675068051}
   quantityText: {fileID: 7382453472437012300}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 4890218457868872231}
 --- !u!1 &6577161249112490628
 GameObject:
@@ -8729,7 +8740,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 9189953681277426485}
   quantityText: {fileID: 6174463829722287858}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 3766269505644959987}
 --- !u!1 &6607652233446306905
 GameObject:
@@ -9050,7 +9062,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 8616981631403560958}
   quantityText: {fileID: 1964144351173495952}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 1850633915507085754}
 --- !u!1 &6729899562656355314
 GameObject:
@@ -9203,6 +9216,81 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 2, y: 2}
   m_UseGraphicAlpha: 1
+--- !u!1 &6789973405494298272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4558820887159470134}
+  - component: {fileID: 9030155119079203952}
+  - component: {fileID: 3874689741276275596}
+  m_Layer: 5
+  m_Name: POPUpPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4558820887159470134
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6789973405494298272}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5765955667720498029}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &9030155119079203952
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6789973405494298272}
+  m_CullTransparentMesh: 1
+--- !u!114 &3874689741276275596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6789973405494298272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6821104813937266138
 GameObject:
   m_ObjectHideFlags: 0
@@ -9522,7 +9610,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 1726750798729278294}
   quantityText: {fileID: 2710026304026666151}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 3657199785541253971}
 --- !u!1 &6866062641164895927
 GameObject:
@@ -10621,7 +10710,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 604829331093929770}
   quantityText: {fileID: 8429793013921094665}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 382948160901619208}
 --- !u!1 &7163261866318599668
 GameObject:
@@ -10791,7 +10881,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 7381189701478723417}
   quantityText: {fileID: 7293429426638515751}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 8531575620491636561}
 --- !u!1 &7198473870154103331
 GameObject:
@@ -11565,7 +11656,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 676671560996715875}
   quantityText: {fileID: 3159021412998696409}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 1591421886176330573}
 --- !u!1 &7872309342946938537
 GameObject:
@@ -12719,7 +12811,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 4503237363601505715}
   quantityText: {fileID: 4539328693211451112}
-  nowQuantity: 0
+  m_nowQuantity: 0
+  m_itemData: {fileID: 0}
   m_selected: {fileID: 4038605134411958506}
 --- !u!1 &8987139589518113860
 GameObject:

@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: P_I_L1
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: d1a22b44f7f87284cbddc08daa82624a, type: 3}
+    - {fileID: 2800000, guid: 1351c453ce23b8e4e957789fd79c1a3e, type: 3}
+    - {fileID: 2800000, guid: d0091e86ab4fa6740acdd6997482bf5b, type: 3}
+    - {fileID: 2800000, guid: 96288e2af289c2e4c894d9235d1790e6, type: 3}
+    - {fileID: 2800000, guid: 4fa4a021ee2cb4c4eac8eb42eb950c45, type: 3}
+    - {fileID: 2800000, guid: f84b2acc7e01c7f4e9fd9c0f602144d0, type: 3}
+    - {fileID: 2800000, guid: f0c844bd26120274a96192d6e5c73e66, type: 3}
+    - {fileID: 2800000, guid: 862341e71f3c78642afc3818dfdd56a2, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 4fa4a021ee2cb4c4eac8eb42eb950c45: 21300000
+    - 1351c453ce23b8e4e957789fd79c1a3e: 21300000
+    - d1a22b44f7f87284cbddc08daa82624a: 21300000
+    - d0091e86ab4fa6740acdd6997482bf5b: 21300000
+    - 862341e71f3c78642afc3818dfdd56a2: 21300000
+    - 96288e2af289c2e4c894d9235d1790e6: 21300000
+    - f84b2acc7e01c7f4e9fd9c0f602144d0: 21300000
+    - f0c844bd26120274a96192d6e5c73e66: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 4fa4a021ee2cb4c4eac8eb42eb950c45, type: 3}
+  - {fileID: 21300000, guid: 1351c453ce23b8e4e957789fd79c1a3e, type: 3}
+  - {fileID: 21300000, guid: d1a22b44f7f87284cbddc08daa82624a, type: 3}
+  - {fileID: 21300000, guid: d0091e86ab4fa6740acdd6997482bf5b, type: 3}
+  - {fileID: 21300000, guid: 862341e71f3c78642afc3818dfdd56a2, type: 3}
+  - {fileID: 21300000, guid: 96288e2af289c2e4c894d9235d1790e6, type: 3}
+  - {fileID: 21300000, guid: f84b2acc7e01c7f4e9fd9c0f602144d0, type: 3}
+  - {fileID: 21300000, guid: f0c844bd26120274a96192d6e5c73e66, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - P_I_L1_4_Healing Potion
+  - P_I_L1_1_Moonlight Potion
+  - P_I_L1_0_Growth Boost Potion
+  - P_I_L1_2_Forest Herbicide
+  - P_I_L1_7_Sticky Potion
+  - P_I_L1_3_Dewdrop Potion
+  - P_I_L1_5_Dulling Potion
+  - P_I_L1_6_Fruit Juice
+  m_RenderDataMap: {}
+  m_Tag: P_I_L1
+  m_IsVariant: 0

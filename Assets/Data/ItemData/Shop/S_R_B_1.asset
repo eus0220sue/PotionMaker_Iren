@@ -17,5 +17,7 @@ MonoBehaviour:
   m_itemName: "\uC911\uAE09 \uD3EC\uC158 \uC720\uB9AC\uBCD1"
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: 7cd7e21d4016b994daf3a82f74b64f7a, type: 3}
-  description: "1\uC911\uAE09 \uD3EC\uC158 \uC81C\uC791\uC744 \uC704\uD55C \uC720\uB9AC\uBCD1"
+  m_buyPrice: 200
+  m_sellPrice: 400
+  m_description: 
   m_usableItem: 0

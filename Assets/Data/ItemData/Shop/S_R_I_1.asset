@@ -17,9 +17,7 @@ MonoBehaviour:
   m_itemName: "\uCE58\uC720 \uC54C\uB85C\uC5D0"
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: 512682233c5b9bc4facbddfa03177185, type: 3}
-  description: "\uCD09\uCD09\uD55C \uC810\uC561\uC9C8\uC744 \uAC00\uC9C4 \uC54C\uB85C\uC5D0\uB85C,
-    \uD53C\uBD80 \uC7AC\uC0DD\uC5D0 \uD0C1\uC6D4\uD55C \uD6A8\uACFC\uB97C \uBCF4\uC778\uB2E4.
-    \uC5D0\uC13C\uC2A4\uB85C \uB18D\uCD95\uD574\uC11C \uC4F8 \uC2DC, \uD53C\uBD80\uC758
-    \uC5F4\uC744 \uBE60\uB974\uAC8C \uC2DD\uD600\uC8FC\uACE0, \uB048\uC801\uD55C
-    \uC810\uC131\uC774 \uC0C1\uCC98\uB97C \uC77C\uC2DC\uC801\uC73C\uB85C \uC9C0\uD608\uD55C\uB2E4."
+  m_buyPrice: 200
+  m_sellPrice: 10
+  m_description: 
   m_usableItem: 0

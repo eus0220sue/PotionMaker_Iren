@@ -1,0 +1,541 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7183511383266125213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_15
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_15
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -250, y: 312}
+  m_speakerPosition: 0
+  m_speakerName: Hootie
+  m_dialogueText: Talking about sparkles... What a jerk.
+  m_characterPortrait: {fileID: 21300000, guid: 9aa1d00674d687b46836eeca0db3818f,
+    type: 3}
+  m_nextNode: {fileID: 3159221499473480945}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-5814604679734095561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_6
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_6
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -1316, y: 107}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: Do you know where that floating outsider went?
+  m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
+    type: 3}
+  m_nextNode: {fileID: 4260921201164428017}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-4678938542946830134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_10
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_10
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -7, y: 105}
+  m_speakerPosition: 0
+  m_speakerName: Nix
+  m_dialogueText: Being surrounded by dull things like you two has wiped my memory.
+  m_characterPortrait: {fileID: 21300000, guid: f27d28361a881b241a88dad8dd32add2,
+    type: 3}
+  m_nextNode: {fileID: 4630239859141422509}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-4194535444022604628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_0
+  m_EditorClassIdentifier: 
+  m_nodeName: 0
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -1356.8, y: -65.99997}
+  m_speakerPosition: 1
+  m_speakerName: ???
+  m_dialogueText: Hey, outsider! Stop running around and making a mess!
+  m_characterPortrait: {fileID: 21300000, guid: c2f0765f02a95cd428e6032c986dff76,
+    type: 3}
+  m_nextNode: {fileID: -1666587971315323250}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-3698183536970121443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_3
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_3
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -590, y: -62}
+  m_speakerPosition: 0
+  m_speakerName: Nix
+  m_dialogueText: "Last time it was some flower-carrying outsider who got on my nerves,
+    now it\u2019s two little brats. How annoying."
+  m_characterPortrait: {fileID: 21300000, guid: f27d28361a881b241a88dad8dd32add2,
+    type: 3}
+  m_nextNode: {fileID: 472681401716328861}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-2813167454986823107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_17
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_17
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 320, y: 304}
+  m_speakerPosition: 0
+  m_speakerName: 
+  m_dialogueText: 
+  m_characterPortrait: {fileID: 0}
+  m_nextNode: {fileID: 0}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-2712872664599504210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_5
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_5
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 32, y: -63}
+  m_speakerPosition: 0
+  m_speakerName: Nix
+  m_dialogueText: "Yeah, big golden flower. But that outsider wasn\u2019t human like
+    you. It floated."
+  m_characterPortrait: {fileID: 21300000, guid: f27d28361a881b241a88dad8dd32add2,
+    type: 3}
+  m_nextNode: {fileID: -5814604679734095561}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-2402185819506183633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_2
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_2
+  m_nodeID: 
+  m_nodeType: 3
+  m_position: {x: -864, y: -61}
+  m_speakerPosition: 0
+  m_speakerName: ???
+  m_dialogueText: Up here. In the tree. I'm Nix how live in this sparkly beutiful
+    tree.
+  m_characterPortrait: {fileID: 21300000, guid: f27d28361a881b241a88dad8dd32add2,
+    type: 3}
+  m_nextNode: {fileID: -3698183536970121443}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-1666587971315323250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_1
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_1
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -1110.6, y: -68.600006}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: "Where\u2019s that voice coming from?"
+  m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
+    type: 3}
+  m_nextNode: {fileID: -2402185819506183633}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &-573807244067045513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_9
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_9
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -294, y: 105}
+  m_speakerPosition: 0
+  m_speakerName: Nix
+  m_dialogueText: "Oh no... I can\u2019t think straight unless I see something sparkly."
+  m_characterPortrait: {fileID: 21300000, guid: f27d28361a881b241a88dad8dd32add2,
+    type: 3}
+  m_nextNode: {fileID: -4678938542946830134}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c799a5ee1de7de4891b51c16680d12f, type: 3}
+  m_Name: Q_M1_4
+  m_EditorClassIdentifier: 
+  m_nodes:
+  - {fileID: -4194535444022604628}
+  - {fileID: -1666587971315323250}
+  - {fileID: -2402185819506183633}
+  - {fileID: -3698183536970121443}
+  - {fileID: 472681401716328861}
+  - {fileID: -2712872664599504210}
+  - {fileID: -5814604679734095561}
+  - {fileID: 4260921201164428017}
+  - {fileID: 5236698730272726361}
+  - {fileID: -573807244067045513}
+  - {fileID: -4678938542946830134}
+  - {fileID: 4630239859141422509}
+  - {fileID: 1697539474213421441}
+  - {fileID: 8812837400072509638}
+  - {fileID: 6852506783660466862}
+  - {fileID: -7183511383266125213}
+  - {fileID: 3159221499473480945}
+  - {fileID: -2813167454986823107}
+--- !u!114 &472681401716328861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_4
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_4
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -278, y: -64}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: 'A flower? '
+  m_characterPortrait: {fileID: 21300000, guid: 952d7665a12110b4796a39192a5c3332,
+    type: 3}
+  m_nextNode: {fileID: -2712872664599504210}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &1697539474213421441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_12
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_12
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -1128, y: 318}
+  m_speakerPosition: 0
+  m_speakerName: Nix
+  m_dialogueText: Yep. Bring me something shiny.
+  m_characterPortrait: {fileID: 21300000, guid: f27d28361a881b241a88dad8dd32add2,
+    type: 3}
+  m_nextNode: {fileID: 8812837400072509638}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &3159221499473480945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_16
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_16
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: 29, y: 315}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: "Don\u2019t be mad, Hootie. What if we give him a Moonlight Potion?
+    That\u2019s shiny."
+  m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
+    type: 3}
+  m_nextNode: {fileID: -2813167454986823107}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &4260921201164428017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_7
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_7
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -899, y: 108}
+  m_speakerPosition: 0
+  m_speakerName: Nix
+  m_dialogueText: "I don\u2019t know where it is now, but I know where it went."
+  m_characterPortrait: {fileID: 21300000, guid: f27d28361a881b241a88dad8dd32add2,
+    type: 3}
+  m_nextNode: {fileID: 5236698730272726361}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &4630239859141422509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_11
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_11
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -1423, y: 316}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: Something sparkly?
+  m_characterPortrait: {fileID: 21300000, guid: 952d7665a12110b4796a39192a5c3332,
+    type: 3}
+  m_nextNode: {fileID: 1697539474213421441}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &5236698730272726361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_8
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_8
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -614, y: 107}
+  m_speakerPosition: 0
+  m_speakerName: Hootie
+  m_dialogueText: "Then tell us where! We\u2019re in a hurry, so be quick."
+  m_characterPortrait: {fileID: 21300000, guid: 9aa1d00674d687b46836eeca0db3818f,
+    type: 3}
+  m_nextNode: {fileID: -573807244067045513}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &6852506783660466862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_14
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_14
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -558, y: 311}
+  m_speakerPosition: 0
+  m_speakerName: Iren
+  m_dialogueText: "Fine, we\u2019ll get you something shiny. But you\u2019d better
+    guide us properly!"
+  m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
+    type: 3}
+  m_nextNode: {fileID: -7183511383266125213}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 
+--- !u!114 &8812837400072509638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03233dc934ba83c498d6dc9d8714aabf, type: 3}
+  m_Name: NewNode_13
+  m_EditorClassIdentifier: 
+  m_nodeName: NewNode_13
+  m_nodeID: 
+  m_nodeType: 0
+  m_position: {x: -856, y: 315}
+  m_speakerPosition: 0
+  m_speakerName: Nix
+  m_dialogueText: "Who knows? Maybe it\u2019ll jog my memory."
+  m_characterPortrait: {fileID: 21300000, guid: f27d28361a881b241a88dad8dd32add2,
+    type: 3}
+  m_nextNode: {fileID: 6852506783660466862}
+  choices: []
+  conditionFlag: 
+  ifTrueNode: {fileID: 0}
+  ifFalseNode: {fileID: 0}
+  m_cutSceneSprite: {fileID: 0}
+  m_talkNpcID: 

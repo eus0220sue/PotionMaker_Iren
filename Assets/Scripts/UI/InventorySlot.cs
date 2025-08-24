@@ -49,6 +49,7 @@ public class InventorySlot : MonoBehaviour
 
 
     public int GetQuantity() => m_nowQuantity;
+    public ItemData GetItemData() => m_itemData;
 
     public void SetSelected(bool isOn)
     {

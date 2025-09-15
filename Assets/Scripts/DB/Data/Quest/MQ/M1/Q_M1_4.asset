@@ -62,5 +62,7 @@ MonoBehaviour:
     m_nextQuestID: Q_M1_5
     m_afterDia: {fileID: 0}
     m_preDia: {fileID: 0}
-  m_rewardItems: []
+  m_rewardItems:
+  - m_item: {fileID: 11400000, guid: 1c4d74b3f226e9e4f92f7427978f666c, type: 2}
+    m_amount: 1
   m_rewardGold: 0

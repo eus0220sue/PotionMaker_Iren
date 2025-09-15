@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: P_L1_1
   m_EditorClassIdentifier: 
   m_itemType: 3
+  m_itemID: 
   m_itemName: "\uB2EC\uBE5B \uBB3C\uC57D"
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: a9d39a97c4416254c9da157d76301f18, type: 3}
-  description: "\uD587\uBE5B\uC744 \uBC1B\uC544 \uC800\uC7A5\uD574 \uB450\uC5C8\uB2E4\uAC00
-    \uC5B4\uB450\uC6B4 \uACF3\uC5D0\uC11C \uC740\uC740\uD55C \uC870\uBA85\uACFC \uAC19\uC774
-    \uBE5B\uB09C\uB2E4. "
-  m_usableItem: 0
+  m_buyPrice: 0
+  m_sellPrice: 0
+  m_description: 
+  m_usableItem: 1

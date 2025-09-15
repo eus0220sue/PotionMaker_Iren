@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d56d8937882a6b4b8b1974df8d029f1, type: 3}
+  m_Name: Q_M3_4
+  m_EditorClassIdentifier: 
+  m_questID: Q_M3_4
+  m_questType: 0
+  m_title: Get Ant Mushroom from the Merchant
+  m_summary: 
+  m_questSteps:
+  - m_description: Talk to the Merchant
+    m_stepType: 4
+    m_requiredAmount: 0
+    m_targetItem: {fileID: 0}
+    m_targetNpcId: Tracie
+    m_targetMapId: 
+    m_nextQuestID: 
+    m_afterDia: {fileID: 0}
+    m_preDia: {fileID: 0}
+  - m_description: Craft Anti-Moss Solution
+    m_stepType: 2
+    m_requiredAmount: 1
+    m_targetItem: {fileID: 11400000, guid: 11587e0551d31744c896594f42651cd3, type: 2}
+    m_targetNpcId: 
+    m_targetMapId: 
+    m_nextQuestID: 
+    m_afterDia: {fileID: 0}
+    m_preDia: {fileID: 0}
+  - m_description: Remove Moss from the Well
+    m_stepType: 3
+    m_requiredAmount: 1
+    m_targetItem: {fileID: 11400000, guid: 11587e0551d31744c896594f42651cd3, type: 2}
+    m_targetNpcId: 
+    m_targetMapId: 
+    m_nextQuestID: 
+    m_afterDia: {fileID: 0}
+    m_preDia: {fileID: 0}
+  - m_description: Collect Clean Water
+    m_stepType: 1
+    m_requiredAmount: 1
+    m_targetItem: {fileID: 11400000, guid: 11587e0551d31744c896594f42651cd3, type: 2}
+    m_targetNpcId: 
+    m_targetMapId: 
+    m_nextQuestID: 
+    m_afterDia: {fileID: 0}
+    m_preDia: {fileID: 0}
+  - m_description: Give Water to the Merchant
+    m_stepType: 3
+    m_requiredAmount: 1
+    m_targetItem: {fileID: 11400000, guid: 11587e0551d31744c896594f42651cd3, type: 2}
+    m_targetNpcId: 
+    m_targetMapId: 
+    m_nextQuestID: Q_M3_5
+    m_afterDia: {fileID: 0}
+    m_preDia: {fileID: 0}
+  m_rewardItems:
+  - m_item: {fileID: 11400000, guid: a263a6c220af70c4d9087860bcc0178b, type: 2}
+    m_amount: 3
+  m_rewardGold: 0

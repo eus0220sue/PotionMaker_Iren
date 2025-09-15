@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gradeType: 2
   m_itemType: 3
-  m_pName: Coming Soon
+  m_pName: Revers Potion
   m_index: 1
-  m_inputI1: {fileID: 0}
-  m_inputI2: {fileID: 0}
+  m_inputI1: {fileID: 11400000, guid: 6b211f472c7c62f4db6dd09e823da7fc, type: 2}
+  m_inputI2: {fileID: 11400000, guid: 92decff4b4d885d48985dbcc0b45de46, type: 2}
   m_outputItemData: {fileID: 0}
   m_OAmount: 1
   m_IAmount1: 1

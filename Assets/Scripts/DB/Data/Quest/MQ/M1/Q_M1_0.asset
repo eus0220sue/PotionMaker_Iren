@@ -26,5 +26,14 @@ MonoBehaviour:
     m_nextQuestID: Q_M1_Step1
     m_afterDia: {fileID: 0}
     m_preDia: {fileID: 0}
+  - m_description: Use Potion to fix bridge
+    m_stepType: 2
+    m_requiredAmount: 1
+    m_targetItem: {fileID: 11400000, guid: dacbc5f725f0b4d40b3a9c66ed1ca766, type: 2}
+    m_targetNpcId: 
+    m_targetMapId: 
+    m_nextQuestID: 
+    m_afterDia: {fileID: 0}
+    m_preDia: {fileID: 0}
   m_rewardItems: []
   m_rewardGold: 0

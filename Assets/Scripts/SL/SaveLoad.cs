@@ -1,56 +1,19 @@
+// SaveLoad.cs
 using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-[Serializable] public class _StringList { public List<string> items = new(); }
-
-[Serializable]
-public class _KeyValueDB
-{
-    [Serializable] public class Entry { public string key; public string value; }
-    public List<Entry> entries = new();           // JsonUtility용
-    [NonSerialized] Dictionary<string, string> map;
-
-    void Ensure()
-    {
-        if (map != null) return;
-        map = new Dictionary<string, string>(StringComparer.Ordinal);
-        foreach (var e in entries) map[e.key] = e.value;
-    }
-
-    public bool TryGet(string key, out string value) { Ensure(); return map.TryGetValue(key, out value); }
-    public void Set(string key, string value)
-    {
-        Ensure();
-        map[key] = value ?? "";
-        int i = entries.FindIndex(e => e.key == key);
-        if (i >= 0) entries[i].value = value ?? "";
-        else entries.Add(new Entry { key = key, value = value ?? "" });
-    }
-    public bool Remove(string key)
-    {
-        Ensure();
-        bool removed = map.Remove(key);
-        if (removed) entries.RemoveAll(e => e.key == key);
-        return removed;
-    }
-    public void Clear() { entries.Clear(); map = null; }
-}
-
 public static class SaveLoad
 {
-    static _KeyValueDB db = new _KeyValueDB();
-    // SaveLoad.cs
+    // KeyDB 인스턴스를 보관
+    static KeyDB db = new KeyDB();
+
     static string PathFor(string name = null)
     {
-        // null 또는 "", "   " → 기본 파일명
         var file = string.IsNullOrWhiteSpace(name) ? "save_slot0.json" : name.Trim();
-
-        // 확장자 없으면 .json 붙이기(선택이지만 권장)
         if (System.IO.Path.GetExtension(file) == string.Empty)
             file += ".json";
-
         return System.IO.Path.Combine(Application.persistentDataPath, file);
     }
 
@@ -114,7 +77,7 @@ public static class SaveLoad
     public static bool HasKey(string k) => db.TryGet(k, out _);
     public static bool Remove(string k) => db.Remove(k);
     public static void Clear() => db.Clear();
-    public static void NewEmpty() => db = new _KeyValueDB();
+    public static void NewEmpty() => db = new KeyDB();
 
     public static void Save(string file = null)
     {
@@ -124,20 +87,15 @@ public static class SaveLoad
         if (!System.IO.Directory.Exists(dir)) System.IO.Directory.CreateDirectory(dir);
 
         var tmp = path + ".tmp";
-
-        // 임시 파일에 먼저 기록
         System.IO.File.WriteAllText(tmp, json);
 
         try
         {
-            // 목적지에 "덮어쓰기"로 복사 → 경합/타이밍 이슈에 강함
-            System.IO.File.Copy(tmp, path, overwrite: true);
+            System.IO.File.Copy(tmp, path, overwrite: true); // 덮어쓰기
         }
         finally
         {
-            // 임시 파일 정리
-            if (System.IO.File.Exists(tmp))
-                System.IO.File.Delete(tmp);
+            if (System.IO.File.Exists(tmp)) System.IO.File.Delete(tmp);
         }
     }
 
@@ -146,7 +104,7 @@ public static class SaveLoad
         var path = PathFor(file);
         if (!File.Exists(path)) return false;
         var json = File.ReadAllText(path);
-        db = JsonUtility.FromJson<_KeyValueDB>(json) ?? new _KeyValueDB();
+        db = JsonUtility.FromJson<KeyDB>(json) ?? new KeyDB();
         return true;
     }
 
@@ -154,5 +112,15 @@ public static class SaveLoad
     {
         var path = PathFor(file);
         if (File.Exists(path)) File.Delete(path);
+    }
+    public static bool Exists(string file = null)
+    {
+        var path = PathFor(file);
+        return System.IO.File.Exists(path);
+    }
+
+    public static string GetSavePath(string file = null)
+    {
+        return PathFor(file);
     }
 }

@@ -1,4 +1,4 @@
-using System;                     // ¡Ú ÀÌº¥Æ®(Action<int>)¿ë
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,15 +6,14 @@ public class ExchangeManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] public InventoryManager InvenManager;   // ÀÎº¥ ¸Å´ÏÀú(ÇÊ¼ö)
-    [SerializeField] public UserData m_userData;             // µî±Þ ¿¬µ¿ O /°ñµå ¿¬µ¿X
+    // [SerializeField] public UserData m_userData;          //  Á¦°Å: SO »ç¿ë ¾È ÇÔ
 
     // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
     // ÅëÈ­(°ñµå)
     // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
     [Header("Currency")]
-    [SerializeField] private int m_gold = 0;                  // ³»ºÎ °ñµå ÀúÀå
-
-    public event Action<int> OnGoldChanged;                   // ¡Ú °ñµå º¯°æ ÀÌº¥Æ®
+    [SerializeField] private int m_gold = 300;                  // ³»ºÎ °ñµå ÀúÀå
+    public event Action<int> OnGoldChanged;
 
     private void Start()
     {
@@ -28,32 +27,75 @@ public class ExchangeManager : MonoBehaviour
     {
         amount = Mathf.Max(0, amount);
         if (m_gold == amount) return;
-
         m_gold = amount;
-
-        OnGoldChanged?.Invoke(m_gold); // ¡Ú º¯°æ ¾Ë¸²
+        OnGoldChanged?.Invoke(m_gold);
     }
 
     private bool SpendGold(int amount)
     {
         if (amount <= 0) return true;
         if (m_gold < amount) return false;
-        SetPlayerGold(m_gold - amount); // ¡Ú Á÷Á¢ ´ëÀÔ ±ÝÁö
+        SetPlayerGold(m_gold - amount);
         return true;
     }
 
     private void AddGold(int amount)
     {
         if (amount <= 0) return;
-        SetPlayerGold(m_gold + amount); // ¡Ú Á÷Á¢ ´ëÀÔ ±ÝÁö
+        SetPlayerGold(m_gold + amount);
+    }
+
+    // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
+    // À¯Àú µî±Þ (ScriptableObject Á¦°ÅÇÏ°í ¿©±â¼­ Á÷Á¢ °ü¸®)
+    // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
+    [Header("User Grade")]
+    [SerializeField] private GradeType.Type m_userGrade = GradeType.Type.Novice;
+    public event Action<GradeType.Type> OnGradeChanged;
+
+    public GradeType.Type GetUserGrade() => m_userGrade;
+
+    public void SetUserGrade(GradeType.Type grade)
+    {
+        if (m_userGrade == grade) return;
+        m_userGrade = grade;
+        OnGradeChanged?.Invoke(m_userGrade);
+    }
+
+    public bool HasRequiredGrade(GradeType.Type required) => m_userGrade >= required;
+
+    // GManager ¼¼ÀÌºê/·Îµå ÆÄÀÌÇÁ¿¡ µî±Þ ¿¬°á
+    private void OnEnable()
+    {
+        if (GManager.Instance != null)
+        {
+            GManager.Instance.OnAfterLoad += ApplyGoldAndGrade;
+            GManager.Instance.OnBeforeSave += PersistGoldAndGrade;
+        }
+    }
+    private void OnDisable()
+    {
+        if (GManager.Instance != null)
+        {
+            GManager.Instance.OnAfterLoad -= ApplyGoldAndGrade;
+            GManager.Instance.OnBeforeSave -= PersistGoldAndGrade;
+        }
+    }
+    private void ApplyGoldAndGrade()
+    {
+        // ÆÄÀÏ ¡æ ¸Þ¸ð¸®
+        SetPlayerGold(SaveLoad.GetInt(Keys.Gold, m_gold));
+        SetUserGrade((GradeType.Type)SaveLoad.GetInt(Keys.Grade, (int)m_userGrade));
+    }
+
+    private void PersistGoldAndGrade()
+    {
+        // ¸Þ¸ð¸® ¡æ KeyDB
+        SaveLoad.SetInt(Keys.Gold, GetPlayerGold());
+        SaveLoad.SetInt(Keys.Grade, (int)GetUserGrade());
     }
 
     // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
     // °¡°Ý Á¤Ã¥
-    // ¿ì¼±¼øÀ§:
-    // 1) ItemDataÀÇ m_buyPrice / m_sellPrice
-    // 2) ÀÎ½ºÆåÅÍ Å×ÀÌºí(m_itemPrices) ¿À¹ö¶óÀÌµå
-    // 3) ±âº»°ª/ÆÇ¸ÅÀ²
     // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
     [Header("Pricing")]
     [Tooltip("°¡°ÝÇ¥¿¡ ¾ø°Å³ª ItemData¿¡ °¡°ÝÀÌ ¾øÀ» ¶§ ¾²´Â ±âº» ±¸¸Å°¡")]
@@ -68,7 +110,7 @@ public class ExchangeManager : MonoBehaviour
     {
         public ItemData Item;
         public int BuyPrice = 0;   // 0ÀÌ¸é ¹Ì¼³Á¤
-        public int SellPrice = -1; // -1ÀÌ¸é ¹Ì¼³Á¤(¡æ ±¸¸Å°¡ * m_sellRate)
+        public int SellPrice = -1; // -1ÀÌ¸é ¹Ì¼³Á¤( ±¸¸Å°¡ * m_sellRate)
     }
 
     [Tooltip("°³º° ¾ÆÀÌÅÛ¿¡ ´ëÇÑ °¡°Ý ¿À¹ö¶óÀÌµå Å×ÀÌºí")]
@@ -77,17 +119,11 @@ public class ExchangeManager : MonoBehaviour
     public int GetBuyPrice(ItemData item)
     {
         if (item == null) return m_defaultBuyPrice;
+        if (item.m_buyPrice > 0) return item.m_buyPrice;
 
-        // 1) ItemData¿¡ ±¸¸Å°¡°¡ ¸í½ÃµÇ¾î ÀÖÀ¸¸é ¿ì¼±
-        if (item.m_buyPrice > 0)
-            return item.m_buyPrice;
-
-        // 2) Å×ÀÌºí ¿À¹ö¶óÀÌµå
         var e = m_itemPrices.Find(x => x.Item == item);
-        if (e != null && e.BuyPrice > 0)
-            return e.BuyPrice;
+        if (e != null && e.BuyPrice > 0) return e.BuyPrice;
 
-        // 3) ±âº»°ª
         return m_defaultBuyPrice;
     }
 
@@ -96,24 +132,15 @@ public class ExchangeManager : MonoBehaviour
         if (item == null)
             return Mathf.Max(1, Mathf.FloorToInt(m_defaultBuyPrice * m_sellRate));
 
-        // 1) ItemData¿¡ ÆÇ¸Å°¡°¡ ¸í½ÃµÇ¾î ÀÖÀ¸¸é ¿ì¼±
-        if (item.m_sellPrice > 0)
-            return item.m_sellPrice;
+        if (item.m_sellPrice > 0) return item.m_sellPrice;
 
-        // 2) Å×ÀÌºí ¿À¹ö¶óÀÌµå
         var e = m_itemPrices.Find(x => x.Item == item);
-        if (e != null && e.SellPrice > 0)
-            return e.SellPrice;
+        if (e != null && e.SellPrice > 0) return e.SellPrice;
 
-        // 3) ±¸¸Å°¡ * ÆÇ¸ÅÀ²
         int buy = GetBuyPrice(item);
         return Mathf.Max(1, Mathf.FloorToInt(buy * m_sellRate));
     }
 
-    /// <summary>
-    /// º¸À¯ °ñµå ±âÁØ ÃÖ´ë ±¸¸Å °¡´É ¼ö·®(Àç°í/ÀÎº¥ Á¦ÇÑ ¹ÌÆ÷ÇÔ).
-    /// Àç°í/ÀÎº¥ Á¦ÇÑÀÌ ÀÖ´Ù¸é È£ÃâÃ³¿¡¼­ Min Ã³¸®ÇØÁà.
-    /// </summary>
     public int GetAffordableMax(ItemData item)
     {
         int unit = GetBuyPrice(item);
@@ -123,9 +150,8 @@ public class ExchangeManager : MonoBehaviour
         return Mathf.Max(0, affordable);
     }
 
-
     // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
-    // ±¸¸Å/ÆÇ¸Å Æ®·£Àè¼Ç
+    // ±¸¸Å/ÆÇ¸Å
     // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
     public bool TryBuy(ItemData item, int qty)
     {
@@ -140,14 +166,12 @@ public class ExchangeManager : MonoBehaviour
 
         int total = unit * qty;
 
-        // ÀçÈ­ Â÷°¨
         if (!SpendGold(total))
         {
             Debug.Log($"[Shop] °ñµå ºÎÁ·: ÇÊ¿ä {total}, º¸À¯ {m_gold}");
             return false;
         }
 
-        // ÀÎº¥ Ã¼Å©
         if (InvenManager == null || InvenManager.IsInventoryData == null)
         {
             Debug.LogWarning("[Shop] InvenManager/InventoryData°¡ ¿¬°áµÇ¾î ÀÖÁö ¾Ê½À´Ï´Ù.");
@@ -187,16 +211,9 @@ public class ExchangeManager : MonoBehaviour
         return true;
     }
 
-    // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
-    // Á¦ÀÛ(±âÁ¸ À¯Áö)
-    // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
-    [Header("Craft / Grade")]
-    public GradeType m_gradeType; // µî±Þ »ç¿ëÃ³°¡ ÀÖÀ¸¸é À¯Áö
-
     public void Craft(CraftData data)
     {
         if (InvenManager == null || InvenManager.IsInventoryData == null) { Debug.LogWarning("[Craft] ÀÎº¥ ¹Ì¿¬°á"); return; }
-
         if (!InvenManager.IsInventoryData.HasItem(data.IsInputItemData, data.IsIAmount)) return;
         if (!InvenManager.IsInventoryData.HasSpaceForItem(data.IsOutputItemData, data.IsOAmount)) return;
 
@@ -207,7 +224,6 @@ public class ExchangeManager : MonoBehaviour
     public void OilCraft(OilCraftData data)
     {
         if (InvenManager == null || InvenManager.IsInventoryData == null) { Debug.LogWarning("[OilCraft] ÀÎº¥ ¹Ì¿¬°á"); return; }
-
         if (!InvenManager.IsInventoryData.HasItem(data.IsInputI1, data.IsIAmount1)) return;
         if (!InvenManager.IsInventoryData.HasSpaceForItem(data.IsOutputItem, data.IsOAmount)) return;
 
@@ -218,13 +234,13 @@ public class ExchangeManager : MonoBehaviour
 
     public void PotionCraft(PotionCraftData data)
     {
-        if (m_userData != null && m_userData.IsGrade < data.IsGradeType)
+        // µî±Þ Ã¼Å©: SO ´ë½Å ³»ºÎ µî±Þ »ç¿ë
+        if (m_userGrade < data.IsGradeType)
         {
             Debug.Log("[PotionCraft] µî±ÞÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
             return;
         }
         if (InvenManager == null || InvenManager.IsInventoryData == null) { Debug.LogWarning("[PotionCraft] ÀÎº¥ ¹Ì¿¬°á"); return; }
-
         if (!InvenManager.IsInventoryData.HasItem(data.IsInputI1, data.IsIAmount1)) return;
         if (!InvenManager.IsInventoryData.HasSpaceForItem(data.IsOutputItem, data.IsOAmount)) return;
 
@@ -232,6 +248,15 @@ public class ExchangeManager : MonoBehaviour
         InvenManager.ConsumeItem(data.IsInputI2, data.IsIAmount2);
         InvenManager.AddItem(data.IsOutputItem, data.IsOAmount);
     }
+
+    // È£È¯¿ë º°Äª (±âÁ¸ ÄÚµå°¡ GetPlayerGrade/SetPlayerGrade¸¦ È£ÃâÇØµµ OK)
+    public GradeType.Type GetPlayerGrade() => GetUserGrade();
+    public void SetPlayerGrade(GradeType.Type grade) => SetUserGrade(grade);
+
+    // int ¹öÀüÀÌ ÇÊ¿äÇÑ ÄÚµå°¡ ÀÖ´Ù¸é ÇÔ²² Á¦°ø
+    public int GetPlayerGradeInt() => (int)GetUserGrade();
+    public void SetPlayerGradeInt(int gradeInt) => SetUserGrade((GradeType.Type)gradeInt);
+
 
 #if UNITY_EDITOR
     private void OnValidate()

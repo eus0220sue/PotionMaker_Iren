@@ -17,10 +17,9 @@ MonoBehaviour:
   m_nodeType: 0
   m_position: {x: 695, y: 80.80069}
   m_speakerPosition: 0
-  m_speakerName: "\uC774\uB80C"
-  m_dialogueText: "\uB2EC\uBE5B \uBB3C\uC57D\uC774\uB77C... \uAD50\uC721 \uC2DC\uAC04\uC5D0
-    \uB4E4\uC5B4\uBCF8 \uAC83 \uAC19\uC740\uB370, \uAE30\uC5B5\uC774 \uC798 \uC548
-    \uB098\uB124."
+  m_speakerName: Iren
+  m_dialogueText: "A Moonlight Potion... I think I learned about it during training,
+    but I don\u2019t remember too well."
   m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
     type: 3}
   m_nextNode: {fileID: -5704105000068147336}
@@ -47,8 +46,8 @@ MonoBehaviour:
   m_nodeType: 0
   m_position: {x: 385.6003, y: -83.60005}
   m_speakerPosition: 1
-  m_speakerName: "\uB9E5\uC2A4"
-  m_dialogueText: "\uADF8\uB7F0\uB370, \uB108\uB294 \uCC98\uC74C \uBCF4\uB294 \uC5BC\uAD74\uC778\uB370? "
+  m_speakerName: Max
+  m_dialogueText: 'By the way, you look new around here. '
   m_characterPortrait: {fileID: 21300000, guid: e1a6357d7e3ccf140b5f898a24cfc666,
     type: 3}
   m_nextNode: {fileID: 7689456825589109257}
@@ -75,11 +74,9 @@ MonoBehaviour:
   m_nodeType: 0
   m_position: {x: 136.39978, y: 66.7999}
   m_speakerPosition: 0
-  m_speakerName: "\uC774\uB80C"
-  m_dialogueText: "\uB3C4\uC640\uB4DC\uB9B4 \uC218\uB294 \uC788\uC9C0\uB9CC... \uC81C\uAC00
-    \uC544\uC9C1 \uC2E0\uC785\uC774\uB77C\uC11C \uD3EC\uC158 \uC81C\uC791\uD558\uB294
-    \uB370, \uC2DC\uAC04\uC774 \uC880 \uAC78\uB9B4 \uC218 \uC788\uC5B4\uC694. \uADF8\uB798\uB3C4
-    \uAD1C\uCC2E\uC73C\uC2DC\uACA0\uC5B4\uC694?"
+  m_speakerName: Iren
+  m_dialogueText: "I\u2019d be happy to help... but since I\u2019m still new, making
+    a potion might take me some time. Are you okay with that?"
   m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
     type: 3}
   m_nextNode: {fileID: -4389381422043417602}
@@ -106,10 +103,9 @@ MonoBehaviour:
   m_nodeType: 0
   m_position: {x: 960.59985, y: 79.99997}
   m_speakerPosition: 1
-  m_speakerName: "\uD6C4\uD2F0"
-  m_dialogueText: "\uC774\uB80C, F \uB97C \uB20C\uB7EC \uB3C4\uAC10\uC744 \uC5F4\uC5B4
-    \uBD10. \uAC70\uAE30\uC5D0 \uAD50\uC721 \uC2DC\uAC04\uC5D0 \uBC30\uC6E0\uB358
-    \uD3EC\uC158 \uB808\uC2DC\uD53C\uAC00 \uC788\uC744 \uAC70\uC57C."
+  m_speakerName: Hooty
+  m_dialogueText: Iren, open your potion compendium. The recipes you learned during
+    training should be in there.
   m_characterPortrait: {fileID: 21300000, guid: c98dbd1280d819c419ff559e07d8b490,
     type: 3}
   m_nextNode: {fileID: 1397729147981339346}
@@ -136,10 +132,9 @@ MonoBehaviour:
   m_nodeType: 0
   m_position: {x: 388.60037, y: 64.99991}
   m_speakerPosition: 1
-  m_speakerName: "\uB9E5\uC2A4"
-  m_dialogueText: "\uADF8\uB7FC! \uC544\uBB34\uB834 \uC77C\uC8FC\uC77C\uBCF4\uB2E4
-    \uB354 \uAC78\uB9AC\uACA0\uC5B4? \uC5EC\uAE30\uC11C \uAE30\uB2E4\uB9B4\uD14C\uB2C8,
-    \uC644\uC131\uD558\uBA74 \uB2E4\uC2DC \uB0A0 \uCC3E\uC544\uC624\uB834."
+  m_speakerName: Max
+  m_dialogueText: "Of course! It won't take longer than a week, right? I\u2019ll
+    be waiting right here, so come find me once it\u2019s ready."
   m_characterPortrait: {fileID: 21300000, guid: e1a6357d7e3ccf140b5f898a24cfc666,
     type: 3}
   m_nextNode: {fileID: -6942252593728253970}
@@ -166,9 +161,8 @@ MonoBehaviour:
   m_nodeType: 0
   m_position: {x: -374.40002, y: -83.40001}
   m_speakerPosition: 1
-  m_speakerName: "\uB9E5\uC2A4"
-  m_dialogueText: "\uC774\uC81C \uC5B4\uCA4C\uBA74 \uC88B\uC9C0? \uC7A5\uC0AC \uB2E4
-    \uB9DD\uD558\uACA0\uB124."
+  m_speakerName: Max
+  m_dialogueText: What am I gonna do now? It's all messed up...
   m_characterPortrait: {fileID: 21300000, guid: 4d7deb36431492a468d2e650bfe7c2f8,
     type: 3}
   m_nextNode: {fileID: -1666587971315323250}
@@ -195,10 +189,9 @@ MonoBehaviour:
   m_nodeType: 0
   m_position: {x: -348, y: 61.999878}
   m_speakerPosition: 1
-  m_speakerName: "\uB9E5\uC2A4"
-  m_dialogueText: "\uB09C \uC774 \uC8FC\uC810\uC758 \uC8FC\uC778\uC778 \uB9E5\uC2A4\uC57C.
-    \uC7A0\uAE50, \uD3EC\uC158 \uBD80\uC11C? \uB4DC\uB514\uC5B4, \uC6B0\uB9AC \uB9C8\uC744\uC5D0\uB3C4
-    \uD3EC\uC158 \uC81C\uC791\uC790\uAC00 \uC654\uAD6C\uB098! \uC815\uB9D0 \uB2E4\uD589\uC774\uC57C!"
+  m_speakerName: Max
+  m_dialogueText: "I\u2019m Max, the owner of this tavern. Wait, the Potion Department?
+    So we finally have a potion maker in town! That\u2019s a relief!"
   m_characterPortrait: {fileID: 21300000, guid: e1a6357d7e3ccf140b5f898a24cfc666,
     type: 3}
   m_nextNode: {fileID: 1757587956252754487}
@@ -253,9 +246,8 @@ MonoBehaviour:
   m_nodeType: 0
   m_position: {x: -117.3999, y: -82.000046}
   m_speakerPosition: 0
-  m_speakerName: "\uC774\uB80C"
-  m_dialogueText: "\uC800\uAE30, \uBB34\uC2A8 \uC77C \uC788\uC73C\uC138\uC694? \uC544\uAE4C\uBD80\uD130
-    \uACC4\uC18D \uD55C\uC228\uB9CC \uC26C\uACE0 \uACC4\uC154\uC11C\uC694."
+  m_speakerName: Iren
+  m_dialogueText: "Excuse me, is something wrong? You\u2019ve been sighing nonstop."
   m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
     type: 3}
   m_nextNode: {fileID: 8485325484590717188}
@@ -365,11 +357,10 @@ MonoBehaviour:
   m_nodeType: 0
   m_position: {x: -110.400024, y: 65.19986}
   m_speakerPosition: 1
-  m_speakerName: "\uB9E5\uC2A4"
-  m_dialogueText: "\uC774\uB80C, \uAE68\uC9C4 \uC870\uBA85\uC744 \uB300\uC2E0\uD560
-    \uB2EC\uBE5B \uBB3C\uC57D\uC744 \uB9CC\uB4E4\uC5B4 \uC904 \uC218 \uC788\uC744\uAE4C?
-    \uC77C\uC8FC\uC77C\uC774\uB098 \uC7A5\uC0AC\uB97C \uD558\uC9C0 \uBABB\uD558\uBA74,
-    \uC815\uB9D0 \uD070\uC77C\uC774\uB77C\uC11C \uADF8\uB798!"
+  m_speakerName: Max
+  m_dialogueText: "Iren, could you make a Moonlight Potion to replace the broken
+    light? If I can\u2019t run my business for a whole week, I\u2019ll be in serious
+    trouble!"
   m_characterPortrait: {fileID: 21300000, guid: 4d7deb36431492a468d2e650bfe7c2f8,
     type: 3}
   m_nextNode: {fileID: -6118684291174417216}
@@ -396,9 +387,8 @@ MonoBehaviour:
   m_nodeType: 0
   m_position: {x: 655.19916, y: -81.999954}
   m_speakerPosition: 0
-  m_speakerName: "\uC774\uB80C"
-  m_dialogueText: "\uC544, \uC800\uB294 \uD3EC\uC158 \uBD80\uC11C\uC758 \uC0C8\uB85C\uC6B4
-    \uACF5\uBB34\uC6D0, \uC774\uB80C\uC774\uC5D0\uC694!"
+  m_speakerName: Iren
+  m_dialogueText: "Ah, I\u2019m Iren, the new public officer in the Potion Department!"
   m_characterPortrait: {fileID: 21300000, guid: 5162b5228986d6c4aa303819d4e57f6e,
     type: 3}
   m_nextNode: {fileID: -3198109200166384244}
@@ -425,12 +415,10 @@ MonoBehaviour:
   m_nodeType: 0
   m_position: {x: 123.99988, y: -82.000046}
   m_speakerPosition: 1
-  m_speakerName: "\uB9E5\uC2A4"
-  m_dialogueText: "\uC5B4\uC82F\uBC24 \uC190\uB2D8 \uB450 \uBA85\uC774 \uAC00\uAC8C\uC5D0\uC11C
-    \uC2F8\uC6C0\uC774 \uB0AC\uB294\uB370, \uADF8 \uACFC\uC815\uC5D0\uC11C \uAC00\uAC8C\uC5D0
-    \uC788\uB358 \uB300\uD615 \uC804\uB4F1\uC774 \uAE68\uC84C\uC9C0 \uBB50\uC57C! 
-    \uC0C8 \uC804\uB4F1\uC774 \uC624\uB824\uBA74 \uC77C\uC8FC\uC77C\uC740 \uAC78\uB9B0\uB2E4\uB294\uB370...
-    \uADF8 \uB3D9\uC548 \uC7A5\uC0AC\uB294 \uB2E4 \uD588\uC9C0, \uBB50."
+  m_speakerName: Max
+  m_dialogueText: "Two guests got into a fight in my tavern last night, and during
+    the brawl, they smashed the big chandelier!\nIt\u2019ll take at least a week
+    for the new one to arrive... I might as well shut down till then."
   m_characterPortrait: {fileID: 21300000, guid: 4d7deb36431492a468d2e650bfe7c2f8,
     type: 3}
   m_nextNode: {fileID: -6831869115065462841}

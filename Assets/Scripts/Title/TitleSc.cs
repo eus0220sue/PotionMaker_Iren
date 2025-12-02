@@ -14,7 +14,7 @@ public class TitleSc : MonoBehaviour
     [SerializeField] PopUp m_quitPopup;
 
     // TitleSc 클래스의 필드 영역에 추가
-    [SerializeField] private TMPro.TMP_Text m_continueText;     // 이어하기 항목의 TMP_Text
+    [SerializeField] private Image m_continue;     // 이어하기 항목의 TMP_Text
     [SerializeField] private Color m_colorEnabled = Color.white;
     [SerializeField] private Color m_colorDisabled = new Color(1f, 1f, 1f, 0.4f);
 
@@ -109,8 +109,8 @@ public class TitleSc : MonoBehaviour
     {
         m_canContinue = (GManager.Instance && GManager.Instance.HasSave());
 
-        if (m_continueText)
-            m_continueText.color = m_canContinue ? m_colorEnabled : m_colorDisabled;
+        if (m_continue)
+            m_continue.color = m_canContinue ? m_colorEnabled : m_colorDisabled;
 
         // 현재 커서가 선택 불가 항목이면, 다음 선택 가능한 항목으로 이동
         if (!IsSelectable(selectedIndex))
@@ -151,7 +151,6 @@ public class TitleSc : MonoBehaviour
                 {
                     if (result)
                     {
-                        GManager.Instance.IsQuestManager?.StartQuest("Q_TM_0");
                         GManager.Instance.IsFirstPlay = true;
                         StartCoroutine(GManager.Instance.StartNewWithLoading(
                             "LoadingScene",           // 로딩 씬 이름

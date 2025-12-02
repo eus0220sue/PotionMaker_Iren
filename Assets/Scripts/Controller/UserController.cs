@@ -196,7 +196,6 @@ public class UserController : ParentController
     /// </summary>
     private void Interact()
     {
-        Debug.Log("[UserController] Interact() 호출됨");
 
         if (isInteracting)
         {
@@ -209,16 +208,20 @@ public class UserController : ParentController
             Debug.Log("[UserController] UI가 열려 있어 상호작용 불가");
             return; // UI 열려있으면 인터렉션 차단
         }
+
+        if (GManager.Instance != null && GManager.Instance.IsUIManager != null && GManager.Instance.IsUIManager.EscapeKeyUIOpenFlag)
+        {
+            Debug.Log("[UserController] UI가 열려 있어 상호작용 불가");
+            return; // Esc 열려있으면 인터렉션 차단
+        }
         isInteracting = true;
 
         if (m_focusedInteractable != null)
         {
-            Debug.Log($"[UserController] 상호작용 대상 있음");
             m_focusedInteractable.Interact();
         }
         else
         {
-            Debug.Log("[UserController] 상호작용 대상 없음");
             isInteracting = false;
         }
 

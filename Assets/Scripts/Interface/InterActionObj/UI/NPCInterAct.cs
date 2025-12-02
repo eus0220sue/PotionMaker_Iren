@@ -50,7 +50,6 @@ public class NPCInterAct : MonoBehaviour, IInteractableInterface
 
     public void Interact()
     {
-        Debug.Log($"[NPCInterAct] Interact called on NPC {m_npcID}");
 
         // 1. 퀘스트 조건 최우선
         foreach (var entry in m_questDialogues)

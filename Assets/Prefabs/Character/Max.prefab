@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061643231868011131}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -21.39, y: -45.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -574065919
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 502e469c3d732da479d8dcca5678e80f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7, y: 5}
+  m_Size: {x: 3, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &7059024569681754269
 MonoBehaviour:
@@ -151,22 +151,29 @@ MonoBehaviour:
   m_npcID: Max
   m_questDialogues:
   - questConditions:
-    - m_questId: MQ_0
+    - m_questId: Q_TM_2
       m_requiredState: Started
-      m_requiredStepIndex: 2
+      m_requiredStepIndex: 0
     requiredFlags: []
     startNode: {fileID: -4194535444022604628, guid: b5c68e9f49fccba41ac267b7d39e38b8,
       type: 2}
   - questConditions:
-    - m_questId: MQ_0
-      m_requiredState: Start
-      m_requiredStepIndex: 9
+    - m_questId: Q_TM_4
+      m_requiredState: Started
+      m_requiredStepIndex: 0
     requiredFlags: []
-    startNode: {fileID: -4194535444022604628, guid: b5c68e9f49fccba41ac267b7d39e38b8,
+    startNode: {fileID: -4194535444022604628, guid: cb4685b82c9078847b6de8ba3a382566,
+      type: 2}
+  - questConditions:
+    - m_questId: Q_M1_4
+      m_requiredState: Started
+      m_requiredStepIndex: 3
+    requiredFlags: []
+    startNode: {fileID: -4194535444022604628, guid: 1d51458fef0749648b91df88a68d6663,
       type: 2}
   m_flagDialogues:
-  - flagName: MQ_0_Step2_Clear
-    dialogue: {fileID: -4389381422043417602, guid: b5c68e9f49fccba41ac267b7d39e38b8,
+  - flagName: Q_TM_2_Complete
+    dialogue: {fileID: -315485932627820299, guid: b5c68e9f49fccba41ac267b7d39e38b8,
       type: 2}
   m_defaultNode: {fileID: 1515740658805058932, guid: 5ca35d0f090a9174b8d91ef33a3c5a8b,
     type: 2}

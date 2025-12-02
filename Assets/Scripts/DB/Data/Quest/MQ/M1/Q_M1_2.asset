@@ -22,14 +22,14 @@ MonoBehaviour:
     m_requiredAmount: 0
     m_targetItem: {fileID: 0}
     m_targetNpcId: 
-    m_targetMapId: 
-    m_nextQuestID: Q_M1_3
+    m_targetMapId: MapM1_02
+    m_nextQuestID: 
     m_afterDia: {fileID: 0}
     m_preDia: {fileID: -4194535444022604628, guid: 20ea3769ce24712458808a25da071ba1,
       type: 2}
   - m_description: Craft Potion with Acid Berry
     m_stepType: 2
-    m_requiredAmount: 0
+    m_requiredAmount: 1
     m_targetItem: {fileID: 11400000, guid: 23c3b4c656e450848810fffa7649310e, type: 2}
     m_targetNpcId: 
     m_targetMapId: 
@@ -38,11 +38,11 @@ MonoBehaviour:
     m_preDia: {fileID: 0}
   - m_description: remove vines
     m_stepType: 3
-    m_requiredAmount: 0
-    m_targetItem: {fileID: 0}
-    m_targetNpcId: 
+    m_requiredAmount: 1
+    m_targetItem: {fileID: 11400000, guid: 23c3b4c656e450848810fffa7649310e, type: 2}
+    m_targetNpcId: M1_VInes 1
     m_targetMapId: 
-    m_nextQuestID: Q_M1_3
+    m_nextQuestID: 
     m_afterDia: {fileID: 0}
     m_preDia: {fileID: 0}
   - m_description: Get in side
@@ -51,7 +51,7 @@ MonoBehaviour:
     m_targetItem: {fileID: 0}
     m_targetNpcId: 
     m_targetMapId: MapM1_02
-    m_nextQuestID: Q_M1_4
+    m_nextQuestID: Q_M1_3
     m_afterDia: {fileID: 0}
     m_preDia: {fileID: -4194535444022604628, guid: dd34f2d9bc19db041b0a940fd0263428,
       type: 2}

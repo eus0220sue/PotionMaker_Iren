@@ -74,9 +74,11 @@ SpriteAtlas:
     - b959dcdc15e562d4094979e8e95d60d0: 21300000
     - 0b51586d79580e841a873eaff8dfca22: 21300000
     - 416491dd45196c740b1730d044c50065: 21300000
+    - 2677c06eeccaecd49991d3825eb720e7: 21300000
     - c40e68aed66f69a4daf4414b7f7a1f24: 21300000
     - a28a3e0f6457aec4abd3f32150f90868: 21300000
     - 26dd175fbc6720242892c2fddb7587fd: 21300000
+    - 883cb0af7c58d4d408aba304abd9712d: 21300000
     - 5bdef1bf43a737149af639170170e291: 21300000
     - 124711df300bbb2479643b867adcd314: 21300000
   m_MasterAtlas: {fileID: 0}
@@ -105,9 +107,11 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b959dcdc15e562d4094979e8e95d60d0, type: 3}
   - {fileID: 21300000, guid: 0b51586d79580e841a873eaff8dfca22, type: 3}
   - {fileID: 21300000, guid: 416491dd45196c740b1730d044c50065, type: 3}
+  - {fileID: 21300000, guid: 2677c06eeccaecd49991d3825eb720e7, type: 3}
   - {fileID: 21300000, guid: c40e68aed66f69a4daf4414b7f7a1f24, type: 3}
   - {fileID: 21300000, guid: a28a3e0f6457aec4abd3f32150f90868, type: 3}
   - {fileID: 21300000, guid: 26dd175fbc6720242892c2fddb7587fd, type: 3}
+  - {fileID: 21300000, guid: 883cb0af7c58d4d408aba304abd9712d, type: 3}
   - {fileID: 21300000, guid: 5bdef1bf43a737149af639170170e291, type: 3}
   - {fileID: 21300000, guid: 124711df300bbb2479643b867adcd314, type: 3}
   m_PackedSpriteNamesToIndex:
@@ -135,9 +139,11 @@ SpriteAtlas:
   - ObjMH_GlassParticle
   - ObjM0_PostBox03
   - ObjM0_PostBox02
+  - M0_SugerPot
   - ObjM0_CopperFlower
   - ObjM0_Stamp01
   - ObjM0_BigFouse02
+  - M0_ScentPot
   - ObjM0_WoodBeer
   - M0MN_Smithy
   m_RenderDataMap: {}

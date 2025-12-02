@@ -20,7 +20,6 @@ public class QuestHUD : MonoBehaviour
                 if (questUIOpen != null)
                 {
                     m_QuestUIParent = questUIOpen;
-                    Debug.Log("QuestUIParent 자동 할당 완료");
                 }
             }
         }
@@ -57,25 +56,31 @@ public class QuestHUD : MonoBehaviour
 
     public void RefreshAllQuestUI()
     {
-        var currentQuests = m_questManager.GetAllStartedQuests();
-        Debug.Log($"현재 진행 중인 퀘스트 개수: {currentQuests.Count}");
+        var currentQuests = m_questManager.GetAllStartedQuests();   // 진행 중만
 
+        // 1) 진행 중이 아닌(=완료된 등) UI는 먼저 제거
+        var startedSet = new HashSet<string>(currentQuests);
+        var staleKeys = new List<string>(m_questUIItems.Keys);
+        foreach (var id in staleKeys)
+        {
+            if (!startedSet.Contains(id))
+            {
+                if (m_questUIItems[id] != null)
+                    Destroy(m_questUIItems[id].gameObject);
+                m_questUIItems.Remove(id);
+            }
+        }
+
+        // 2) 진행 중인 것만 생성/갱신
         foreach (var questID in currentQuests)
         {
             if (!m_questUIItems.ContainsKey(questID))
             {
-                if (m_QuestUIPrefab == null)
+                if (m_QuestUIPrefab == null || m_QuestUIParent == null)
                 {
-                    Debug.LogError("m_QuestUIPrefab이 null입니다!");
-                    return;
-                }
-                if (m_QuestUIParent == null)
-                {
-                    Debug.LogError("m_QuestUIParent가 null입니다!");
                     return;
                 }
                 var go = Instantiate(m_QuestUIPrefab, m_QuestUIParent);
-                Debug.Log($"Quest UI 프리팹 생성: {go.name} under {m_QuestUIParent.name}");
                 var uiItem = go.GetComponent<QuestUIEntity>();
                 m_questUIItems.Add(questID, uiItem);
                 uiItem.Initialize();
@@ -84,14 +89,11 @@ public class QuestHUD : MonoBehaviour
             UpdateQuestUI(questID, m_questManager.GetCurrentStepIndex(questID));
         }
     }
-
     public void UpdateQuestUI(string questID, int stepIndex)
     {
-        Debug.Log($"[QuestHUD] UpdateQuestUI 호출 - QuestID: {questID}, Step: {stepIndex}");
 
         if (!m_questUIItems.TryGetValue(questID, out var uiItem))
         {
-            Debug.LogWarning($"[QuestHUD] UI 항목을 찾지 못함: {questID}");
             return;
         }
 
@@ -100,13 +102,9 @@ public class QuestHUD : MonoBehaviour
 
         if (questData == null || currentStep == null)
         {
-            Debug.LogWarning($"[QuestHUD] 퀘스트 데이터 또는 스텝 데이터가 없음: {questID}");
             return;
         }
 
-        // 퀘스트 타이틀과 설명 출력 로그 추가
-        Debug.Log($"퀘스트 타이틀: {questData.m_title}");
-        Debug.Log($"퀘스트 설명: {currentStep.m_description}");
 
         int currentAmount = 0;
 

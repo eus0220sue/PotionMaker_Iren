@@ -60,17 +60,14 @@ public class SoundManager : MonoBehaviour
     {
         if (index < 0 || index >= systemSounds.Count)
         {
-            Debug.LogWarning($"[SoundManager] 시스템 사운드 인덱스 {index} 범위 벗어남");
             return;
         }
         sfxSource.PlayOneShot(systemSounds[index].clip);
-        Debug.Log($"[SoundManager] 시스템 사운드 재생: {systemSounds[index].name}");
     }
     public IEnumerator PlaySoundForDuration(AudioClip clip, float duration)
     {
         if (clip == null || sfxSource == null)
         {
-            Debug.LogWarning("Clip 또는 sfxSource가 없습니다.");
             yield break;
         }
 
@@ -87,33 +84,27 @@ public class SoundManager : MonoBehaviour
     {
         if (clip == null)
         {
-            Debug.LogWarning("[SoundManager] PlayBGM: clip이 null입니다.");
             return;
         }
 
         if (bgmSource == null)
         {
-            Debug.LogError("[SoundManager] bgmSource가 연결되어 있지 않습니다!");
             return;
         }
 
-        Debug.Log($"[SoundManager] 재생 준비: {clip.name}");
         bgmSource.clip = clip;
         bgmSource.loop = true;
         bgmSource.Play();
 
-        Debug.Log($"[SoundManager]  새로운 BGM 재생 시작: {clip.name}");
     }
     public void PlayGatherSound(int index)
     {
         if (index < 0 || index >= gatherSounds.Count)
         {
-            Debug.LogWarning($"[SoundManager] Gather 사운드 인덱스 {index} 범위 벗어남");
             return;
         }
         AudioClip clip = gatherSounds[index].clip;
         sfxSource.PlayOneShot(clip);
-        Debug.Log($"[SoundManager] Gather 사운드 재생: {gatherSounds[index].name}");
     }
     public void StopAllSFX()
     {
@@ -139,7 +130,6 @@ public class SoundManager : MonoBehaviour
         loopSource.loop = true;
         loopSource.Play();
 
-        Debug.Log($"[SoundManager] 시스템 사운드 루프 재생 시작: {playerSounds[index].name}");
     }
 
     // 루프 재생 정지
@@ -149,7 +139,6 @@ public class SoundManager : MonoBehaviour
         {
             loopSource.Stop();
             loopSource.clip = null;
-            Debug.Log($"[SoundManager] 시스템 사운드 루프 정지: {playerSounds[index].name}");
         }
     }
     public void SetBGMVolume(float volume)

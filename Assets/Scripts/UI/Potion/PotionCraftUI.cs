@@ -341,7 +341,7 @@ public class PotionCraftUI : MonoBehaviour
         Debug.Log($"[TryCraft] 포션 제작 시도: {data.IsName}");
 
         // 1. 등급 확인
-        if (m_exchangeManager.m_userData.IsGrade < data.IsGradeType)
+        if (m_exchangeManager.GetUserGrade() < data.IsGradeType)
         {
             GManager.Instance.IsErrorMessage.ShowErrorMessage($"제작하기 위해선 {data.IsGradeType} 등급을 달성해야 합니다.", this.transform.parent);
             yield break;

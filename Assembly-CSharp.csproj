@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5EE040AE-953E-2EAF-C92D-E5068B4D52D4}</ProjectGuid>
+    <ProjectGuid>{3C4D9BCD-BB96-5D4F-C568-428583EBC400}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -65,6 +65,7 @@
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\SuperTilemapEditor\Components\TilemapRoom2D.cs" />
     <Compile Include="Assets\Scripts\UI\ResBookUI.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Triangulation\Advanced Triangulator\TriangulationSets.cs" />
+    <Compile Include="Assets\Scripts\SL\Binder\GoldBind_GM.cs" />
     <Compile Include="Assets\Scripts\DB\Data\MaterialData.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Lightmap\Sorting\SortDepthList.cs" />
     <Compile Include="Assets\SNJLib\2D\Pathfinding\PriorityQueue.cs" />
@@ -208,8 +209,9 @@
     <Compile Include="Assets\Scripts\Manager\VideoManager.cs" />
     <Compile Include="Assets\FunkyCode\Demos - SmartLighting2D\Demos - Intermediate\5 - Race\Scripts\FollowRacer.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Day\Pass.cs" />
-    <Compile Include="Assets\FunkyCode\Demos - SmartLighting2D\Scripts\DemoFollowMouse.cs" />
+    <Compile Include="Assets\Scripts\SL\Binder\InventoryBind_GM.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Event Handling\Base.cs" />
+    <Compile Include="Assets\FunkyCode\Demos - SmartLighting2D\Scripts\DemoFollowMouse.cs" />
     <Compile Include="Assets\Scripts\UI\HUD_UI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Settings\LightingSettings.cs" />
@@ -267,6 +269,7 @@
     <Compile Include="Assets\SNJLib\2D\Pathfinding\Graph.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Material\Extended\Lights.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\Scripts\Map\CameraBoundsRegion.cs" />
     <Compile Include="Assets\Scripts\Title\PopUp.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Triangulation\Advanced Triangulator\DTSweepUtility.cs" />
     <Compile Include="Assets\Scripts\Controller\ParentController.cs" />
@@ -334,6 +337,7 @@
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Light\ShadowEngine\Algorithm\SoftShadowSorter.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Light\ShadowEngine\Algorithm\Fast.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\Scripts\Map\CameraBoundsAutoSetter.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\SuperTilemapEditor\Rendering\Light\Shadow\Collider.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\SuperTilemapEditor\Rendering\Night\Room.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Components\Effects\LightBlink.cs" />
@@ -356,6 +360,7 @@
     <Compile Include="Assets\Scripts\Obj\CameraBase.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Settings\Presets\LightmapPresets.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Lightmap\Objects\TilemapRoom.cs" />
+    <Compile Include="Assets\Scripts\SL\Binder\ObjAction\ObjAction.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Buffers\LightBuffer2D.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Light\NoSort.cs" />
@@ -366,6 +371,7 @@
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Components\Manager\LightingManager2D.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\Rendering\Lightmap\Sorted.cs" />
     <Compile Include="Assets\Scripts\DB\Data\InvenData.cs" />
+    <Compile Include="Assets\Scripts\SL\KeyDB.cs" />
     <Compile Include="Assets\FunkyCode\SmartUtilities2D\Scripts\Graphics\MaterialManager.cs" />
     <Compile Include="Assets\FunkyCode\SmartLighting2D\Scripts\SuperTilemapEditor\Components\TilemapCollider2D.cs" />
     <Compile Include="Assets\Fantacode Studios\NewDialogue\Script\UI\DialogueUI.cs" />

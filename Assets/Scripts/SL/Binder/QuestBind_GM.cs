@@ -1,112 +1,194 @@
-// Assets/Scripts/SL/Binder/QuestBind_GM.cs
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class QuestEntry { public string id; public string state; public int step; }
-
-[System.Serializable]
-public class QuestSnapshot { public List<QuestEntry> list = new(); }
-
+/// <summary>
+/// Äù½ºÆ® ÁøÇà »óÈ²À» SaveLoad(KeyDB) ¡ç¡æ ¿ùµå(QuestManager) »çÀÌ¿¡ µ¿±âÈ­ÇÑ´Ù.
+/// - ·Îµå Á÷ÈÄ(GManager.OnAfterLoad): JSON ¡æ QuestManager º¹¿ø + HUD °»½Å
+/// - ÀúÀå Á÷Àü(GManager.OnBeforeSave): QuestManager ¡æ JSON ½º³À¼¦ ±â·Ï
+/// - »õ °ÔÀÓ(IsFirstPlay=true)ÀÌ°í ÀúÀåµÈ Äù½ºÆ®°¡ ¾øÀ¸¸é m_initialQuestId¸¦ ÀÚµ¿ ½ÃÀÛ
+/// </summary>
 public class QuestBind_GM : MonoBehaviour
 {
-    [SerializeField] private QuestManager quest;
+    [Header("Quest Manager")]
+    [SerializeField] private QuestManager quest;   // ¾ÀÀÇ QuestManager ÂüÁ¶
 
-    void OnEnable()
+    [Header("ÃÊ±â Äù½ºÆ®(»õ °ÔÀÓÀÏ ¶§ ÀÚµ¿ ½ÃÀÛ)")]
+    [SerializeField] private string m_initialQuestId = "Q_TM_0";
+
+    // ----- DTO -----
+    [Serializable]
+    private class QuestEntry
     {
-        if (!GManager.Instance) return;
-        GManager.Instance.OnAfterLoad += Apply;   // ÀúÀå ºÒ·¯¿Â µÚ ¡æ ¿ùµå¿¡ Àû¿ë
-        GManager.Instance.OnBeforeSave += Capture; // ÀúÀå Á÷Àü   ¡æ ¿ùµå¿¡¼­ ¼öÁý
-
-        Apply(); // ¾À¿¡ ³ªÁß¿¡ ºÙ¾îµµ Áï½Ã ¹Ý¿µ + HUD °»½Å
+        public string id;
+        public string state; // "NotStarted" / "Started" / "Complete"
+        public int step;     // ÇöÀç ½ºÅÜ ÀÎµ¦½º (0~)
     }
 
-    void OnDisable()
+    [Serializable]
+    private class QuestSnapshot
     {
-        if (!GManager.Instance) return;
+        public List<QuestEntry> list = new();
+    }
+
+    private void Awake()
+    {
+        if (!quest) quest = FindObjectOfType<QuestManager>(true);
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(Co_Subscribe());
+    }
+
+    private IEnumerator Co_Subscribe()
+    {
+        while (GManager.Instance == null) yield return null;
+
+        // Áßº¹ ±¸µ¶ ¹æÁö ÈÄ Àç±¸µ¶
+        GManager.Instance.OnAfterLoad -= Apply;
+        GManager.Instance.OnBeforeSave -= Capture;
+
+        GManager.Instance.OnAfterLoad += Apply;    // ·Îµå ¡æ ¿ùµå º¹¿ø
+        GManager.Instance.OnBeforeSave += Capture;  // ÀúÀå Á÷Àü ¡æ ½º³À¼¦ ±â·Ï
+
+        // ¾À¿¡ µÚ´Ê°Ô ºÙ¾îµµ Áï½Ã 1È¸ ¹Ý¿µ
+        Apply();
+    }
+
+    private void OnDisable()
+    {
+        if (GManager.Instance == null) return;
         GManager.Instance.OnAfterLoad -= Apply;
         GManager.Instance.OnBeforeSave -= Capture;
     }
 
-    // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
-    // ÀúÀå ¡æ ¿ùµå Àû¿ë (HUD Áï½Ã °»½Å Æ÷ÇÔ)
-    // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
-    void Apply()
+    // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
+    // LOAD ¡æ ¿ùµå¿¡ Àû¿ë
+    // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
+    public void Apply()
     {
         if (!quest) return;
 
-        string json = SaveLoad.GetString(GManager.Keys.QuestsJson, "");
-        var snap = string.IsNullOrEmpty(json) ? new QuestSnapshot()
-                                              : JsonUtility.FromJson<QuestSnapshot>(json) ?? new QuestSnapshot();
+        // ÀúÀå JSON ÀÐ±â (ÀÌ¾îÇÏ±â¿ë)
+        string json = SaveLoad.GetString(Keys.QuestsJson, "");  // Keys.QuestsJson == "quest.all"
 
-        // ÇöÀç »óÅÂ ÃÊ±âÈ­ ÈÄ, ½º³À¼¦ ¹Ý¿µ
-        quest.m_questStates.Clear();
-        quest.m_currentSteps.Clear();
+        // ¡Ú »õ·ÎÇÏ±â: 1È¸¼º ÇÃ·¡±×°¡ ÄÑÁ® ÀÖÀ¸¸é ÀúÀå À¯¹«¿Í ¹«°üÇÏ°Ô Ã³À½ Äù½ºÆ®·Î °­Á¦ ÃÊ±âÈ­
+        if (GManager.Instance != null && GManager.Instance.ForceQuestResetOnce)
+        {
+            // ³»ºÎ »óÅÂ ÃÊ±âÈ­
+            quest.m_questStates?.Clear();
+            quest.m_currentSteps?.Clear();
 
+            // ½ÃÀÛ Äù½ºÆ® ¼±ÅÃ
+            string startId = string.IsNullOrEmpty(m_initialQuestId) ? "Q_TM_0" : m_initialQuestId;
+
+            // °­Á¦ ½ÃÀÛ
+            quest.StartQuest(startId);
+
+            // 1È¸¼º ÇÃ·¡±× OFF (¼Òºñ)
+            GManager.Instance.ForceQuestResetOnce = false;
+
+            TryRefreshHUD();
+            return;
+        }
+
+        // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
+        // ÀÌ¾îÇÏ±â: ÀúÀåµÈ ½º³À¼¦À» ±×´ë·Î º¹¿ø
+        // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
+        QuestSnapshot snap = string.IsNullOrEmpty(json)
+            ? new QuestSnapshot()
+            : (JsonUtility.FromJson<QuestSnapshot>(json) ?? new QuestSnapshot());
+
+        // ³»ºÎ »óÅÂ ÃÊ±âÈ­
+        quest.m_questStates?.Clear();
+        quest.m_currentSteps?.Clear();
+
+        int restored = 0;
         if (snap.list != null)
         {
             foreach (var e in snap.list)
             {
-                if (string.IsNullOrEmpty(e.id)) continue;
-
+                if (e == null || string.IsNullOrEmpty(e.id)) continue;
                 string state = string.IsNullOrEmpty(e.state) ? "NotStarted" : e.state;
                 int step = Mathf.Max(0, e.step);
 
                 quest.m_questStates[e.id] = state;
                 quest.m_currentSteps[e.id] = step;
+                restored++;
             }
         }
 
-        // ¡Ú HUD Áï½Ã °»½Å: ÁøÇà Áß(Started)ÀÎ Äù½ºÆ® ÇÏ³ª¸¦ °ñ¶ó Ç¥½Ã
-        if (GManager.Instance?.IsHUDUI != null)
-        {
-            string chosenId = null;
-
-            // (1) Started »óÅÂÀÎ Äù½ºÆ® Áß ÇÏ³ª ¼±ÅÃ
-            foreach (var kv in quest.m_questStates)
-            {
-                if (kv.Value == "Started") { chosenId = kv.Key; break; }
-            }
-
-            // (2) ¾øÀ¸¸é Complete°¡ ¾Æ´Ñ ¾î¶² Äù½ºÆ®¶óµµ ¼±ÅÃ(¼±ÅÃ»çÇ×)
-            if (chosenId == null)
-            {
-                foreach (var kv in quest.m_questStates)
-                {
-                    if (kv.Value != "Complete") { chosenId = kv.Key; break; }
-                }
-            }
-
-            // (3) ÃÖÁ¾ ¼±ÅÃµÈ Äù½ºÆ®·Î HUD ¾÷µ¥ÀÌÆ®
-            if (chosenId != null)
-            {
-                int stepIndex = quest.GetCurrentStepIndex(chosenId);
-                GManager.Instance.IsHUDUI.UpdateQuest(chosenId, stepIndex);
-            }
-            // ÇÊ¿äÇÏ¸é, ÁøÇà ÁßÀÎ Äù½ºÆ®°¡ ÀüÇô ¾øÀ» ¶§ HUD¸¦ ºñ¿ì´Â ¸Þ¼­µå¸¦ È£ÃâÇÏµµ·Ï È®Àå °¡´É:
-            // else { GManager.Instance.IsHUDUI.ClearQuest(); }
-        }
+        TryRefreshHUD();
     }
 
-    // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
-    // ¿ùµå ¡æ ÀúÀå ¼öÁý
-    // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
-    void Capture()
+
+
+    // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
+    // SAVE ¡ç ¿ùµå¿¡¼­ ¼öÁý
+    // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
+    public void Capture()
     {
         if (!quest) return;
 
         var snap = new QuestSnapshot();
 
-        // QuestManagerÀÇ °ø°³ µñ¼Å³Ê¸®¿¡¼­ ±×´ë·Î ½º³À¼¦ ¸¸µé±â
-        foreach (var kv in quest.m_questStates)
+        if (quest.m_questStates != null)
         {
-            string id = kv.Key;
-            string state = kv.Value;
-            int step = quest.GetCurrentStepIndex(id);
+            foreach (var kv in quest.m_questStates)
+            {
+                string id = kv.Key;
+                string state = string.IsNullOrEmpty(kv.Value) ? "NotStarted" : kv.Value;
 
-            snap.list.Add(new QuestEntry { id = id, state = state, step = step });
+                int step = 0;
+                try { step = quest.GetCurrentStepIndex(id); } catch { /* ¹«½Ã */ }
+
+                snap.list.Add(new QuestEntry { id = id, state = state, step = Mathf.Max(0, step) });
+            }
         }
 
-        SaveLoad.SetString(GManager.Keys.QuestsJson, JsonUtility.ToJson(snap));
+        string outJson = JsonUtility.ToJson(snap);
+        SaveLoad.SetString(Keys.QuestsJson, outJson);   // "quest.all"·Î ±â·Ï
+    }
+
+    // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
+    // HUD º¸Á¤
+    // ¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡
+    private void TryRefreshHUD()
+    {
+        var hud = GManager.Instance?.IsHUDUI;
+        if (hud == null || quest == null || quest.m_questStates == null) return;
+
+        //  ¸ÕÀú UI ÀüºÎ ¸®ºôµå(Started/¹Ì¿Ï·á Äù Ç×¸ñµéÀ» ÇÁ¸®ÆÕÀ¸·Î »ý¼º)
+        hud.RefreshAllQuestUI();
+
+        // ¾î¶² Äù¸¦ ÃÖÀü¸é¿¡ º¸¿©ÁÙÁö ¼±ÅÃ
+        string chosenId = null;
+
+        // 1) Started ¿ì¼±
+        foreach (var kv in quest.m_questStates)
+            if (kv.Value == "Started") { chosenId = kv.Key; break; }
+
+        // 2) ¾øÀ¸¸é '¹Ì¿Ï·á(any != Complete)' Áß ÇÏ³ª
+        if (chosenId == null)
+            foreach (var kv in quest.m_questStates)
+                if (kv.Value != "Complete") { chosenId = kv.Key; break; }
+
+        // (¼±ÅÃ) 3) ÀüºÎ Complete¶ó¸é ±× Áß ÇÏ³ª¶óµµ º¸¿©ÁÖ°í ½ÍÀ¸¸é ÁÖ¼® ÇØÁ¦
+        // if (chosenId == null)
+        //     foreach (var kv in quest.m_questStates)
+        //         if (kv.Value == "Complete") { chosenId = kv.Key; break; }
+
+        if (!string.IsNullOrEmpty(chosenId))
+        {
+            int step = 0;
+            try { step = quest.GetCurrentStepIndex(chosenId); } catch { }
+            hud.UpdateQuest(chosenId, step);  // ÀÌÁ¦ UI Ç×¸ñÀÌ Á¸ÀçÇÏ¹Ç·Î °æ°í ¾øÀ½
+        }
+        else
+        {
+            hud.ClearQuestUI();
+        }
     }
 }

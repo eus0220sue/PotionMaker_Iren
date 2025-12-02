@@ -19,14 +19,14 @@ MonoBehaviour:
   m_questSteps:
   - m_description: Pick Up Clue
     m_stepType: 1
-    m_requiredAmount: 0
-    m_targetItem: {fileID: 0}
+    m_requiredAmount: 1
+    m_targetItem: {fileID: 11400000, guid: c3d89f3e8b67fee498157237b2edadeb, type: 2}
     m_targetNpcId: 
     m_targetMapId: 
     m_nextQuestID: 
-    m_afterDia: {fileID: 0}
-    m_preDia: {fileID: -4194535444022604628, guid: a4112813a72bb9f41af27f2f56844734,
+    m_afterDia: {fileID: -4194535444022604628, guid: a4112813a72bb9f41af27f2f56844734,
       type: 2}
+    m_preDia: {fileID: 0}
   - m_description: Visit Blacksmith
     m_stepType: 0
     m_requiredAmount: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
     m_preDia: {fileID: 0}
   - m_description: Bring the Clue to Dylan and Talk to Him
     m_stepType: 3
-    m_requiredAmount: 0
+    m_requiredAmount: 1
     m_targetItem: {fileID: 11400000, guid: c3d89f3e8b67fee498157237b2edadeb, type: 2}
     m_targetNpcId: Dylan
     m_targetMapId: 

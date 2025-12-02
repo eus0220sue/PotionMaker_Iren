@@ -21,7 +21,6 @@ public class UIManager : MonoBehaviour
         set
         {
             escapeKeyUIOpenFlag = value;
-            Debug.Log($"[UIManager] EscapeKeyUIOpenFlag set to: {escapeKeyUIOpenFlag}");
         }
     }
     void Awake()
@@ -39,11 +38,9 @@ public class UIManager : MonoBehaviour
         {
             m_escapeKeyUIInstance = Instantiate(EscapeKeyUIPrefab);
             m_escapeKeyUIInstance.SetActive(false);
-            Debug.Log("[UIManager] EscapeKeyUI 인스턴스 생성 완료");
         }
         else
         {
-            Debug.LogWarning("[UIManager] EscapeKeyUIPrefab이 할당되지 않았거나 이미 인스턴스가 존재합니다.");
         }
     }
 
@@ -70,14 +67,7 @@ public class UIManager : MonoBehaviour
     public bool ShopUIOpenFlag = false;
     public bool BookUIOpenFlag = false;
     public bool QuestUIOpenFlag = false;
-    /*void Awake()
-    {
-        if (CraftUI == null) CraftUI = GameObject.Find("CraftUI");
-        if (PotionCraftUI == null) PotionCraftUI = GameObject.Find("PotionCraftUI");
-        if (ShopUI == null) ShopUI = GameObject.Find("ShopUI");
-        if (DialogueUI == null) DialogueUI = GameObject.Find("DialogueUI");
-    }
-    */
+
 
     void Update()
     {
@@ -87,11 +77,9 @@ public class UIManager : MonoBehaviour
             {
                 m_escapeKeyUIInstance = Instantiate(EscapeKeyUIPrefab);
                 m_escapeKeyUIInstance.SetActive(false);
-                Debug.Log("[UIManager] EscapeKeyUI 인스턴스 생성 완료 (Update)");
             }
             else
             {
-                Debug.LogWarning("[UIManager] EscapeKeyUIPrefab이 할당되지 않았습니다.");
                 return;
             }
         }
@@ -101,7 +89,6 @@ public class UIManager : MonoBehaviour
         // ESC키 누름 감지
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("ESC 눌림");
 
             string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
 
@@ -133,17 +120,14 @@ public class UIManager : MonoBehaviour
 
             if (EscapeKeyUIOpenFlag)
             {
-                Debug.Log("ESC창 열려있음 -> 닫기");
                 HideEscapeKeyUI();
             }
             else if (!UIOpenFlag)
             {
-                Debug.Log("열린 UI 없음 -> ESC창 켜기");
                 ShowEscapeKeyUI();
             }
             else
             {
-                Debug.Log("다른 UI 열려있음 -> 닫기");
                 CloseUI();
                 HideEscapeKeyUI();
             }
@@ -184,7 +168,6 @@ public class UIManager : MonoBehaviour
 
         if (DialogueUI == null)
         {
-            Debug.LogError("[UIManager] DialogueUI가 연결되지 않았습니다.");
             return;
         }
 
@@ -192,7 +175,6 @@ public class UIManager : MonoBehaviour
 
         if (startNode == null)
         {
-            Debug.LogWarning("[UIManager] startNode가 null입니다.");
             return;
         }
 

@@ -10,9 +10,19 @@ public class HUD_UI : MonoBehaviour
     [SerializeField] private TMP_Text m_goldText;
 
     [Header("Managers")]
-    private ExchangeManager m_exchangeManager; // ★ 추가
+    private ExchangeManager m_exchangeManager; // 추가
+
+    [SerializeField] private Transform m_listRoot; // 퀘 UI가 붙는 부모
+
 
     private int currentGold = 0;
+
+    // QuestHUD 자동 주입(인스펙터 비어있을 때 대비)
+    private void Awake()
+    {
+        if (m_questHUD == null)
+            m_questHUD = GetComponentInChildren<QuestHUD>(true);
+    }
 
     private void OnEnable()
     {
@@ -25,7 +35,7 @@ public class HUD_UI : MonoBehaviour
         {
             m_exchangeManager.OnGoldChanged -= HandleGoldChanged; // 중복구독 방지
             m_exchangeManager.OnGoldChanged += HandleGoldChanged;
-            UpdateGold(m_exchangeManager.GetPlayerGold()); // ★ 초기 동기화
+            UpdateGold(m_exchangeManager.GetPlayerGold()); //  초기 동기화
         }
         else
         {
@@ -38,6 +48,21 @@ public class HUD_UI : MonoBehaviour
     {
         if (m_exchangeManager != null)
             m_exchangeManager.OnGoldChanged -= HandleGoldChanged;
+    }
+
+    //  새로 추가: QuestHUD의 엔트리들을 먼저 재구성(프리팹 생성/동기화)
+    public void RefreshAllQuestUI()
+    {
+        if (m_questHUD == null)
+            m_questHUD = GetComponentInChildren<QuestHUD>(true);
+
+        if (m_questHUD != null)
+        {
+            m_questHUD.RefreshAllQuestUI();
+        }
+        else
+        {
+        }
     }
 
     // 이벤트 콜백
@@ -61,11 +86,21 @@ public class HUD_UI : MonoBehaviour
 
     public void UpdateQuest(string questID, int stepIndex)
     {
+        if (m_questHUD == null)
+            m_questHUD = GetComponentInChildren<QuestHUD>(true);
+
         m_questHUD?.UpdateQuestUI(questID, stepIndex);
     }
-
     public void ClearQuestUI()
     {
-        m_questHUD?.ClearAllQuests();
+        if (m_questHUD == null)
+            m_questHUD = GetComponentInChildren<QuestHUD>(true);
+
+        if (m_questHUD != null)
+        {
+            m_questHUD.ClearAllQuests();  // 딕셔너리까지 함께 비움
+            Debug.Log("[HUD_UI] ClearQuestUI -> QuestHUD.ClearAllQuests 호출");
+        }
     }
+
 }

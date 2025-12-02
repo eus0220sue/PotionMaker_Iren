@@ -6,12 +6,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
+
+
 public class GManager : MonoBehaviour
 {
 
     // === [세이브 슬롯 / 오토세이브 옵션] ===
     [Header("Save/Load")]
-    [SerializeField] private string saveFile = null;   // 비워두면 save_slot0.json
+    [SerializeField] private string saveFile = "save_slot0"; // 인스펙터에서 슬롯 지정
 
     [SerializeField]public bool TPFlag = false;
     [Header("현재 맵 그룹")]
@@ -147,12 +149,15 @@ public class GManager : MonoBehaviour
     // 내부 상태
     private float _pendingFadeInSec = 0.6f;
     private bool _waitFadeInAfterReady = false;
-
+    private bool _isContinueFlow = false;
+    private bool _pendingNewGameClear = false;
 
     /// <summary>
     /// 싱글톤 인스턴스
     /// </summary>
     public static GManager Instance { get; private set; } = null;
+    public event System.Action OnAfterLoadLate; // 씬/매니저/UI 초기화가 끝난 직후 알림
+    private Coroutine _saveCoalescer;
 
     private void Awake()
     {
@@ -161,6 +166,7 @@ public class GManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            AutoWireBinds();
         }
         else
         {
@@ -192,6 +198,41 @@ public class GManager : MonoBehaviour
             mapBGMController.PlayBGMForMap(currentMapGroup);
         }
     }
+
+    private IEnumerator Co_PostLoadRefresh()
+    {
+        yield return null; // 씬 내 Start/Init 대기
+        yield return null;
+
+
+        if (_pendingNewGameClear)
+        {
+            var invMgr = FindObjectOfType<InventoryManager>(true);
+            invMgr?.ClearAllSlots();               
+            _pendingNewGameClear = false;
+        }
+
+        var invBind = FindObjectOfType<InventoryBind_GM>(true);
+        invBind?.LoadAndApply();
+
+        // 판매탭 비주얼(안전겸 한 번 더)
+        ShopUI shop = null;
+        float t = 0f, timeout = 3f;
+        while (t < timeout)
+        {
+            shop = FindObjectOfType<ShopUI>(true);
+            if (shop != null) break;
+            t += Time.unscaledDeltaTime;
+            yield return null;
+        }
+        if (shop != null)
+        {
+            shop.UpdateSellUI();
+        }
+
+        OnAfterLoadLate?.Invoke();
+    }
+
     // 1) 기존 PlayIntroVideo / WaitForIntroEnd 전부 대체
     public void PlayIntroVideo(string clipResPath = "Video/OP_KR.ver")
     {
@@ -204,7 +245,6 @@ public class GManager : MonoBehaviour
         var vm = IsVideoManager ?? FindObjectOfType<VideoManager>(true);
         if (vm == null)
         {
-            Debug.LogWarning("[GManager] VideoManager를 찾지 못해 인트로 스킵");
             yield break;
         }
         if (!vm.gameObject.activeSelf) vm.gameObject.SetActive(true);
@@ -213,14 +253,12 @@ public class GManager : MonoBehaviour
         var clip = Resources.Load<UnityEngine.Video.VideoClip>(clipResPath);
         if (clip == null)
         {
-            Debug.LogWarning($"[GManager] 인트로 클립을 찾지 못했습니다: Resources/{clipResPath}");
             yield break;
         }
 
         // 코루틴은 GManager가 실행 → VideoManager 비활성이어도 OK
         yield return vm.PlayVideoRoutine(clip);
 
-        Debug.Log("인트로 영상 끝! 게임 시작!");
     }
     public IEnumerator PlayIntroAndWait(string clipResPath = "Video/OP_KR.ver")
     {
@@ -351,6 +389,14 @@ public class GManager : MonoBehaviour
             m_UIManager.QuestUIClosed = GameObject.Find("QuestUIClosed");
         }
     }
+    private string GetSaveFileName()
+    {
+        var name = string.IsNullOrEmpty(saveFile) ? "save_slot0" : saveFile;
+        if (!name.EndsWith(".json", StringComparison.OrdinalIgnoreCase))
+            name += ".json";
+        return name;
+    }
+
     /// <summary>
     /// 세이브 키 목록
     /// </summary>
@@ -369,6 +415,8 @@ public class GManager : MonoBehaviour
         public const string DestroyedSet = "map.destroyed";
         public const string PickedSet = "map.picked";
     }
+    public bool ForceQuestResetOnce { get; set; } = false;  // 새로하기 직후 1회 강제 초기화 플래그
+
 
     /// <summary>
     /// 2) “처음하기 / 이어하기 / 저장” API 추가
@@ -382,9 +430,8 @@ public class GManager : MonoBehaviour
         Vector3 spawnPos, Quaternion spawnRot,
         float fadeOutSec = 0.6f, float fadeInSec = 0.6f)
     {
-        // 1) 새게임 키 초기화
         SaveLoad.NewEmpty();
-        SaveLoad.SetInt(Keys.Gold, 0);
+        SaveLoad.SetInt(Keys.Gold, 300);
         SaveLoad.SetInt(Keys.Grade, (int)GradeType.Type.Novice);
         SaveLoad.SetVector3(Keys.Pos, spawnPos);
         SaveLoad.SetQuaternion(Keys.Rot, spawnRot);
@@ -394,6 +441,11 @@ public class GManager : MonoBehaviour
         SaveLoad.SetString(Keys.QuestsJson, "");
         SaveLoad.SetString(Keys.Scene, targetScene);
 
+        // ★ 추가
+        IsFirstPlay = true;
+        ForceQuestResetOnce = true;
+        _pendingNewGameClear = true;
+        _isContinueFlow = false;
         // 2) 페이드 아웃
         if (IsFadeInOut != null) yield return IsFadeInOut.FadeOut(fadeOutSec);
 
@@ -411,6 +463,7 @@ public class GManager : MonoBehaviour
     // 이어하기: JSON 로드→저장된 씬으로 이동→OnAfterLoad
     public bool ContinueGame()
     {
+        _isContinueFlow = true;
         if (!SaveLoad.Load(saveFile)) return false;
 
         string target = SaveLoad.GetString(Keys.Scene, "");
@@ -439,6 +492,7 @@ public class GManager : MonoBehaviour
         _pendingFinalScene = null;
 
         AutoReferenceSceneObjects(); // 씬 객체 캐싱(플레이어/카메라/UI 등)
+        AutoWireBinds();
 
         // 저장 적용(바인더들이 OnAfterLoad 구독해서 수행)
         OnAfterLoad?.Invoke();
@@ -446,7 +500,63 @@ public class GManager : MonoBehaviour
         //  월드 준비 완료까지 기다렸다가 페이드 인
         if (_waitFadeInAfterReady)
             StartCoroutine(Co_WaitWorldReadyThenFadeIn());
+        StartCoroutine(Co_PostLoadRefresh());
+        RefreshInventoryVisualsAfterLoad();
+        StartCoroutine(Co_ApplySavedPlayerTransformWhenReady());
+        if (_isContinueFlow)
+        {
+            // 바인더 적용이 끝났더라도, 플레이어/바운드/카메라가 준비될 때까지 잠깐 대기 후 스냅
+            StartCoroutine(Co_SnapCameraAfterBounds());
+        }
     }
+
+    private IEnumerator Co_SnapCameraAfterBounds()
+    {
+        // 이어하기에서만 의미 있음
+        if (!_isContinueFlow) yield break;
+
+        float timeout = 3f;
+        // CameraBase, Player 준비 기다림(+ 가능하면 바운드까지)
+        while (timeout > 0f)
+        {
+            bool hasCam = (IsCameraBase != null);
+            bool hasUser = (IsUserTrans != null);
+            bool hasBounds = false;
+
+            if (hasCam)
+            {
+                // CameraBase.cs에 HasValidBounds() 추가해두었죠. (없으면 이 줄은 제거해도 됩니다)
+                hasBounds = IsCameraBase.HasValidBounds();
+            }
+
+            // 바운드가 아직 없어도 SnapToWorld가 언클램프 스냅을 해주도록 되어 있으니, cam+user만 준비되면 진행
+            if (hasCam && hasUser) break;
+
+            timeout -= Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        var t = IsUserTrans;
+        if (IsCameraBase == null)
+        {
+            _isContinueFlow = false;
+            yield break;
+        }
+
+        // 저장된 좌표 로드
+        var savedPos = SaveLoad.GetVector3(Keys.Pos, t ? t.position : Vector3.zero);
+        var savedRot = SaveLoad.GetQuaternion(Keys.Rot, t ? t.rotation : Quaternion.identity);
+
+        // 타겟 지정
+        IsCameraBase.SetTarget(t);
+
+        // 바운드가 준비되었다면 클램프, 아니면 언클램프 스냅( CameraBase.SnapToWorld 내부에서 처리 )
+        IsCameraBase.SnapToWorld(savedPos);
+
+        // 1회성 플래그 해제
+        _isContinueFlow = false;
+    }
+
     public bool WasLastSaveOk { get; private set; } = false;
     public System.DateTime? LastSaveTime { get; private set; } = null;
     public event System.Action<bool> OnSaved; // true=성공, false=실패
@@ -457,22 +567,58 @@ public class GManager : MonoBehaviour
         bool ok = true;
         try
         {
-            OnBeforeSave?.Invoke();
-            SaveLoad.SetString(Keys.Scene, UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-            SaveLoad.Save(saveFile); // 여기서 예외 나면 catch로
+            // ★ 저장 직전 최신 좌표 강제 기록
+            var t = ResolvePlayerTransform();
+            if (t != null)
+            {
+                MarkPlayer(t);
+            }
+            else
+            {
+            }
+
+            OnBeforeSave?.Invoke(); // 바인더들이 키에 상태 쓰는 지점
+
+            var file = GetSaveFileName();            //  파일명 통일
+            SaveLoad.Save(file);                     //  존재하지 않는 API 호출 제거
+
         }
         catch (System.Exception e)
         {
             ok = false;
-            Debug.LogError($"[Save] 실패: {e}");
         }
         finally
         {
             WasLastSaveOk = ok;
             if (ok) LastSaveTime = System.DateTime.Now;
             OnSaved?.Invoke(ok);
+            FindObjectOfType<InventoryBind_GM>(true)?.SaveSnapshot();
+
         }
     }
+    private Transform ResolvePlayerTransform()
+    {
+        if (IsUserTrans != null) return IsUserTrans;
+
+        // 1) UserController 기준
+        var uc = FindObjectOfType<UserController>(true);
+        if (uc != null)
+        {
+            m_userObj = uc.gameObject;      // ★ 프로퍼티가 아니라 내부 필드에 세팅
+            return uc.transform;
+        }
+
+        // 2) Player 태그
+        var go = GameObject.FindGameObjectWithTag("Player");
+        if (go != null)
+        {
+            m_userObj = go;                  // ★ 내부 필드에 세팅
+            return go.transform;
+        }
+
+        return null;
+    }
+
 
     /// <summary>
     /// 3) 편의 API (골드/등급/좌표) 추가
@@ -504,16 +650,16 @@ public class GManager : MonoBehaviour
     // GManager 클래스 안 아무 곳에 추가
     public bool HasSave()
     {
-        string file = string.IsNullOrEmpty(saveFile) ? "save_slot0.json" : saveFile;
+        string file = GetSaveFileName();
         string path = System.IO.Path.Combine(Application.persistentDataPath, file);
         return System.IO.File.Exists(path);
     }
     public IEnumerator ContinueWithLoadingBlocking(float fadeOutSec = 0.6f, float fadeInSec = 0.6f)
     {
+        _isContinueFlow = true;
         // 1) 저장 불러오기(메모리로만), 목표 씬 이름 얻기
         if (!SaveLoad.Load(saveFile))
         {
-            Debug.LogWarning("[Continue] 저장 파일을 불러오지 못했습니다.");
             yield break;
         }
         string targetScene = SaveLoad.GetString(Keys.Scene, SceneManager.GetActiveScene().name);
@@ -573,4 +719,107 @@ public class GManager : MonoBehaviour
 
         _waitFadeInAfterReady = false;
     }
+
+    public void RefreshInventoryVisualsAfterLoad()
+    {
+        StartCoroutine(Co_RefreshInventoryVisuals());
+    }
+
+    private IEnumerator Co_ApplySavedPlayerTransformWhenReady()
+    {
+        // 바인더 Awake/Start 보장
+        yield return null;
+
+        Vector3 savedPos = GetPlayerPos();
+        Quaternion savedRot = GetPlayerRot();
+
+        // 플레이어 등장 대기
+        float timeout = 3f, t = 0f;
+        while (t < timeout && (IsUserController == null || !IsUserController.gameObject.activeInHierarchy))
+        {
+            t += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        var trans = IsUserController ? IsUserController.transform : null;
+        if (trans != null)
+        {
+            trans.SetPositionAndRotation(savedPos, savedRot);
+        }
+    }
+
+
+
+    private System.Collections.IEnumerator Co_RefreshInventoryVisuals()
+    {
+        // 씬 안의 Awake/Start가 다 돌 시간을 1~2프레임 준다
+        yield return null;
+        yield return null;
+
+        // 1) 인벤 스냅샷을 메모리에 적용 (한 번 더 안전하게)
+        var invBind = UnityEngine.Object.FindObjectOfType<InventoryBind_GM>(true);
+        invBind?.LoadAndApply();
+
+        // 2) 인벤토리 UI(가 있으면) → 강제 리프레시
+        //    (InventoryManager에서 평소엔 Add/Remove/Consume 때 UpdateUI()를 호출하지만,
+        //     이어하기 직후엔 수동으로 한 번 쏴주는 게 안전)
+        IsInventoryUI?.UpdateUI();
+
+        // 3) 상점 판매 탭은 인벤 미러링이니 같이 갱신
+        var shop = UnityEngine.Object.FindObjectOfType<ShopUI>(true);
+        shop?.UpdateSellUI();
+
+    }
+
+    // 프레임 끝(또는 짧은 딜레이 후) 1회만 SaveNow() 실행
+    public void SaveSoon(float delaySec = 0f)
+    {
+        if (_saveCoalescer != null) return;               // 이미 예약되어 있으면 중복 예약 방지
+        _saveCoalescer = StartCoroutine(Co_SaveSoon(delaySec));
+    }
+
+    private IEnumerator Co_SaveSoon(float delaySec)
+    {
+        if (delaySec > 0f) yield return new WaitForSeconds(delaySec);
+        yield return null;                                 // 프레임 끝까지 대기 → 여러 요청을 1회로 합침
+        SaveNow();                                         // ★ 실제 저장 (OnBeforeSave → Binder.Capture 호출됨)
+        _saveCoalescer = null;
+    }
+
+    // 앱 종료/일시정지 시 안전 저장
+    private void OnApplicationQuit()
+    {
+        SaveNow();
+    }
+
+    private PlayerBind_GM _playerBind;
+    private InventoryBind_GM _inventoryBind;
+    private QuestBind_GM _questBind;
+
+    private void AutoWireBinds()
+    {
+        _playerBind = FindObjectOfType<PlayerBind_GM>(true);
+        _inventoryBind = FindObjectOfType<InventoryBind_GM>(true);
+        _questBind = FindObjectOfType<QuestBind_GM>(true);
+
+        // 중복구독 방지 후 구독
+        if (_playerBind != null)
+        {
+            OnBeforeSave -= _playerBind.Capture; OnBeforeSave += _playerBind.Capture;
+            OnAfterLoad -= _playerBind.Apply; OnAfterLoad += _playerBind.Apply;
+        }
+
+        if (_inventoryBind != null)
+        {
+            OnBeforeSave -= _inventoryBind.SaveSnapshot; OnBeforeSave += _inventoryBind.SaveSnapshot;
+            OnAfterLoad -= _inventoryBind.LoadAndApply; OnAfterLoad += _inventoryBind.LoadAndApply;
+        }
+
+        if (_questBind != null)
+        {
+            OnBeforeSave -= _questBind.Capture; OnBeforeSave += _questBind.Capture;
+            OnAfterLoad -= _questBind.Apply; OnAfterLoad += _questBind.Apply;
+        }
+    }
+
 }

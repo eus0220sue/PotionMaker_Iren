@@ -73,6 +73,21 @@ public class InventoryManager : MonoBehaviour
 
         return InventoryData.GetItemCount(item);
     }
+    public void ClearAllSlots()
+    {
+        if (IsInventoryData?.slots == null) return;
+
+        var slots = IsInventoryData.slots;
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i] == null) continue;
+            slots[i].itemData = null;
+            slots[i].quantity = 0;
+        }
+
+        // 비주얼도 바로 반영
+        GManager.Instance?.IsInventoryUI?.UpdateUI();
+    }
 
 }
 

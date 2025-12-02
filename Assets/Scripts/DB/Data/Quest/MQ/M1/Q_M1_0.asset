@@ -17,22 +17,32 @@ MonoBehaviour:
   m_title: Grow Plants to Support Bridge
   m_summary: 
   m_questSteps:
-  - m_description: Craft Growth Boost Potion
-    m_stepType: 2
+  - m_description: Visit Forest
+    m_stepType: 0
     m_requiredAmount: 0
-    m_targetItem: {fileID: 11400000, guid: dacbc5f725f0b4d40b3a9c66ed1ca766, type: 2}
+    m_targetItem: {fileID: 0}
     m_targetNpcId: 
-    m_targetMapId: 
+    m_targetMapId: MapM1_01
     m_nextQuestID: Q_M1_Step1
-    m_afterDia: {fileID: 0}
+    m_afterDia: {fileID: 7201767837969887034, guid: 16b3a4ccf1c4c0a468afc93372da5070,
+      type: 2}
     m_preDia: {fileID: 0}
-  - m_description: Use Potion to fix bridge
+  - m_description: Craft Growth Boost Potion
     m_stepType: 2
     m_requiredAmount: 1
     m_targetItem: {fileID: 11400000, guid: dacbc5f725f0b4d40b3a9c66ed1ca766, type: 2}
     m_targetNpcId: 
-    m_targetMapId: 
-    m_nextQuestID: 
+    m_targetMapId: MapM1_01
+    m_nextQuestID: Q_M1_Step2
+    m_afterDia: {fileID: 0}
+    m_preDia: {fileID: 0}
+  - m_description: Use Potion to fix bridge
+    m_stepType: 0
+    m_requiredAmount: 1
+    m_targetItem: {fileID: 11400000, guid: dacbc5f725f0b4d40b3a9c66ed1ca766, type: 2}
+    m_targetNpcId: ObjM1_01Bridge_Broken
+    m_targetMapId: MapM1_01
+    m_nextQuestID: Q_M1_1
     m_afterDia: {fileID: 0}
     m_preDia: {fileID: 0}
   m_rewardItems: []

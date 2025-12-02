@@ -37,28 +37,33 @@ public class QuestManager : MonoBehaviour
             m_questStates[questID] = "Started";
             m_currentSteps[questID] = 0;
 
-            Debug.Log($"[퀘스트 시작] {questID}");
 
-            // 첫 스텝의 preDia 실행
+            // 첫 스텝의 preDia 실행 (원본대로 UI + DialogueManager 둘 다 호출)
             var data = GetQuestData(questID);
             if (data != null && data.m_questSteps.Count > 0)
             {
                 var firstStep = data.m_questSteps[0];
-                if (firstStep.m_preDia != null)
+                if (firstStep != null && firstStep.m_preDia != null)
                 {
-                    GManager.Instance.IsUIManager.OpenDialogueUI(firstStep.m_preDia);
-                    GManager.Instance.IsDialogueManager.StartDialogue(firstStep.m_preDia);
-                    Debug.Log($"[퀘스트 대화] {questID} 첫 스텝 시작 전 대화 실행");
+                    var ui = GManager.Instance?.IsUIManager;
+                    ui?.OpenDialogueUI(firstStep.m_preDia);
+                    GManager.Instance?.IsDialogueManager?.StartDialogue(firstStep.m_preDia);
+
                 }
             }
 
             SetQuestFlag($"{questID}_Step0_Start", true);
 
-            Debug.Log($"[QuestManager] 이벤트 호출 직전 - QuestID: '{questID}', StepIndex: 0");
+            // HUD/이벤트 (원본 유지)
+            GManager.Instance?.IsHUDUI?.UpdateQuest(questID, 0);
             OnQuestProgressChanged?.Invoke(questID, 0);
             UpdateQuestInspectorList();
+
+            // 시작 상태를 디스크(JSON)에 남기기(프레임 말 1회 저장)
+            GManager.Instance?.SaveSoon();
         }
     }
+
     public void TryCompleteStep(string questID)
     {
         var step = GetCurrentStep(questID);
@@ -70,7 +75,6 @@ public class QuestManager : MonoBehaviour
                 string currentMap = GManager.Instance.currentMapGroup?.name;
                 string targetMap = step.m_targetMapId;
 
-                Debug.Log($"[Quest Visit] 현재 맵: {currentMap}, 타겟 맵: {targetMap}");
 
                 if (currentMap == targetMap)
                 {
@@ -111,12 +115,10 @@ public class QuestManager : MonoBehaviour
                 string questID = kvp.Key;
                 var step = GetCurrentStep(questID);
 
-                Debug.Log($"[TryTalkToNPC] 퀘스트 {questID} 현재 Step: {step?.m_stepType}, 타겟: {step?.m_targetNpcId}");
 
                 if (step != null && step.m_stepType == QuestStepType.Talk && step.m_targetNpcId == npcID)
                 {
                     AdvanceStep(questID);
-                    Debug.Log($"[퀘스트 진행] {questID} - {npcID}와 대화하여 스텝 완료");
                     break;
                 }
             }
@@ -167,7 +169,6 @@ public class QuestManager : MonoBehaviour
         {
             GManager.Instance.IsInvenManager.RemoveItem(step.m_targetItem, step.m_requiredAmount);
             AdvanceStep(questID);
-            Debug.Log($"[QuestManager] Deliver Step 완료 처리: {questID}");
         }
     }
 
@@ -178,94 +179,109 @@ public class QuestManager : MonoBehaviour
         if (data == null) return;
 
         int step = GetCurrentStepIndex(questID);
-        QuestStep currentStep = null;
-        if (step >= 0 && step < data.m_questSteps.Count)
-            currentStep = data.m_questSteps[step];
+        QuestStep currentStep = (step >= 0 && step < data.m_questSteps.Count) ? data.m_questSteps[step] : null;
 
-        // 현재 스텝 완료 시 afterDia 실행
+        // 현재 스텝 완료 후 대화
         if (currentStep != null && currentStep.m_afterDia != null)
         {
-            GManager.Instance.IsUIManager.OpenDialogueUI(currentStep.m_afterDia);
-            Debug.Log($"[퀘스트 대화] {questID} Step {step} 완료 후 대화 실행");
+            var ui = GManager.Instance?.IsUIManager;
+            ui?.OpenDialogueUI(currentStep.m_afterDia);
+            GManager.Instance?.IsDialogueManager?.StartDialogue(currentStep.m_afterDia);
+
         }
 
+        // ─────────────────────────────────────────────────────────
+        // 아직 마지막 스텝이 아니면, 스텝만 advance
+        // ─────────────────────────────────────────────────────────
         if (step + 1 < data.m_questSteps.Count)
         {
             m_currentSteps[questID] = step + 1;
 
-            Debug.Log($"[퀘스트 진행] {questID} - Step {step} 완료 → Step {step + 1} 시작");
 
             SetQuestFlag($"{questID}_Step{step}_Start", false);
             SetQuestFlag($"{questID}_Step{step}_Clear", true);
             SetQuestFlag($"{questID}_Step{step + 1}_Start", true);
 
-            if (GManager.Instance.IsHUDUI != null)
-            {
-                GManager.Instance.IsHUDUI.UpdateQuest(questID, m_currentSteps[questID]);
-                Debug.Log($"[AdvanceStep] 이벤트 호출: OnQuestProgressChanged({questID}, {m_currentSteps[questID]})");
-            }
-
-            Debug.Log($"[QuestManager] 이벤트 호출 직전 - QuestID: '{questID}', StepIndex: {m_currentSteps[questID]}");
+            // HUD/이벤트 (원본 유지)
+            GManager.Instance?.IsHUDUI?.UpdateQuest(questID, m_currentSteps[questID]);
             OnQuestProgressChanged?.Invoke(questID, m_currentSteps[questID]);
-            Debug.Log("[AdvanceStep] 이벤트 호출 완료");
 
-            GManager.Instance?.SaveNow();
+            // ★ 중간 진행도 JSON에 남기기(프레임 말 1회 저장)
+            GManager.Instance?.SaveSoon();
 
+            // 다음 스텝 preDia (원본처럼 UI + DialogueManager 둘 다 호출)
             var nextStep = data.m_questSteps[step + 1];
-            if (nextStep.m_preDia != null)
+            if (nextStep != null && nextStep.m_preDia != null)
             {
-                GManager.Instance.IsUIManager.OpenDialogueUI(nextStep.m_preDia);
-                Debug.Log($"[퀘스트 대화] {questID} Step {step + 1} 시작 전 대화 실행");
+                var ui = GManager.Instance?.IsUIManager;
+                ui?.OpenDialogueUI(nextStep.m_preDia);
+                GManager.Instance?.IsDialogueManager?.StartDialogue(nextStep.m_preDia);
+
             }
         }
+        // ─────────────────────────────────────────────────────────
+        // 마지막 스텝 완료 → 퀘스트 완료 + (있다면) 다음 퀘스트 즉시 시작
+        // ─────────────────────────────────────────────────────────
         else
         {
-            Debug.Log($"[퀘스트 진행] {questID} - 마지막 Step {step} 완료 → 퀘스트 완료 예정");
+            string nextId = currentStep?.m_nextQuestID;
 
-            if (GManager.Instance.IsHUDUI != null)
-            {
-                GManager.Instance.IsHUDUI.ClearQuestUI();
-            }
-
-            if (!string.IsNullOrEmpty(currentStep?.m_nextQuestID))
-            {
-                Debug.Log($"[퀘스트 진행] {questID} - 다음 퀘스트 자동 시작 대기 중: {currentStep.m_nextQuestID}");
-                StartCoroutine(StartNextQuestWithDelay(currentStep.m_nextQuestID, 0.1f));
-            }
-
+            // 1) 현재 퀘스트 완료
             CompleteQuest(questID);
+            GManager.Instance.IsHUDUI?.ClearQuestUI();
+
+            // 2) 다음 퀘스트가 있으면 즉시 시작
+            if (!string.IsNullOrEmpty(nextId))
+            {
+                StartQuest(nextId);
+
+                // (필요 시 유지) 다음 퀘스트 첫 스텝 preDia & HUD 갱신
+                var nextData = GetQuestData(nextId);
+                QuestStep firstStep = (nextData != null && nextData.m_questSteps.Count > 0) ? nextData.m_questSteps[0] : null;
+                if (firstStep?.m_preDia != null)
+                {
+                    var ui = GManager.Instance?.IsUIManager;
+                    ui?.OpenDialogueUI(firstStep.m_preDia);
+                    GManager.Instance?.IsDialogueManager?.StartDialogue(firstStep.m_preDia);
+                }
+
+                GManager.Instance?.IsHUDUI?.UpdateQuest(nextId, GetCurrentStepIndex(nextId));
+            }
+            else
+            {
+                // 이어갈 퀘스트가 없으면 HUD 비움
+                GManager.Instance?.IsHUDUI?.ClearQuestUI();
+            }
+
+            // 3) 마지막에 저장 (프레임 말 1회로 합쳐짐)
+            GManager.Instance?.SaveSoon();
         }
 
         UpdateQuestInspectorList();
-    }
-
-    private IEnumerator StartNextQuestWithDelay(string nextQuestID, float delaySeconds)
-    {
-        yield return new WaitForSeconds(delaySeconds);
-        StartQuest(nextQuestID);
     }
 
     public void CompleteQuest(string questID)
     {
         m_questStates[questID] = "Complete";
 
-        Debug.Log($"[퀘스트 완료] {questID}");
 
         var data = GetQuestData(questID);
         if (data != null)
         {
             foreach (var reward in data.m_rewardItems)
             {
-                InventoryManager.Instance.AddItem(reward.m_item, reward.m_amount);
+                if (reward?.m_item != null && reward.m_amount > 0)
+                {
+                    InventoryManager.Instance.AddItem(reward.m_item, reward.m_amount);
+                }
             }
         }
 
         SetQuestFlag($"{questID}_Complete", true);
-        OnQuestProgressChanged?.Invoke(questID, m_currentSteps[questID]);
-
-        GManager.Instance?.SaveNow();
-
+        OnQuestProgressChanged?.Invoke(questID, GetCurrentStepIndex(questID));
         UpdateQuestInspectorList();
+        GManager.Instance?.SaveSoon();
+
     }
 
     public QuestData GetQuestData(string questID)
@@ -293,7 +309,6 @@ public class QuestManager : MonoBehaviour
     public void SetQuestFlag(string flagName, bool value)
     {
         m_questFlags[flagName] = value;
-        Debug.Log($"[퀘스트 플래그] {flagName} = {value}");
     }
 
     public bool GetQuestFlag(string flagName)
@@ -371,6 +386,31 @@ public class QuestManager : MonoBehaviour
                 TryCompleteStep(kvp.Key);
             }
         }
+    }
+
+    // QuestManager.cs 안에 추가 (대사/컷신 없이 상태만 세움)
+    public void StartQuestSilently(string questID)
+    {
+        if (string.IsNullOrEmpty(questID)) return;
+        if (!m_currentSteps.ContainsKey(questID))
+        {
+            m_currentSteps[questID] = 0;
+            SetQuestFlag($"{questID}_Step0_Start", true);
+            OnQuestProgressChanged?.Invoke(questID, 0);
+            GManager.Instance?.IsHUDUI?.UpdateQuest(questID, 0);
+        }
+    }
+
+    public void SetCurrentStepSilently(string questID, int stepIndex)
+    {
+        if (string.IsNullOrEmpty(questID)) return;
+        m_currentSteps[questID] = Mathf.Max(0, stepIndex);
+        // 플래그 정합(간단 버전): 해당 stepIndex의 Start만 true로 보장
+        for (int s = 0; s <= stepIndex; s++)
+            SetQuestFlag($"{questID}_Step{s}_Start", s == stepIndex);
+
+        OnQuestProgressChanged?.Invoke(questID, m_currentSteps[questID]);
+        GManager.Instance?.IsHUDUI?.UpdateQuest(questID, m_currentSteps[questID]);
     }
 
 

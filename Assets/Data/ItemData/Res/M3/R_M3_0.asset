@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: R_M3_0
   m_EditorClassIdentifier: 
   m_itemType: 0
-  m_itemName: "\uD669\uAE08\uBC00"
+  m_itemID: 
+  m_itemName: Golden Wheat
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: f46c7f310b70bb04482095bcddacf1f2, type: 3}
-  description: "\uB728\uAC70\uC6B4 \uD587\uBE5B\uC758 \uC5D0\uB108\uC9C0\uB97C \uC794\uB729
-    \uBA38\uAE08\uC740 \uBC00."
+  m_buyPrice: 0
+  m_sellPrice: 0
+  m_description: Plump golden wheat.
   m_usableItem: 0

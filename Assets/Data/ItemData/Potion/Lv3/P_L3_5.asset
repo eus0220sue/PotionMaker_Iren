@@ -19,5 +19,5 @@ MonoBehaviour:
   m_itemIcon: {fileID: 21300000, guid: 5f96325368bb03943b65762cf6ee507f, type: 3}
   m_buyPrice: 0
   m_sellPrice: 0
-  m_description: 
+  m_description: Highly condensed plant fertilizer. Must be used with care.
   m_usableItem: 0

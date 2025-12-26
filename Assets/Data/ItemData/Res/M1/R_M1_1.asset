@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemType: 0
   m_itemID: 
-  m_itemName: "\uC57C\uAD11 \uBC84\uC12F"
+  m_itemName: Glow Mushroom
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: d9976cf3f2b97294e9fcfacc44cf7970, type: 3}
-  m_description: 4
+  m_buyPrice: 0
+  m_sellPrice: 0
+  m_description: Glowing mushroom with a pink dot.
   m_usableItem: 0

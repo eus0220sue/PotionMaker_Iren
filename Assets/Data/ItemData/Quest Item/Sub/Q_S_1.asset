@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemType: 0
   m_itemID: 
-  m_itemName: "\uB2EC\uD33D\uC774\uC9C4\uC561"
+  m_itemName: SnailSlime
   m_maxStack: 1
   m_itemIcon: {fileID: 21300000, guid: cbcebdcd0ea359648b8f21b03ab1505c, type: 3}
-  description: 
+  m_buyPrice: 0
+  m_sellPrice: 0
+  m_description: 
   m_usableItem: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gradeType: 0
   m_itemType: 3
-  m_pName: "\uC0DD\uC7A5 \uCD09\uC9C4 \uD3EC\uC158"
+  m_pName: Growth Boost Potion
   m_index: 0
   m_inputI1: {fileID: 11400000, guid: da3a8b620a1cdb8419d4e21d260efd94, type: 2}
   m_inputI2: {fileID: 11400000, guid: f16807265ed664449be09c6d7fea3fea, type: 2}
@@ -23,5 +23,4 @@ MonoBehaviour:
   m_IAmount1: 1
   m_IAmount2: 1
   m_potionIllust: {fileID: 21300000, guid: d1a22b44f7f87284cbddc08daa82624a, type: 3}
-  m_PotionDS: "\uC2DD\uBB3C\uC744 \uAE09\uC18D\uB3C4\uB85C \uC790\uB77C\uB098\uAC8C
-    \uD574\uC900\uB2E4."
+  m_PotionDS: It allows plants to grow rapidly.

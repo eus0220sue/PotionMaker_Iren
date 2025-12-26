@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemType: 0
   m_itemID: 
-  m_itemName: "\uCE58\uC720 \uC54C\uB85C\uC5D0"
+  m_itemName: Healing Aloe
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: 512682233c5b9bc4facbddfa03177185, type: 3}
   m_buyPrice: 200

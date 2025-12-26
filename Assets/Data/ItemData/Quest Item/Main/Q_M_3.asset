@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemType: 0
   m_itemID: 
-  m_itemName: "\uC36C\uCE90\uCCD0"
+  m_itemName: SunCatcher
   m_maxStack: 1
   m_itemIcon: {fileID: 21300000, guid: e2677d4e4c577fe41a8bb654f30963bf, type: 3}
-  description: 
+  m_buyPrice: 0
+  m_sellPrice: 0
+  m_description: 
   m_usableItem: 0

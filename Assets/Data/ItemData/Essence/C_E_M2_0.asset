@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: C_E_M2_0
   m_EditorClassIdentifier: 
   m_itemType: 0
-  m_itemName: "\uC544\uC774\uC2A4 \uD3EC\uADF8 \uC5D0\uC13C\uC2A4"
+  m_itemID: 
+  m_itemName: Ice Fog Essence
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: 3686233afb9f442489ac5b963a7035fd, type: 3}
-  description: 
+  m_buyPrice: 0
+  m_sellPrice: 0
+  m_description: 
   m_usableItem: 0

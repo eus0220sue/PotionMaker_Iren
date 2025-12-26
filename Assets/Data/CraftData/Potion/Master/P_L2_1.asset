@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gradeType: 2
   m_itemType: 3
-  m_pName: "\uC815\uD654\uC758 \uBB3C\uBC29\uC6B8"
+  m_pName: Drop of Purification
   m_index: 1
   m_inputI1: {fileID: 11400000, guid: c801127c5d083684bb7828374d6dff08, type: 2}
   m_inputI2: {fileID: 11400000, guid: 925e0455bd1139b4b9ef742bee249b9f, type: 2}
@@ -23,5 +23,4 @@ MonoBehaviour:
   m_IAmount1: 1
   m_IAmount2: 1
   m_potionIllust: {fileID: 21300000, guid: 356144d63d365a74eac290794522333b, type: 3}
-  m_PotionDS: "\uC0AC\uC6A9\uC790 \uC8FC\uBCC0\uC5D0 \uC874\uC7AC\uD558\uB294 \uAC04\uB2E8\uD55C
-    \uC624\uC5FC\uC744 \uB9D0\uB054\uD788 \uC815\uD654\uD55C\uB2E4."
+  m_PotionDS: Cleanses simple impurities and dirt around the user.

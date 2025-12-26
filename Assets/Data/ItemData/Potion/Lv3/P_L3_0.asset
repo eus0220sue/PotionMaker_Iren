@@ -19,5 +19,6 @@ MonoBehaviour:
   m_itemIcon: {fileID: 21300000, guid: 2af4f6d74a5696e4bb995588f4724394, type: 3}
   m_buyPrice: 0
   m_sellPrice: 0
-  m_description: 
+  m_description: Returns the user to their original form, but only if another potion
+    was taken beforehand.
   m_usableItem: 0

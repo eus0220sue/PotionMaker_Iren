@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C_P_M2_0
   m_EditorClassIdentifier: 
   m_itemType: 1
-  m_name: "\uB9D1\uC740 \uC790\uAC08 \uAC00\uB8E8"
+  m_name: Glimmer Pebble Powder
   m_index: 3
   m_inputItemData: {fileID: 11400000, guid: 6bd2bc6da8b6db7469fc69b51feccff0, type: 2}
   m_outputItemData: {fileID: 11400000, guid: 925e0455bd1139b4b9ef742bee249b9f, type: 2}

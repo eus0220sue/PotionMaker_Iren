@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gradeType: 0
   m_itemType: 3
-  m_pName: "\uAC10\uAC01\uC800\uD558 \uD3EC\uC158"
+  m_pName: Dulling Potion
   m_index: 5
   m_inputI1: {fileID: 11400000, guid: 6dd5399d569d93147875e0f0a8fdab9f, type: 2}
   m_inputI2: {fileID: 11400000, guid: c1bcb5caf2edec64e8fdb4cefecf47f5, type: 2}
@@ -23,5 +23,4 @@ MonoBehaviour:
   m_IAmount1: 1
   m_IAmount2: 1
   m_potionIllust: {fileID: 21300000, guid: f84b2acc7e01c7f4e9fd9c0f602144d0, type: 3}
-  m_PotionDS: "\uAC10\uAC01\uC774 \uB454\uD574\uC9C0\uACE0 \uB9C8\uBE44 \uD6A8\uACFC\uAC00
-    \uC0DD\uAE34\uB2E4."
+  m_PotionDS: Dulls senses and causes mild paralysis.

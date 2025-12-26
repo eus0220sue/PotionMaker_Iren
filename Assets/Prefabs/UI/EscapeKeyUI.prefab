@@ -613,7 +613,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 127bf784a9634a64cb7c39fb5b601672, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 231de15e38233684db05dfe44c50257b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -800,7 +800,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b5d71f1bf5bb829428b5d9034f5fc010, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 47be2b2c259c8ae4fa0e114ec4df2da8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -965,7 +965,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9bbcff7a349ba10469afc6e15c2fd410, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9d2c96af49d357a41a395c97e901b7a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1094,11 +1094,11 @@ MonoBehaviour:
   volumeSlider: {fileID: 6871031860038663984}
   volumeValueText: {fileID: 2002769161058355747}
   keyMapSprites:
-  - {fileID: 21300000, guid: b5d71f1bf5bb829428b5d9034f5fc010, type: 3}
-  - {fileID: 21300000, guid: dd7e8ad4af2ebac47a73032130df0442, type: 3}
+  - {fileID: 21300000, guid: 47be2b2c259c8ae4fa0e114ec4df2da8, type: 3}
+  - {fileID: 21300000, guid: 2c5fd30229b305b4ba11a0e28f98a050, type: 3}
   toTitleSprites:
-  - {fileID: 21300000, guid: 127bf784a9634a64cb7c39fb5b601672, type: 3}
-  - {fileID: 21300000, guid: 1acd32f2ef7b830498b22e22af4df96c, type: 3}
+  - {fileID: 21300000, guid: 231de15e38233684db05dfe44c50257b, type: 3}
+  - {fileID: 21300000, guid: 95cbfdaaaac7d9448a9553992de2b91c, type: 3}
   keyMapImage: {fileID: 4032195449568817111}
   toTitleImage: {fileID: 3596883333809744544}
   KeyGuideGameObj: {fileID: 1909306702810408004}
@@ -1137,7 +1137,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 252}
-  m_SizeDelta: {x: 72, y: 48}
+  m_SizeDelta: {x: 172, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4790110690176439945
 CanvasRenderer:
@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC124\uC815"
+  m_text: Settings
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 86321f3427d06ff41a1191f2ff184e2a, type: 2}
   m_sharedMaterial: {fileID: -8180728337706100390, guid: 86321f3427d06ff41a1191f2ff184e2a,

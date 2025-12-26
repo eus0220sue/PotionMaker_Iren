@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemType: 0
   m_itemID: 
-  m_itemName: "\uAFC0"
+  m_itemName: Honey
   m_maxStack: 1
   m_itemIcon: {fileID: 21300000, guid: a85bc81792a31704489b9d3373cb17ae, type: 3}
-  description: 
+  m_buyPrice: 0
+  m_sellPrice: 0
+  m_description: 
   m_usableItem: 0

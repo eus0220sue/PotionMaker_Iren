@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemType: 0
   m_itemID: 
-  m_itemName: "\uAF43 \uBCF4\uD638\uAD6C 03"
+  m_itemName: Flower Protector 03
   m_maxStack: 1
   m_itemIcon: {fileID: 21300000, guid: b3d05f59eaba9b146a539b08a7e46332, type: 3}
-  description: 
+  m_buyPrice: 0
+  m_sellPrice: 0
+  m_description: 
   m_usableItem: 0

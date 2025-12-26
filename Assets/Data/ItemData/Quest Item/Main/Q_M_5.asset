@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemType: 0
   m_itemID: 
-  m_itemName: "\uBA54\uC544\uB9AC \uC870\uAC1C"
+  m_itemName: Echo Shell
   m_maxStack: 1
   m_itemIcon: {fileID: 21300000, guid: 8bc665f3d4b5f2049aa0c741a589dae2, type: 3}
-  description: 
+  m_buyPrice: 0
+  m_sellPrice: 0
+  m_description: 
   m_usableItem: 0

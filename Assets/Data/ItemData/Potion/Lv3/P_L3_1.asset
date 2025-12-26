@@ -19,5 +19,5 @@ MonoBehaviour:
   m_itemIcon: {fileID: 21300000, guid: 24d5abfddb3321547ac69f7c46baf97b, type: 3}
   m_buyPrice: 0
   m_sellPrice: 0
-  m_description: 
+  m_description: Rapidly accelerates growth with permanent effects.
   m_usableItem: 0

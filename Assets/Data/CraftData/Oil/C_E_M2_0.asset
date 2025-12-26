@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C_E_M2_0
   m_EditorClassIdentifier: 
   m_itemType: 2
-  m_name: "\uC544\uC774\uC2A4 \uD3EC\uADF8 \uC5D0\uC13C\uC2A4"
+  m_name: Ice Fog Essence
   m_index: 2
   m_inputI1: {fileID: 11400000, guid: 04a93fb8de2201646916a2a733196afc, type: 2}
   m_inputI2: {fileID: 11400000, guid: a8d1e9f08ce0dfd469a16edc02d2f1df, type: 2}

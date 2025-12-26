@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C_P_M4_3
   m_EditorClassIdentifier: 
   m_itemType: 1
-  m_name: "\uBBF8\uB04C \uBC14\uC704 \uAC00\uB8E8"
+  m_name: Slippyrock Powder
   m_index: 9
   m_inputItemData: {fileID: 11400000, guid: 73034efa3cba8db45b15e944f0939189, type: 2}
   m_outputItemData: {fileID: 11400000, guid: d97e641f51c01ee4598b703e6eaf071f, type: 2}

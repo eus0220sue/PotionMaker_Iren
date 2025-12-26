@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "C_E_M4_\uFF13"
   m_EditorClassIdentifier: 
   m_itemType: 2
-  m_name: "\uB9D0\uB791 \uC218\uC815 \uC5D0\uC13C\uC2A4"
+  m_name: Squishite Essence
   m_index: 9
   m_inputI1: {fileID: 11400000, guid: 2d53411dd1d35184d8f2d8a98b85f492, type: 2}
   m_inputI2: {fileID: 11400000, guid: a8d1e9f08ce0dfd469a16edc02d2f1df, type: 2}

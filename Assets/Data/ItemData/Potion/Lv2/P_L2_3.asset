@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemType: 0
   m_itemID: 
-  m_itemName: "\uC232\uC758 \uD5A5\uAE30 \uBB3C\uC57D"
+  m_itemName: Forest's Scent Potion
   m_maxStack: 10
   m_itemIcon: {fileID: 21300000, guid: d0446c9af477470439cc7121454f3993, type: 3}
   m_buyPrice: 0
   m_sellPrice: 0
-  m_description: 
+  m_description: Releases a natural fragrance that relaxes the body.
   m_usableItem: 1

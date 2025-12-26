@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: C_E_M4_0
   m_EditorClassIdentifier: 
   m_itemType: 0
-  m_itemName: "\uC554\uCD08\uBCA0\uB9AC \uC5D1\uAE30\uC2A4"
+  m_itemID: 
+  m_itemName: Crag Berry Essence
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: 54ccc4d4e70991041bff597f2c82d947, type: 3}
-  description: 
+  m_buyPrice: 0
+  m_sellPrice: 0
+  m_description: 
   m_usableItem: 0

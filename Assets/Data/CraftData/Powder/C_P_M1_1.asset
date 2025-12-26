@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C_P_M1_1
   m_EditorClassIdentifier: 
   m_itemType: 1
-  m_name: "\uC0DD\uBA85\uC758 \uC774\uB07C \uAC00\uB8E8"
+  m_name: Bloomie Moss Powder
   m_index: 1
   m_inputItemData: {fileID: 11400000, guid: da3a8b620a1cdb8419d4e21d260efd94, type: 2}
   m_outputItemData: {fileID: 11400000, guid: 6bcd42b2d4213a24a8544f61869b3f7c, type: 2}

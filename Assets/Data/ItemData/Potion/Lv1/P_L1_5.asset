@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: P_L1_5
   m_EditorClassIdentifier: 
   m_itemType: 3
-  m_itemName: "\uAC10\uAC01\uC800\uD558 \uD3EC\uC158"
+  m_itemID: 
+  m_itemName: Dulling Potion
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: e7150dd826eb93347be86817c468b196, type: 3}
-  description: "\uAC10\uAC01\uC774 \uB454\uD574\uC9C0\uACE0 \uB9C8\uBE44 \uD6A8\uACFC\uAC00
-    \uC0DD\uAE34\uB2E4."
+  m_buyPrice: 0
+  m_sellPrice: 0
+  m_description: Dulls senses and causes mild paralysis.
   m_usableItem: 1

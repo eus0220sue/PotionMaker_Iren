@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: "C_E_M4_\uFF13"
   m_EditorClassIdentifier: 
   m_itemType: 0
-  m_itemName: "\uB9D0\uB791 \uC218\uC815 \uC5D0\uC13C\uC2A4"
+  m_itemID: 
+  m_itemName: Squishite Essence
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: 545d87a06d05a28489153c87adf73a40, type: 3}
-  description: 
+  m_buyPrice: 0
+  m_sellPrice: 0
+  m_description: 
   m_usableItem: 0

@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: C_E_M4_1
   m_EditorClassIdentifier: 
   m_itemType: 0
-  m_itemName: "\uB531\uD480 \uACB0\uC815 \uC5D0\uC13C\uC2A4"
+  m_itemID: 
+  m_itemName: Stickite Crystal Essence
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: 8160c5415da55ff4ba778cc77fcff9e2, type: 3}
-  description: 
+  m_buyPrice: 0
+  m_sellPrice: 0
+  m_description: 
   m_usableItem: 0

@@ -275,8 +275,8 @@ MonoBehaviour:
   m_position: {x: 409.4, y: 218.4006}
   m_speakerPosition: 1
   m_speakerName: 
-  m_dialogueText: "\uC5EC\uAE30\uC11C \uAE30\uB2E4\uB9B4\uD14C\uB2C8, \uC644\uC131\uD558\uBA74
-    \uB2E4\uC2DC \uB0A0 \uCC3E\uC544\uC624\uB834."
+  m_dialogueText: " I\u2019ll be waiting right here, so come find me once it\u2019s
+    ready."
   m_characterPortrait: {fileID: 21300000, guid: e1a6357d7e3ccf140b5f898a24cfc666,
     type: 3}
   m_nextNode: {fileID: 1397729147981339346}

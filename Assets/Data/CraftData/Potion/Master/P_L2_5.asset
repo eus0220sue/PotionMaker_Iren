@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gradeType: 2
   m_itemType: 3
-  m_pName: "\uB8E8\uBAA8\uC2A4 \uD3EC\uC158"
+  m_pName: Lumos Potion
   m_index: 5
   m_inputI1: {fileID: 11400000, guid: 24fb8cd0e9f275f43ac10c282582e35c, type: 2}
   m_inputI2: {fileID: 11400000, guid: 0840e297976c36341a937e544c94ec52, type: 2}
@@ -23,6 +23,5 @@ MonoBehaviour:
   m_IAmount1: 1
   m_IAmount2: 1
   m_potionIllust: {fileID: 21300000, guid: 361f667ec93fd374e92a95a272ac78f7, type: 3}
-  m_PotionDS: "\uC5B4\uB460 \uC18D\uC5D0\uC11C\uB3C4 \uBC1D\uC740 \uBE5B\uC744 \uB0B4\uBFDC\uC5B4,
-    \uC8FC\uBCC0\uC744 \uD658\uD788 \uBE44\uCDB0\uC900\uB2E4. \uC5B4\uB450\uC6B4
-    \uB3D9\uAD74\uC774\uB098 \uBC24\uAE38 \uD0D0\uC0C9\uC5D0 \uD544\uC218 \uC544\uC774\uD15C."
+  m_PotionDS: "Emits bright light in darkness\u2014essential for caves and night
+    travel."

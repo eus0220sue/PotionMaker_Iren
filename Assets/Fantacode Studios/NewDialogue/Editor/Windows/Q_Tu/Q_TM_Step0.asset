@@ -129,9 +129,8 @@ MonoBehaviour:
   m_position: {x: 895, y: 672}
   m_speakerPosition: 1
   m_speakerName: "\uBCA0\uB974\uADF8\uB974"
-  m_dialogueText: "\uC544\uB974\uBBF8\uC2A4\uC5D0 \uB300\uD574 \uB354 \uC790\uC138\uD558\uAC8C
-    \uC54C\uACE0 \uC2F6\uB2E4\uBA74, \uB9C8\uC744 \uC0AC\uB78C\uB4E4\uACFC \uB300\uD654
-    \uD574 \uBD10. \uCE5C\uD574\uC838\uC11C \uB098\uC060 \uAC70 \uC5C6\uC796\uC544?"
+  m_dialogueText: If you want to know more about the Armis, try talking to the villagers.
+    No harm in getting friendly with them, right?
   m_characterPortrait: {fileID: 21300000, guid: fa9205cd940c85440a9717228152bfa5,
     type: 3}
   m_nextNode: {fileID: 901442564996652242}
@@ -362,9 +361,8 @@ MonoBehaviour:
   m_position: {x: 1101.5983, y: 3.1999512}
   m_speakerPosition: 1
   m_speakerName: Vergre
-  m_dialogueText: "\uC791\uC5C5\uC2E4\uC740 \uB9C8\uC744 \uAC00\uC7A5 \uC624\uB978\uCABD\uC5D0
-    \uC791\uC740 \uC624\uB450\uB9C9\uC744 \uC900\uBE44\uD574\uB1A8\uC5B4, \uC798
-    \uC0AC\uC6A9\uD558\uAE38 \uBC14\uB798."
+  m_dialogueText: "Anyway, enough of the explanations. Follow me\u2014I'll show you
+    around the village."
   m_characterPortrait: {fileID: 21300000, guid: fa9205cd940c85440a9717228152bfa5,
     type: 3}
   m_nextNode: {fileID: -4850457013466289271}

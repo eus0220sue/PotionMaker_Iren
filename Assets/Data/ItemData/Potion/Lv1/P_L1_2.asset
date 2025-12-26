@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemType: 3
   m_itemID: 
-  m_itemName: "\uC232\uC758 \uC81C\uCD08\uC81C"
+  m_itemName: Forest Herbicide
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: 8f68bba7d36b2be45b3f1b5a22228b0f, type: 3}
   m_buyPrice: 0
   m_sellPrice: 0
-  m_description: 
+  m_description: Removes nearby weeds instantly. Heavy use prevents regrowth for
+    a while.
   m_usableItem: 1

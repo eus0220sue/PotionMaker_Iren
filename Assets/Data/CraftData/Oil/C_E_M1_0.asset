@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C_E_M1_0
   m_EditorClassIdentifier: 
   m_itemType: 2
-  m_name: "\uC800\uC8FC\uBC1B\uC740 \uC774\uB07C \uC5D0\uC13C\uC2A4"
+  m_name: Cursed Moss Essence
   m_index: 0
   m_inputI1: {fileID: 11400000, guid: da3a8b620a1cdb8419d4e21d260efd94, type: 2}
   m_inputI2: {fileID: 11400000, guid: a8d1e9f08ce0dfd469a16edc02d2f1df, type: 2}

@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemType: 0
   m_itemID: 
-  m_itemName: "\uD0C4\uC0B0 \uD3EC\uC158"
+  m_itemName: Fizzy Potion
   m_maxStack: 10
   m_itemIcon: {fileID: 21300000, guid: 88656181b4b6765489337e72c40297ec, type: 3}
   m_buyPrice: 0
   m_sellPrice: 0
-  m_description: 
+  m_description: A fizzy, dark potion that tastes great and restores vitality.
   m_usableItem: 1

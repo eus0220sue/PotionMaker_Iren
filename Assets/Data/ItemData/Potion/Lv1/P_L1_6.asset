@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: P_L1_6
   m_EditorClassIdentifier: 
   m_itemType: 3
-  m_itemName: "\uC5F4\uB9E4 \uC96C\uC2A4"
+  m_itemID: 
+  m_itemName: Fruit Juice
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: de28b1b05e99cca4088bcefa6b834932, type: 3}
-  description: "\uB3D9\uAD74\uC5D0 \uC0AC\uB294 \uBC40\uC5D0\uAC8C \uC778\uAE30\uAC00
-    \uC788\uC73C\uBA70, \uC12D\uCDE8 \uC2DC \uC790\uC2E0\uC774 \uD558\uB358 \uC77C\uC744
-    \uB9DD\uAC01\uD558\uACE0, \uC5F4\uB9E4\uD55C\uD14C\uB9CC \uC9D1\uC911\uD558\uAC8C
-    \uB41C\uB2E4."
+  m_buyPrice: 0
+  m_sellPrice: 0
+  m_description: Favored by cave snakes. Causes the drinker to forget tasks and focus
+    only on the berry.
   m_usableItem: 1

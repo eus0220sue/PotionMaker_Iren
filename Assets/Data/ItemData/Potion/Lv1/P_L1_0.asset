@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemType: 3
   m_itemID: 
-  m_itemName: "\uC0DD\uC7A5 \uCD09\uC9C4 \uBB3C\uC57D"
+  m_itemName: 'Growth Boost Potion '
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: eb377fbcd0651554bbd25f1276dcba65, type: 3}
   m_buyPrice: 0
   m_sellPrice: 0
-  m_description: 
+  m_description: It allows plants to grow rapidly.
   m_usableItem: 1

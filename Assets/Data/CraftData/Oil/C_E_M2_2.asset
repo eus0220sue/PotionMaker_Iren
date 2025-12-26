@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C_E_M2_2
   m_EditorClassIdentifier: 
   m_itemType: 2
-  m_name: "\uB2E4\uC774\uC544 \uC9C4\uC8FC \uC5D0\uC13C\uC2A4"
+  m_name: Diamond Pearl Essence
   m_index: 4
   m_inputI1: {fileID: 11400000, guid: 424c8b9b29f44374cadbaf723c3f8155, type: 2}
   m_inputI2: {fileID: 11400000, guid: a8d1e9f08ce0dfd469a16edc02d2f1df, type: 2}

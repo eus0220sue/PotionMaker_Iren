@@ -19,5 +19,6 @@ MonoBehaviour:
   m_itemIcon: {fileID: 21300000, guid: 04b2d130b3d21a547a4e9fd1bf26214f, type: 3}
   m_buyPrice: 0
   m_sellPrice: 0
-  m_description: 
+  m_description: Imbued with ant-like traits. Overdosing may shrink you to the size
+    of a cell.
   m_usableItem: 0

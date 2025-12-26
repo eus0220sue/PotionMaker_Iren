@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C_E_M1_1
   m_EditorClassIdentifier: 
   m_itemType: 2
-  m_name: "\uC6B0\uC0B0 \uC78E\uC0AC\uADC0 \uC5D0\uC13C\uC2A4"
+  m_name: Umbrella Leaf Essence
   m_index: 1
   m_inputI1: {fileID: 11400000, guid: 26c3ef0427319ff4c83efeda59643aa6, type: 2}
   m_inputI2: {fileID: 11400000, guid: a8d1e9f08ce0dfd469a16edc02d2f1df, type: 2}

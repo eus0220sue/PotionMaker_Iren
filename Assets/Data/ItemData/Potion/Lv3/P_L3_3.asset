@@ -19,5 +19,6 @@ MonoBehaviour:
   m_itemIcon: {fileID: 21300000, guid: 5ed43074d8fc49849aaea308144e065b, type: 3}
   m_buyPrice: 0
   m_sellPrice: 0
-  m_description: 
+  m_description: Forms a heat- and water-resistant barrier. Used on gear or magical
+    defenses.
   m_usableItem: 0

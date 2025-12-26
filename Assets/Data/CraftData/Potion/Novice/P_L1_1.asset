@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gradeType: 0
   m_itemType: 3
-  m_pName: "\uB2EC\uBE5B \uD3EC\uC158"
+  m_pName: Moonlight Potion
   m_index: 1
   m_inputI1: {fileID: 11400000, guid: 72c2054dcd5416d46a8bc945915923c8, type: 2}
   m_inputI2: {fileID: 11400000, guid: dd266de2b27c51849b5af192a2ffed31, type: 2}
@@ -23,6 +23,5 @@ MonoBehaviour:
   m_IAmount1: 1
   m_IAmount2: 1
   m_potionIllust: {fileID: 21300000, guid: 1351c453ce23b8e4e957789fd79c1a3e, type: 3}
-  m_PotionDS: "\uD587\uBE5B\uC744 \uBC1B\uC544 \uC800\uC7A5\uD574 \uB450\uC5C8\uB2E4\uAC00
-    \uC5B4\uB450\uC6B4 \uACF3\uC5D0\uC11C \uC740\uC740\uD55C \uC870\uBA85\uACFC \uAC19\uC774
-    \uBE5B\uB09C\uB2E4. "
+  m_PotionDS: It is stored in sunlight and then shines like a subtle light in the
+    dark.

@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemType: 3
   m_itemID: 
-  m_itemName: "\uB2EC\uBE5B \uBB3C\uC57D"
+  m_itemName: Moonlight Potion
   m_maxStack: 20
   m_itemIcon: {fileID: 21300000, guid: a9d39a97c4416254c9da157d76301f18, type: 3}
   m_buyPrice: 0
   m_sellPrice: 0
-  m_description: 
+  m_description: It is stored in sunlight and then shines like a subtle light in
+    the dark.
   m_usableItem: 1

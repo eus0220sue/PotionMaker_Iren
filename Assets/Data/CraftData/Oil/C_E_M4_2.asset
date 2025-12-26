@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: C_E_M4_2
   m_EditorClassIdentifier: 
   m_itemType: 2
-  m_name: "\uD558\uC580 \uC804\uAC08 \uB3C5 \uC5D0\uC13C\uC2A4"
+  m_name: White Scorp Venom Essence
   m_index: 8
   m_inputI1: {fileID: 11400000, guid: ff020e2f2bff50e47bcad1c153e7fc83, type: 2}
   m_inputI2: {fileID: 11400000, guid: a8d1e9f08ce0dfd469a16edc02d2f1df, type: 2}
